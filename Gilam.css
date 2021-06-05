@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Gilam';
+    src: url('fonts/Fontfabric---Gilam-Heavy.eot');
+    src: url('fonts/Fontfabric---Gilam-Heavy.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Fontfabric---Gilam-Heavy.woff2') format('woff2'),
+         url('fonts/Fontfabric---Gilam-Heavy.woff') format('woff'),
+         url('fonts/Fontfabric---Gilam-Heavy.ttf')  format('truetype'),
+         url('fonts/Fontfabric---Gilam-Heavy.svg#Gilam') format('svg');
+}

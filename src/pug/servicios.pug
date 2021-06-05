@@ -1,0 +1,24 @@
+extends templates/_servicios
+include helpers/_mixins
+
+block content
+  div.header-image
+    include templates/_navbar.pug
+    
+  
+  .container.descanso
+    div.row.align-items-start
+      .col-md-6
+        .subtitulo-2.primary-color SOMOS EL ALIADO 
+          br
+          span.secondary-color QUE ESTABAS
+          br
+          | BUSCANDO.
+      .col-md-6
+        p En Hielo Frío Internacional cuidamos hasta el último detalle de tu máquina.
+        p Queremos demostrarte con nuestra experiencia, la dedicación que ponemos a cada equipo.
+        p Acércate a nosotros y conoce todos los planes de arrendamiento que tenemos para tu negocio con opciones de mantenimiento incluido.
+        p Tenemos la flexibilidad de adaptarnos a tus necesidades y presupuesto.
+
+  .grid 
+    include templates/content/servicios/grid-servicios

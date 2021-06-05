@@ -1,0 +1,8 @@
+@mixin white-logo{
+    .logo
+        {
+            .cls-1, .cls-2, .cls-3{
+            fill: white
+        }
+    }
+}

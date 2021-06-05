@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Gilam';
+    src: url('Gilam-Heavy.eot');
+    src: url('Gilam-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('Gilam-Heavy.woff2') format('woff2'),
+        url('Gilam-Heavy.woff') format('woff'),
+        url('Gilam-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
