@@ -1,0 +1,104 @@
+extends templates/_catalogo
+include helpers/_mixins
+
+block content
+  div
+    include templates/_navbar.pug
+
+  .slides-home.slides-horizontal.container-fluid
+    .slide.row.align-items-center
+        .image.col-md-6
+            include svg/catalogo/basico/medidas.pug
+            img(src="assets/images/catalogo/basica.png")
+        .info.col-md-6.d-md-flex.flex-column
+            .titulo-1.primary-color.mt-auto Básica
+            .subtitulo-1.secondary-color Ideal para que tu negocio
+                br
+                | sea el más cool.
+            .content.mt-3.mb-auto.pe-5
+                p Sus dimensiones son tan accesibles que ocupan muy poco espacio dentro de restaurantes pequeños, food courts o cafeterías, incluso puedes instalarla debajo de la barra del bar.
+                p Haz tu servicio más eficiente sirviendo el hielo directamente de la máquina, al ubicarla cerca de donde se preparan las bebidas. 
+                p De tamaño compacto y fácil manejo, tienes una alta eficiencia en producción de hielo con bajo consumo de energía.
+  .horizontal-info 
+    .content.container.slide-1
+      .d-flex
+        .icon
+          img(src="assets/images/catalogo/basico/Kilos_Hielo_B.svg")
+        .text.subtitulo-3
+          | De 70 a 120 Kilos 
+          strong.secondary-color diarios.
+  .horizontal-info 
+    .content.container.slide-1
+      .d-flex
+        .icon
+          include svg/catalogo/diagrama.pug
+        .text.subtitulo-3
+          | Cubo tipo 
+          strong.secondary-color media luna 
+          | individual.
+  .horizontal-info.kg
+    .content.container.slide-1
+      .d-flex
+        .icon
+          include svg/catalogo/deposito.pug
+        .text.subtitulo-3
+          | Concentra 
+          strong.secondary-color 35 Kilos 
+          | en su depósito.
+
+  .detalles.container-fluid 
+    .row
+      .col-md-6.text.d-md-flex.align-items-center.justify-center
+        div
+          .subtitulo-2 
+            span.white-color HIELO
+            br
+            span.primary-color SANITIZADO
+          .texto-2.white-color Con su eficaz sistema higiénico obtienes un excelente hielo purificado listo para consumo.
+      .col-md-6.image.d-md-flex.align-items-center.justify-center
+        img(src="assets/images/catalogo/basico/Sanitizado_B.svg")
+
+  .detalles.container-fluid 
+    .row
+      .col-md-6.text.d-md-flex.align-items-center.justify-center
+        div
+          .subtitulo-2 
+            span.white-color EVAPORADOR 
+            br
+            span.primary-color DE ACERO 
+              | INOXIDABLE
+          .texto-2.white-color Por medio de una constante regulación en la temperatura, se adapta al medio ambiente de tu establecimiento.
+      .col-md-6.image.d-md-flex.align-items-center.justify-center
+        img(src="assets/images/catalogo/basico/Evaporador_B.svg")
+
+  .detalles.container-fluid 
+    .row
+      .col-md-6.text.d-md-flex.align-items-center.justify-center
+        div
+          .subtitulo-2 
+            span.white-color ESPACIO 
+            br
+            span.primary-color REDUCIDO
+          .texto-2.white-color Sólo elige el lugar para su instalación y comienza a refrescar el día de tus comensales.
+      .col-md-6.image.d-md-flex.align-items-center.justify-center
+        img(src="assets/images/catalogo/basico/Espacio_B.svg")
+
+  .detalles.container-fluid 
+    .row
+      .col-md-6.text.d-md-flex.align-items-center.justify-center
+        div
+          .subtitulo-2 
+            span.white-color FÁCIL 
+            br
+            span.primary-color MANTENIMIENTO
+          .texto-2.white-color Consérvala en óptimas condiciones y obtén el mayor rendimiento sin tantas complicaciones.
+      .col-md-6.image.d-md-flex.align-items-center.justify-center
+        img(src="assets/images/catalogo/basico/Mantenimiento_B.svg")
+
+  include templates/content/catalogo/quotes
+  
+  .container.subtitulo-2.primary-color REQUERIMIENTOS
+
+  .grid.mt-2
+    include templates/content/catalogo/grid-catalogo
+    

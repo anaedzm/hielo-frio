@@ -1,0 +1,83 @@
+@import '../_includes'
+
+.slides-home
+    margin-top: 50px
+    &.intermedio, &.premium
+        margin-top: 100px
+        
+        .slide
+            height: calc(100vh - 100px)
+            overflow: visible
+        .image
+            height: 100%
+            svg
+                height: 95%
+                left: 42%
+                transform: translateX(-50%)
+            img
+                height: 90%
+                margin: 0 auto
+    .image
+        position: relative
+        svg
+            position: absolute
+            height: 105%
+            top: 5%
+            left: 7%
+
+.horizontal-info 
+    height: 100vh
+    display: flex
+    align-items: center
+    justify-content: center
+    .d-flex
+        align-items: center
+        justify-content: center
+    .icon
+        max-width: 350px
+        width: 300px
+    .text 
+        width: 754px
+        text-align: left
+        padding-left: 50px
+
+    .content
+        max-width: 1200px
+        text-align: center
+        display: flex
+        align-items: center
+        justify-content: center
+
+.detalles
+    height: 100vh
+    
+    .row
+        height: 100%
+    .text
+        background: $opaque-blue
+        &> div
+            padding: 80px
+    &.intermedio
+        .text
+            background: $primary
+    &.premium
+        .text
+            background: $premium
+    .texto-2
+        margin-top: 35px
+        max-width: 400px
+    .image
+        img
+            padding: 80px
+            max-height: 100vh
+
+.nombre-quote
+    margin-top: 35px
+
+.grid.intermedio
+    .grid-element:hover
+        background: $primary
+
+.grid.premium
+    .grid-element:hover
+        background: $premium

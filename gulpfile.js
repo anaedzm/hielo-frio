@@ -109,15 +109,15 @@ gulp.task('stylus', () => {
 gulp.task('js', () => {
   return gulp.src([ src_assets_folder + 'js/**/*.js' ], { since: gulp.lastRun('js') })
     .pipe(plumber())
-    .pipe(webpack({
-      mode: 'production'
-    }))
-    .pipe(sourcemaps.init())
-      .pipe(babel({
-        presets: [ '@babel/env' ]
-      }))
-      .pipe(concat('all.js'))
-      .pipe(uglify())
+    // .pipe(webpack({
+    //   mode: 'production'
+    // }))
+    // .pipe(sourcemaps.init())
+    //   .pipe(babel({
+    //     presets: [ '@babel/env' ]
+    //   }))
+    //   .pipe(concat('all.js'))
+    //   .pipe(uglify())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(dist_assets_folder + 'js'))
     .pipe(browserSync.stream());

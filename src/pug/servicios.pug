@@ -2,8 +2,78 @@ extends templates/_servicios
 include helpers/_mixins
 
 block content
-  div.header-image
+  div.header-image.slider
     include templates/_navbar.pug
+    .slide 
+      .bg
+        img(src="assets/images/servicios/Back1_72.png")
+      .container-fluid
+        .row.align-items-center
+          .col-md-6.ps-5
+            .text
+              .titulo-1.secondary-color
+                | COMIENZA A ENFRIAR
+              .subtitulo-1.white-color
+                | en un abrir 
+                br
+                | y cerrar de ojos.
+              .pie-1.white-color
+                | CONTAMOS CON DISPONIBILIDAD INMEDIATA.
+          .col-md-6
+            .image
+              img.mx-auto(src="assets/images/servicios/Vaso1_72.png")
+    //- .slide 
+    //-   .bg
+    //-     img(src="assets/images/servicios/Back2_72.png")
+    //-   .container-fluid
+    //-     .row.align-items-center
+    //-       .col-md-6.ps-5
+    //-         .text
+    //-           .titulo-1.secondary-color
+    //-             | ¿CUÁL
+    //-             br
+    //-             | PREFIERES?
+    //-           .subtitulo-1.white-color
+    //-             | Estamos para servirte.
+    //-           .pie-1.white-color
+    //-             | COTIZACIONES SIN COMPROMISO.
+    //-       .col-md-6
+    //-         .image
+    //-           img.mx-auto(src="assets/images/servicios/Carpeta2_72.png")
+    //- .slide 
+    //-   .bg
+    //-     img(src="assets/images/servicios/Back3_72.png")
+    //-   .container-fluid
+    //-     .row.align-items-center
+    //-       .col-md-6.ps-5
+    //-         .text
+    //-           .titulo-1.secondary-color
+    //-             | LLEGAMOS
+    //-           .subtitulo-1.white-color
+    //-             | hasta donde estés. 
+    //-           .pie-1.white-color
+    //-             | NUESTRO SERVICIO CUENTA CON COBERTURA 
+    //-             br
+    //-             | A NIVEL NACIONAL.
+    //-       .col-md-6
+    //-         .image
+    //-           img.mx-auto(src="assets/images/servicios/Caja3_72.png") 
+    //- .slide 
+    //-   .bg
+    //-     img(src="assets/images/servicios/Back4_72.png")
+    //-   .container-fluid
+    //-     .row.align-items-center
+    //-       .col-md-6.ps-5
+    //-         .text
+    //-           .titulo-1.secondary-color
+    //-             | TENEMOS
+    //-           .subtitulo-1.white-color
+    //-             | para todos. 
+    //-           .pie-1.white-color
+    //-             | AMPLIA VARIEDAD DE INVENTARIO.
+    //-       .col-md-6
+    //-         .image
+    //-           img.mx-auto(src="assets/images/servicios/Tabla4_72.png") 
     
   
   .container.descanso

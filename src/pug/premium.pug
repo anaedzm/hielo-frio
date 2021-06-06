@@ -1,0 +1,98 @@
+extends templates/_catalogo
+include helpers/_mixins
+
+block content
+  div
+    include templates/_navbar.pug
+
+  .slides-home.slides-horizontal.container-fluid.premium
+    .slide.row.align-items-center
+        .image.col-md-6
+            include svg/catalogo/premium/medidas.pug
+            img(src="assets/images/catalogo/Premium_72.png")
+        .info.col-md-6.d-md-flex.flex-column
+            .titulo-1.primary-color.mt-auto PREMIUM
+            .subtitulo-1.secondary-color La única capaz de congelar 
+                br
+                | tus sentidos.
+            .content.mt-3.mb-auto.pe-5
+                p Su poderosa estructura y alta potencia la convierten en una extraordinaria opción para comedores industriales, hoteles, restaurantes grandes, expendios y bares.
+                p Tiene la carga ideal para enfriar hieleras con cervezas y regalarle hielo a los clientes.
+                p Disponible con una amplia gama de capacidades en producción.
+                p Altamente eficiente, competitiva y ahorra energía.
+        
+  .horizontal-info.kg
+    .content.container.slide-1
+      .d-flex
+        .icon
+          img(src="assets/images/catalogo/basico/Kilos_Hielo_B.svg")
+        .text.subtitulo-3
+          | De 180 a 300 kilos 
+          strong.secondary-color diarios.
+  .horizontal-info 
+    .content.container.slide-1
+      .d-flex
+        .icon
+          include svg/catalogo/diagrama.pug
+        .text.subtitulo-3
+          | Cubo tipo 
+          strong.secondary-color media luna 
+          | individual.
+  .horizontal-info 
+    .content.container.slide-1
+      .d-flex
+        .icon
+          include svg/catalogo/premium/deposito.pug
+        .text.subtitulo-3
+          | Almacena 
+          strong.secondary-color 410 Kilos 
+          | en su depósito.
+
+  .detalles.container-fluid.premium
+    .row
+      .col-md-6.text.d-md-flex.align-items-center.justify-center
+        div
+          .subtitulo-2 
+            span.white-color HIELO
+                br
+                | SANITIZADO
+            br
+            span.secondary-color CADA 40 MINUTOS
+
+          .texto-2.white-color Con su eficaz sistema higiénico puedes contar, de manera frecuente, con hielo totalmente purificado y listo para servirse.
+      .col-md-6.image.d-md-flex.align-items-center.justify-center
+        img(src="assets/images/catalogo/intermedio/Sanitizado_INT.svg")
+
+  .detalles.container-fluid.premium
+    .row
+      .col-md-6.text.d-md-flex.align-items-center.justify-center
+        div
+          .subtitulo-2 
+            span.secondary-color EVAPORADOR 
+            br
+            span.white-color DE ACERO 
+              | INOXIDABLE
+          .texto-2.white-color Por medio de una constante regulación en la temperatura, se adapta al medio ambiente de tu establecimiento.
+      .col-md-6.image.d-md-flex.align-items-center.justify-center
+        img(src="assets/images/catalogo/basico/Evaporador_B.svg")
+
+  .detalles.container-fluid.premium
+    .row
+      .col-md-6.text.d-md-flex.align-items-center.justify-center
+        div
+          .subtitulo-2 
+            span.secondary-color ALTA EFICIENCIA
+            br
+            span.white-color EN PRODUCCIÓN
+
+          .texto-2.white-color Su infalible proceso asegura tener bebidas refrescantes en cualquier momento.
+      .col-md-6.image.d-md-flex.align-items-center.justify-center
+        img(src="assets/images/catalogo/premium/produccion.svg")
+
+  include templates/content/catalogo/quotes
+  
+  .container.subtitulo-2.premium-color REQUERIMIENTOS
+
+  .grid.mt-2.premium
+    include templates/content/catalogo/grid-catalogo
+    

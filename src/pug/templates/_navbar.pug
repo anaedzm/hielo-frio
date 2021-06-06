@@ -3,3 +3,11 @@ div.navbar
         div.logo
           include ../svg/logo.pug
       div.menu
+        button#hamburger(onclick="openMenu()")
+
+div#menu-expanded
+  ul#menu-list
+    li.titulo-1 
+      a(href="basico.html").secondary-color CATÁLOGO
+    li.titulo-1 
+      a(href="servicios.html").secondary-color SERVICIOS

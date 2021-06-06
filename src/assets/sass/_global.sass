@@ -6,7 +6,7 @@
 
 .subtitulo-1
     font-size: 35pt
-    letter-spacing: -0.05em
+    letter-spacing: -0.03em
     font-family: 'Gilam-Bold'
     line-height: 39pt
 
@@ -17,15 +17,37 @@
     text-transform: uppercase
     line-height: 41pt
 
+.subtitulo-3
+    font-size: 36pt
+    letter-spacing: -0.03em
+    font-family: "Gilam-Regular"
+    strong
+        font-family: "Gilam-Bold"
+
 .pie-1
     font-size: 19pt
     font-family: 'Gilam-Semibold'
+
+.pie-2
+    font-family: "Gilam-Semibold"
+    font-size: 15pt
+
+.texto-2
+    font-size: 19pt
+    font-family: "Gilam-Semibold"
+    line-height: 25pt
 
 .primary-color
     color: $primary
 
 .secondary-color
     color: $secondary
+
+.white-color
+    color: white
+
+.premium-color
+    color: $premium
 
 body
     background-color: $light-gray
@@ -44,8 +66,12 @@ p
     background: #333
 
 .navbar 
-    padding: 15px
+    padding: 0px 50px
     padding-top: 50px
+    position: fixed
+    z-index: 2
+    width: 100%
+    top: 0
     a 
         max-width: 250px
         width: 100%
@@ -53,6 +79,60 @@ p
 .logo 
     max-width: 250px
     width: 100%
+
+.menu
+    button
+        position: relative
+        padding: 10px
+        width: 50px
+        border: 0
+        background: transparent
+        *
+            transition: all 0.3s ease-in-out
+        &.open
+            &:before
+                transform: rotate(-45deg)
+                
+            &:after
+                transform: rotate(45deg)
+                margin-top: -13px
+        &:after
+            content: ""
+            display: block
+            width: 40px
+            height: 3px
+            transition: all 0.3s ease-in-out
+            background: white
+        &:before
+            content: ""
+            display: block
+            width: 40px
+            height: 3px
+            transition: all 0.3s ease-in-out
+            background: white
+            margin-bottom: 10px
+
+#menu-expanded
+    opacity: 0
+    background: $dark-blue
+    position: fixed
+    top: 100%
+    left: 0
+    width: 100%
+    height: 100%
+    transition: all 0.3s ease-in-out
+    &.open
+        opacity: 1
+        z-index: 1
+        top: 0
+    ul
+        opacity: 0
+        text-align: right
+        margin-top: 150px
+        padding-right: 50px
+        transition: all 0.3s ease-in-out
+        &.open
+            opacity: 1
 
 .slides-horizontal
     .slide
@@ -62,6 +142,8 @@ p
     .image
     .info
         height: 100%
+        div 
+            transition: all 0.3s ease-in-out
     .buttons 
         width: 100%
         text-align: right
@@ -74,6 +156,15 @@ p
             border: 0
             padding: 20px 0 35px
             transition: all 0.3s
+            &.active 
+                .cls-1, .cls-2
+                    fill: white
+                &:nth-child(1)
+                    background: #55bff0
+                &:nth-child(2)
+                    background: #4583a9
+                &:nth-child(3)
+                    background: #226c93  
             svg
                 transition: all 0.3s
             &:hover
@@ -90,7 +181,7 @@ p
             object-fit: contain
             width: 100%
             height: 100%
-.container-flui 
+.container-flui
     max-width: 1280px
     margin: 0 auto
 .grid
@@ -123,7 +214,7 @@ p
                 opacity: 1
                 bottom: 15px
                 height: auto
-            background: #74BDEB
+            background: $opaque-blue
             #hover
                 .cls-1, .cls-2, .cls-3, .st0, .st1
                     fill: white
@@ -145,4 +236,25 @@ p
     .row
         height: auto
         min-height: auto
+    i 
+        overflow-wrap: break-word
+
+.list
+    list-style: none
+    margin-bottom: 50px
+    li
+        margin-bottom: 25px
+        position: relative
+    li::before 
+        content: ""
+        background: $secondary
+        border-radius: 15px
+        font-weight: bold
+        display: inline-block
+        width: 15px
+        height: 15px
+        top: 8px
+        position: absolute
+        margin-left: -31px
+
         
