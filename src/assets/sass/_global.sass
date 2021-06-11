@@ -138,7 +138,7 @@ p
 
 #menu-expanded
     opacity: 0
-    background: $dark-blue
+    background: transparentize($dark-blue, .1)
     position: fixed
     top: 100%
     left: 0
@@ -155,8 +155,25 @@ p
         margin-top: 150px
         padding-right: 50px
         transition: all 0.3s ease-in-out
+        @include buttons-cat
+        button span    
+            margin-top: -30px
+            display: block
+        button svg 
+            transition: all .3s
+            width: 100%
+            height: 100%
+            object-fit: contain
         &.open
             opacity: 1
+        .titulo-1 
+            color: $gray
+            font-family: 'Gilam-Semibold'
+            font-size: 65pt
+            a
+                color: $gray
+                &:hover 
+                    color: $primary
 .home-slides
     cursor: url("../../images/mas.png"), auto
 .slides-horizontal
@@ -169,40 +186,7 @@ p
         height: 100%
         div 
             transition: all 0.3s ease-in-out
-    .buttons 
-        width: 100%
-        text-align: right
-        button 
-            cursor: url("../../images/mas_on.svg"), auto
-            background: $gray
-            &:nth-child(2n)
-                background: $bg
-            width: 200px
-            height: 200px
-            border: 0
-            padding: 20px 0 35px
-            transition: all 0.3s
-            &.active 
-                path, rect, polygon
-                    fill: white
-                &:nth-child(1)
-                    background: #55bff0
-                &:nth-child(2)
-                    background: #4583a9
-                &:nth-child(3)
-                    background: #226c93  
-            svg
-                transition: all 0.3s
-            &:hover
-                &:first-child
-                    background: #55bff0
-                &:nth-child(2)
-                    background: #4583a9
-                &:nth-child(3)
-                    background: #226c93                    
-                #hover 
-                    .cls-1, .cls-2
-                        fill: white
+        @include buttons-cat
         svg
             object-fit: contain
             width: 100%

@@ -6,3 +6,52 @@
         }
     }
 }
+
+@mixin buttons-cat {
+    .buttons {
+        width: 100%;
+        text-align: right;
+        button {
+            span
+                {font-size: 16pt;
+                text-transform: uppercase;
+                font-family: 'Gilam-Bold';
+                color: white;
+                opacity: 0;
+                padding-bottom: 5px; }
+            cursor: url("../../images/mas_on.svg"), auto;
+            background: $gray;
+            &:nth-child(2n)
+              {  background: $bg}
+            width: 200px;
+            height: 200px;
+            border: 0;
+            padding: 20px 0 35px;
+            transition: all 0.3s;
+            &.active {
+                span 
+                    {opacity: 1}
+                path, rect, polygon
+                    {fill: white}
+                &:nth-child(1)
+                    {background: #55bff0}
+                &:nth-child(2)
+                    {background: #4583a9}
+                &:nth-child(3)
+                    {background: #226c93 } }
+            svg
+                {transition: all 0.3s}
+            &:hover {
+                span {opacity: 1}
+                path, rect, polygon
+                    {fill: white}
+                &:nth-child(1)
+                    {background: #55bff0}
+                &:nth-child(2)
+                    {background: #4583a9}
+                &:nth-child(3)
+                    {background: #226c93  }
+                }
+            }
+    }
+}

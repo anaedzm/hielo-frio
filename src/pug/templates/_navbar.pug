@@ -8,6 +8,18 @@ div.navbar
 div#menu-expanded
   ul#menu-list
     li.titulo-1 
-      a(href="basico.html").secondary-color CATÁLOGO
+      | CATÁLOGO
+        .buttons
+          button(onmouseenter="changeHomeCatalog(1, event)")
+              include ../svg/home/maquinas/basica
+              span Básica
+          button(onmouseenter="changeHomeCatalog(2, event)")
+              include ../svg/home/maquinas/intermedia
+              span Intermedia
+          button(onmouseenter="changeHomeCatalog(3, event)" href="premium.html") 
+              include ../svg/home/maquinas/premium
+              span Premium
     li.titulo-1 
-      a(href="servicios.html").secondary-color SERVICIOS
+      a(href="servicios.html") SERVICIOS
+    li.titulo-1 
+      a(href="#contacto") CONTACTO
