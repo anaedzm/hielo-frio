@@ -1,2 +1,64 @@
+.footer 
+    .container 
+        .row.main
+            .col-md-6.info.d-md-flex.flex-column
+                .subtitulo-2.secondary-color 
+                    | SIÉNTETE LIBRE 
+                    .white-color Y CONTÁCTANOS
+
+                .white-color.texto-2 Teléfono: 871 717 2536
+
+                .social 
+                    ul 
+                        li.fb
+                            a(href="#" target="_blank") 
+                                include ../../svg/icons/fb.pug
+                        li.ig
+                            a(href="#" target="_blank") 
+                                include ../../svg/icons/ig.pug
+                        li.tw
+                            a(href="#" target="_blank")
+                                include ../../svg/icons/tw.pug
+                .map 
+                    a(href="https://www.google.com/maps/place/Brasilia+2003,+Nuevo+San+Isidro,+27100+Torre%C3%B3n,+Coah./data=!4m2!3m1!1s0x868fda48b14e2dbf:0x3b636a67deaf5db8?sa=X&ved=2ahUKEwj2gLeu-4XxAhXQhK0KHSbeDM8Q8gEwAHoECAUQAQ"  target="_blank")
+                        include ../../svg/icons/maps.pug  
+                        span.regular.font-16.white-color | Torreón, Coahuila.
+
+            .col-md-6.form 
+                .texto-2.white-color Nuestro equipo está listo para ayudarte.
+                form(action="")
+                    .row
+                        .col-md-12
+                            input(type="text" name="mail" id="mail" placeholder="Correo electrónico*" required) 
+                        .col-md-12
+                            input(type="text" name="name" placeholder="Nombre*" id="name" required) 
+                        .col-md-12
+                            input(type="text" name="addr" id="addr" placeholder="Dirección") 
+                        .col-md-6
+                            input(type="text" name="city" id="city" placeholder="Ciudad*" required) 
+                        .col-md-6
+                            input(type="text" name="state" id="state" placeholder="Estado")
+                        .col-md-12  
+                            input(type="text" name="state" id="state" placeholder="Modelo")
+                    .secondary-color.mt-2
+                        .font-13.regular *Campos obligatorios
+                    .row.send
+                        .col-md-7.text-end
+                            button(type="submit" value="ENVIAR").submit ENVIAR
+                        .col-md-5.text-center 
+                            .font-15.semibold.white-color Tu solicitud ha sido enviada
+        .row.align-items-end.bottom
+            .col-md-6
+                .regular.font-12.white-color Copyright 2021 HIELO FRÍO INTERNACIONAL, S.A. de C.V., en Av. Brasilia 2003 Col. Nuevo San Isidro, 
+                    | C.P.27100. Torreón, Coahuila. México. | Distribuidor Autorizado Hoshizaki.
+                .font-13.bold.white-color.mt-3 
+                    a(href="aviso-privacidad.html").white-color AVISO DE PRIVACIDAD Y COOKIES
+            .col-md-6.text-end
+                a(href="index.html")
+                    include ../../svg/logo.pug
+
+
+
+
 link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300")
 script(async src="/assets/js/app.js")

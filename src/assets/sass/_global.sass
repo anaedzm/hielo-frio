@@ -37,6 +37,27 @@
     font-family: "Gilam-Semibold"
     line-height: 25pt
 
+.font-16
+    font-size: 16pt
+
+.font-13
+    font-size: 13pt
+
+.font-12
+    font-size: 12pt
+
+.font-15
+    font-size: 15pt
+
+.regular
+    font-family: "Gilam-Regular"
+
+.semibold
+    font-family: "Gilam-Semibold"
+
+.bold
+    font-family: "Gilam-Semibold"
+
 .primary-color
     color: $primary
 
@@ -55,6 +76,9 @@ body
     line-height: 24pt
     font-family: 'Gilam-Regular'
     color: $text
+
+a:hover 
+    color: inherit
 
 p
     margin-bottom: 11pt
@@ -133,7 +157,8 @@ p
         transition: all 0.3s ease-in-out
         &.open
             opacity: 1
-
+.home-slides
+    cursor: url("../../images/mas.png"), auto
 .slides-horizontal
     .slide
         height: 100vh
@@ -148,6 +173,7 @@ p
         width: 100%
         text-align: right
         button 
+            cursor: url("../../images/mas_on.svg"), auto
             background: $gray
             &:nth-child(2n)
                 background: $bg
@@ -157,7 +183,7 @@ p
             padding: 20px 0 35px
             transition: all 0.3s
             &.active 
-                .cls-1, .cls-2
+                path, rect, polygon
                     fill: white
                 &:nth-child(1)
                     background: #55bff0
@@ -216,7 +242,7 @@ p
                 height: auto
             background: $opaque-blue
             #hover
-                .cls-1, .cls-2, .cls-3, .st0, .st1
+                path, polygon, rect
                     fill: white
         svg
             transition: all 0.3s
@@ -257,4 +283,66 @@ p
         position: absolute
         margin-left: -31px
 
-        
+.footer
+    background: $dark-blue
+    min-height: 600px
+    padding-top: 80px
+    .main
+        min-height: 400px
+        .form 
+            align-self: flex-end
+            .send
+                margin-top: 50px
+            input
+                color: white
+                background: transparent
+                border: 0
+                border-bottom: 1px solid $secondary
+                padding-top: 15px
+                font-size: 12pt
+                width: 100%
+                &:placeholder
+                    color: white
+            &> div.texto-2 
+                margin-bottom: 50px
+    .info
+        .subtitulo-2
+            margin-bottom: 35px
+        .social
+            margin-top: auto
+        .map
+            margin-top: 25px
+            svg
+                width: 25px
+                margin-right: 10px
+        svg
+            width: 35px
+            path
+                transition: all 0.3s ease-in-out
+        .social
+            ul
+                list-style: none
+                padding: 0
+                margin: 0
+                li
+                    margin-right: 15px
+                    display: inline-block
+                    &:hover
+                        svg
+                            path
+                                fill: $secondary
+    .bottom
+        line-height: 1em
+        margin-top: 80px
+        padding-bottom: 35px
+        svg
+            max-width: 300px
+            path
+                fill: $opaque-blue
+    button[type="submit"]
+        background: $opaque-blue
+        color: $dark-blue
+        padding: 2px 15px
+        border: 0
+        font-size: 15pt
+        font-family: "Gilam-Semibold"

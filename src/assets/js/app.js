@@ -22,11 +22,15 @@ function changeHomeCatalog(i, e) {
   activeBtnHomeInfo.classList.add('active')
   
   if(i === 2) {
-    document.getElementById("titulo_CatalogHome").style.opacity="0";
-    setTimeout(function() {
-      document.getElementById("titulo_CatalogHome").innerHTML = 'Test';
-      document.getElementById("titulo_CatalogHome").style.opacity="1";
-    }, 200);
+    // document.getElementById("titulo_CatalogHome").style.opacity="0";
+    // setTimeout(function() {
+    //   document.getElementById("titulo_CatalogHome").innerHTML = 'Test';
+    //   document.getElementById("titulo_CatalogHome").style.opacity="1";
+    // }, 200);
   }
     
+}
+
+document.getElementById('slides-home-1').onclick = function(){
+  window.location.href = 'basico.html';
 }
