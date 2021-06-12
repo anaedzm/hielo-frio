@@ -1,24 +1,23 @@
 div.navbar 
       a(href="index.html")
-        div.logo
+        div.logo#logo
           include ../svg/logo.pug
       div.menu
         button#hamburger(onclick="openMenu()")
 
 div#menu-expanded
   ul#menu-list
-    li.titulo-1 
-      | CATÁLOGO
-        .buttons
-          button(onmouseenter="changeHomeCatalog(1, event)")
-              include ../svg/home/maquinas/basica
-              span Básica
-          button(onmouseenter="changeHomeCatalog(2, event)")
-              include ../svg/home/maquinas/intermedia
-              span Intermedia
-          button(onmouseenter="changeHomeCatalog(3, event)" href="premium.html") 
-              include ../svg/home/maquinas/premium
-              span Premium
+    li.titulo-1 CATÁLOGO
+      .buttons
+        button(onclick="window.location.href='basico.html'")
+            include ../svg/home/maquinas/basica
+            span Básica
+        button(onclick="window.location.href='intermedio.html'")
+            include ../svg/home/maquinas/intermedia
+            span Intermedia
+        button(onclick="window.location.href='premium.html'") 
+            include ../svg/home/maquinas/premium
+            span Premium
     li.titulo-1 
       a(href="servicios.html") SERVICIOS
     li.titulo-1 

@@ -4,6 +4,8 @@ include helpers/_mixins
 block content
   div.header-image
     include templates/_navbar.pug
+    video(autoplay muted loop id="myVideo")
+      source(src="assets/video/VideoPrueba_HF.mp4" type="video/mp4")
     
   include templates/content/home/slides-home.pug
   

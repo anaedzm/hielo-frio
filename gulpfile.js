@@ -136,6 +136,11 @@ gulp.task('fonts', () => {
     .pipe(gulp.dest(dist_assets_folder + 'fonts'))
 });
 
+gulp.task('video', () => {
+  return gulp.src([ src_assets_folder + 'video/*.+(mp4)' ], { since: gulp.lastRun('video') })
+    .pipe(gulp.dest(dist_assets_folder + 'video'))
+});
+
 gulp.task('vendor', () => {
   if (node_dependencies.length === 0) {
     return new Promise((resolve) => {
@@ -152,7 +157,7 @@ gulp.task('vendor', () => {
     .pipe(browserSync.stream());
 });
 
-gulp.task('build', gulp.series('clear', 'html', 'pug', 'sass', 'less', 'stylus', 'js', 'images', 'vendor', 'fonts'));
+gulp.task('build', gulp.series('clear', 'html', 'pug', 'sass', 'less', 'stylus', 'js', 'images', 'vendor', 'fonts', 'video'));
 
 gulp.task('dev', gulp.series('html', 'pug', 'sass', 'less', 'stylus', 'js'));
 
