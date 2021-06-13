@@ -3,12 +3,18 @@
     text-transform: uppercase
     line-height: 73pt
     font-family: 'Gilam-Heavy'
+    @media (max-width: 640px)
+        font-size: 45pt
+        line-height: 41pt
 
 .subtitulo-1
     font-size: 35pt
     letter-spacing: -0.03em
     font-family: 'Gilam-Bold'
     line-height: 39pt
+    @media (max-width: 640px)
+        font-size: 21pt
+        line-height: 22pt
 
 .subtitulo-2
     font-size: 37pt
@@ -16,6 +22,9 @@
     font-family: 'Gilam-Bold'
     text-transform: uppercase
     line-height: 41pt
+    @media (max-width: 640px)
+        line-height: 23pt
+        font-size: 20pt
 
 .subtitulo-3
     font-size: 36pt
@@ -23,10 +32,14 @@
     font-family: "Gilam-Regular"
     strong
         font-family: "Gilam-Bold"
+    @media (max-width: 640px)
+        font-size: 15pt
 
 .pie-1
     font-size: 19pt
     font-family: 'Gilam-Semibold'
+    @media (max-width: 640px)
+        font-size: 12pt
 
 .pie-2
     font-family: "Gilam-Semibold"
@@ -36,18 +49,29 @@
     font-size: 19pt
     font-family: "Gilam-Semibold"
     line-height: 25pt
+    @media (max-width: 640px)
+        font-size: 13pt
+        line-height: 17pt
 
 .font-16
     font-size: 16pt
+    @media screen and ( max-width: 640px )
+        font-size: 10pt
 
 .font-13
     font-size: 13pt
+    @media screen and ( max-width: 640px )
+        font-size: 9pt
 
 .font-12
     font-size: 12pt
+    @media screen and ( max-width: 640px )
+        font-size: 7pt
 
 .font-15
     font-size: 15pt
+    @media screen and ( max-width: 640px )
+        font-size: 13pt
 
 .regular
     font-family: "Gilam-Regular"
@@ -60,6 +84,9 @@
 
 .primary-color
     color: $primary
+
+.bright-color
+    color: $bright-blue
 
 .secondary-color
     color: $secondary
@@ -76,6 +103,11 @@ body
     line-height: 24pt
     font-family: 'Gilam-Regular'
     color: $text
+    @media (max-width: 640px)
+        line-height: 16pt
+        font-size: 13pt
+        p  
+            margin-bottom: 7pt
 
 a:hover 
     color: inherit
@@ -97,8 +129,10 @@ p
         object-fit: cover
 
 .navbar 
-    padding: 0px 50px
-    padding-top: 50px
+    padding: 15px
+    @media screen and ( min-width: 641px  )
+        padding: 0px 50px
+        padding-top: 50px
     position: fixed
     z-index: 2
     width: 100%
@@ -108,8 +142,10 @@ p
         width: 100%
 
 .logo 
-    max-width: 250px
+    max-width: 180px
     width: 100%
+    @media screen and ( min-width: 641px  )
+        max-width: 250px
     svg 
         path, rect, polygon
             transition: 0.3s all ease-in-out
@@ -168,7 +204,14 @@ p
         text-align: right
         margin-top: 150px
         padding-right: 200px
-        transition: all 0.3s ease-in-out
+        transition-delay: 0.3s all
+        transition: all 0.5s ease-in-out
+        transform: translateX(50px)
+        li
+            list-style-type: none
+        @media screen and ( max-width: 640px)
+            padding-right: 80px
+            margin-top:  80px
         @include buttons-cat
         .buttons
             width: auto
@@ -179,6 +222,18 @@ p
                 cursor: pointer
                 width: 204px
                 height: 204px
+                &:first-child
+                    background: transparentize(#eaebed, 0.2)
+                    &.active, &:hover
+                        background: transparentize(#55bff0, 0.2 )
+                &:nth-child(2)
+                    background: transparentize(#eef1f3, 0.2)
+                    &.active, &:hover
+                        background: transparentize(#4583a9, 0.2 )
+                &:nth-child(3)
+                    background: transparentize(#eaebed, 0.2)
+                    &.active, &:hover
+                        background: transparentize(#226c93, 0.2 )
         button span    
             margin-top: -30px
             display: block
@@ -189,22 +244,80 @@ p
             object-fit: contain
         &.open
             opacity: 1
+            transform: translateX(0)
         .titulo-1 
             color: $gray
             font-family: 'Gilam-Semibold'
             font-size: 65pt
+            @media screen and ( max-width: 640px)
+                display: block
+                font-size: 40pt
+                .buttons 
+                    margin-right: -166px
+                    margin-left: 45px
+                    button 
+                        cursor: pointer
+                        width: 80%
+                        height: 120px
+                        padding: 5px
+                        display: block
+                        display: flex
+                        text-align: left
+                        align-items: center
+                        flex-direction: row
+                        justify-content: space-between
+                        svg
+                            padding: 15px
+                        span 
+                            opacity: 1
+                            color: $primary
+                            padding: 0
+                            padding-bottom: 0
+                            line-height: 2em
+                            margin-bottom: auto
+                            margin-top: auto
+                            flex-grow: 1
+                            display: block
+                            width: 100%              
             a
                 color: $gray
                 &:hover 
                     color: $primary
-.home-slides
-    cursor: url("../../images/mas.png"), auto
-    .slide
-        padding: 80px 0
+
 .slides-horizontal
     .slide
         height: 100vh
         min-height: 680px
+    &.home-slides
+        #titulo_CatalogHome
+            line-height: 1.3em
+        .slide
+            padding: 80px 0
+            height: auto
+            @media (min-width: 641px)
+                .info > div:first-child
+                    min-height: 552px
+        #image_CatalogHome 
+            max-height: 530px
+            margin: 0 auto
+            transition: all 0.3s ease-in-out
+        .hide
+            display: none
+        #mas
+            background: transparent
+            width: 64px
+            border: 0
+            display: flex
+            margin-right: 15px
+            &:hover
+                svg
+                    transform: scale(1.2)
+                    path, polygon, rect
+                        fill: $secondary
+            svg
+                transition: all 0.3s ease-in-out
+                width: 100% 
+    
     .image
     .info
         height: 100%
@@ -215,16 +328,16 @@ p
             object-fit: contain
             width: 100%
             height: 100%
-.container-flui
-    max-width: 1280px
-    margin: 0 auto
+
 .grid
-    display: flex
+    @media screen and ( min-width: 641px  )
+        display: flex
     .grid-element
         height: 320px
         width: 100px
         flex-grow: 1
-        background: $bg
+        @media screen and ( min-width: 641px  )
+            background: $bg
         padding: 45px 35px 25px
         position: relative
         transition: all 0.3s
@@ -239,19 +352,20 @@ p
             overflow: hidden
             margin-top: 35px
             transition: all 0.3s ease-in-out
-        
-        &:nth-child(2n)
-            background: $gray
+        @media screen and ( min-width: 641px  )
+            &:nth-child(2n)
+                background: $gray
         &:hover
-            width: 300px
-            .text
-                opacity: 1
-                bottom: 15px
-                height: auto
-            background: $opaque-blue
-            #hover
-                path, polygon, rect
-                    fill: white
+            @media screen and ( min-width: 641px  )
+                width: 300px
+                .text
+                    opacity: 1
+                    bottom: 15px
+                    height: auto
+                background: $opaque-blue
+                #hover
+                    path, polygon, rect
+                        fill: white
         svg
             transition: all 0.3s
             max-height: 150px
@@ -260,13 +374,37 @@ p
             transition: all 0.3s
             text-align: center
             box-sizing: border-box
+        @media screen and ( max-width: 641px  )
+            width: 100%
+            background-image: url(../../images/mas.svg)
+            background-repeat: no-repeat
+            background-size: 35px
+            background-position-x: 85%
+            background-position-y: 40px
             
+            path, polygon, rect
+                fill: white
+            &:first-child, &:last-child
+                background-color: $premium
+            &:nth-child(2)
+                background-color: $primary
+            &:nth-child(3)
+                background-color: $secondary
+            .text
+                opacity: 1
+                height: auto
+                margin-top: 35px
         
     
 
 .descanso
     height: auto
-    padding: 150px 0
+    padding: 80px 15px
+    @media (min-width: 641px)
+        padding: 150px 0
+    @media (max-width: 640px)
+        p
+            padding-right: 35px
     .row
         height: auto
         min-height: auto
@@ -294,7 +432,9 @@ p
 .footer
     background: $dark-blue
     min-height: 600px
-    padding-top: 80px
+    padding: 50px 35px 0
+    @media screen and ( min-width: 641px  )
+        padding: 80px 0
     .main
         min-height: 400px
         .form 
@@ -312,7 +452,9 @@ p
                 &:placeholder
                     color: white
             &> div.texto-2 
-                margin-bottom: 50px
+                margin-bottom: 35px
+                @media screen and ( min-width: 641px )    
+                    margin-bottom: 50px
     .info
         .subtitulo-2
             margin-bottom: 35px
@@ -321,13 +463,20 @@ p
         .map
             margin-top: 25px
             svg
-                width: 25px
                 margin-right: 10px
+                width: 23px
+            @media screen and ( min-width: 641px  )
+                svg
+                    width: 25px
         svg
-            width: 35px
+            width: 24px
+            @media screen and ( min-width: 641px  )
+                width: 35px
             path
                 transition: all 0.3s ease-in-out
         .social
+            @media screen and ( max-width: 640px  )
+                margin-top: 120px
             ul
                 list-style: none
                 padding: 0
@@ -352,5 +501,46 @@ p
         color: $dark-blue
         padding: 2px 15px
         border: 0
-        font-size: 15pt
+        font-size: 12pt
+        @media screen and ( min-width: 641px  )
+            font-size: 15pt
+            
+        transition: all 0.3s ease-in-out
         font-family: "Gilam-Semibold"
+        &:hover
+            background-color: $bright-blue
+    @media screen and ( max-width: 640px  )
+        .title
+            order: -1
+        .form 
+            order: 0
+        .info
+            order: 2
+        .logo
+            order: 3
+            width: auto
+            flex-grow: 1
+            svg
+                width: 110px
+                path, rect, polygon
+                    fill: $secondary
+        .bottom 
+            margin-top: 35px
+        .aviso
+            margin-top: 35px
+        .tel
+            font-size: 15pt
+            margin-top: 15px
+@media (max-width: 640px)
+    .slides-horizontal
+        &.home-slides
+            .slide
+                padding-bottom: 0
+                min-height: auto
+                #mas 
+                    width: 45px
+                    svg
+
+    .descanso
+        .subtitulo-2
+            margin-bottom: 45px

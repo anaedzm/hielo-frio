@@ -1,1 +1,24 @@
 @import '../_includes'
+@include white-logo
+
+.descanso
+    @media screen and ( max-width: 640px )
+        padding: 35px 15px
+.slide 
+    height: 100vh
+    display: flex
+    min-height: 600px
+    .container-fluid
+        align-self: center
+
+.container-fluid
+    position: relative
+.bg
+        position: absolute
+        width: 100%
+        height: 100%
+        img 
+            width: 100%
+            height: 100%
+            object-fit: cover
+            object-position: center

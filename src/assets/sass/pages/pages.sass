@@ -6,21 +6,32 @@ body
 
 .descanso
     height: auto
-    padding: 150px 0
+    @media screen and ( max-width:  640px)
+        padding: 70px 15px
     .row
         height: auto
         min-height: auto
 
 .grid
     .grid-element
+        @media screen and ( max-width:  640px)
+            height: auto
+            background-color: $secondary
         .text
             width: calc( 100% + 70px)
             margin-left: -35px 
             margin-right: -35px 
             height: 0
             overflow: hidden
+            @media screen and ( max-width:  640px)
+                height: auto
+
         &:hover
             width: 400px
+@media screen and ( max-width:  640px)
+    .grid .grid-element:first-child, .grid .grid-element:last-child, .grid .grid-element:nth-child(2)
+        height: auto
+        background-color: $secondary
 
 .header-image.slider
     position: relative
@@ -29,8 +40,19 @@ body
         display: flex
         align-items: center
         justify-content: center
+        .titulo-1
+            @media screen and ( max-width:  640px)
+                max-width: 320px
+                margin-top: 50px
+                margin-bottom: 15px
+        .image
+            @media screen and ( max-width:  640px)
+                max-width: 320px
+                margin: 50px auto 0
         .pie-1
-            margin-top: 80px
+            margin-top: 15px
+            @media screen and ( min-width:  641px)
+                margin-top: 80px
         .text, .image
             position: relative
     .bg

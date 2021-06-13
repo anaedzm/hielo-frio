@@ -9,6 +9,7 @@
 
 @mixin buttons-cat {
     .buttons {
+        margin-top: 50px;
         width: 100%;
         text-align: right;
         button {
@@ -28,29 +29,31 @@
             border: 0;
             padding: 20px 0 35px;
             transition: all 0.3s;
-            &.active {
-                span 
-                    {opacity: 1}
-                path, rect, polygon
-                    {fill: white}
-                &:nth-child(1)
-                    {background: #55bff0}
-                &:nth-child(2)
-                    {background: #4583a9}
-                &:nth-child(3)
-                    {background: #226c93 } }
+            &:first-child{
+                background: transparentize(#eaebed, 0.2);
+                &.active, &:hover{
+                    background: transparentize(#55bff0, 0.2 )
+                }
+            }
+            &:nth-child(2){
+                background: transparentize(#eef1f3, 0.2);
+                &.active, &:hover{
+                    background: transparentize(#4583a9, 0.2 )
+                }
+            }
+            &:nth-child(3){
+                background: transparentize(#eaebed, 0.2);
+                &.active, &:hover{
+                    background: transparentize(#226c93, 0.2 )
+                }
+            }
             svg
                 {transition: all 0.3s}
-            &:hover {
+            &:hover, &.active {
                 span {opacity: 1}
                 path, rect, polygon
                     {fill: white}
-                &:nth-child(1)
-                    {background: #55bff0}
-                &:nth-child(2)
-                    {background: #4583a9}
-                &:nth-child(3)
-                    {background: #226c93  }
+               
                 }
             }
     }

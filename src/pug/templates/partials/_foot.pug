@@ -1,13 +1,12 @@
 .footer#contacto
     .container 
         .row.main
-            .col-md-6.info.d-md-flex.flex-column
+            .col-md-12.title
                 .subtitulo-2.secondary-color 
-                    | SIÉNTETE LIBRE 
-                    .white-color Y CONTÁCTANOS
-
-                .white-color.texto-2 Teléfono: 871 717 2536
-
+                        | SIÉNTETE LIBRE 
+                        .white-color Y CONTÁCTANOS
+            .col-md-6.info.d-md-flex.flex-column
+                .white-color.texto-2.d-none.d-md-block Teléfono: 871 717 2536
                 .social 
                     ul 
                         li.fb
@@ -19,13 +18,19 @@
                         li.tw
                             a(href="#" target="_blank")
                                 include ../../svg/icons/tw.pug
-                .map 
-                    a(href="https://www.google.com/maps/place/Brasilia+2003,+Nuevo+San+Isidro,+27100+Torre%C3%B3n,+Coah./data=!4m2!3m1!1s0x868fda48b14e2dbf:0x3b636a67deaf5db8?sa=X&ved=2ahUKEwj2gLeu-4XxAhXQhK0KHSbeDM8Q8gEwAHoECAUQAQ"  target="_blank")
-                        include ../../svg/icons/maps.pug  
-                        span.regular.font-16.white-color | Torreón, Coahuila.
-
+                .d-flex.d-md-block.align-items-baseline
+                    .map 
+                        a(href="https://www.google.com/maps/place/Brasilia+2003,+Nuevo+San+Isidro,+27100+Torre%C3%B3n,+Coah./data=!4m2!3m1!1s0x868fda48b14e2dbf:0x3b636a67deaf5db8?sa=X&ved=2ahUKEwj2gLeu-4XxAhXQhK0KHSbeDM8Q8gEwAHoECAUQAQ"  target="_blank")
+                            include ../../svg/icons/maps.pug  
+                            span.regular.font-16.white-color | &nbsp;  Torreón, Coahuila.
+                    .text-end.d-sm-none.d-block.logo
+                        a(href="index.html")
+                            include ../../svg/logo.pug
+                .white-color.texto-2.d-md-none.tel Teléfono: 871 717 2536
+                
+            
             .col-md-6.form 
-                .texto-2.white-color Nuestro equipo está listo para ayudarte.
+                .texto-2.white-color.mt-md-0.mt-4 Nuestro equipo está listo para ayudarte.
                 form(action="")
                     .row
                         .col-md-12
@@ -43,18 +48,18 @@
                     .secondary-color.mt-2
                         .font-13.regular *Campos obligatorios
                     .row.send
-                        .col-md-7.text-end
+                        .col-md-7.text-md-end.text-center
                             button(type="submit" value="ENVIAR").submit ENVIAR
-                        .col-md-5.text-center 
+                        .col-md-5.text-center.mt-md-0.mt-3
                             .font-15.semibold.white-color Tu solicitud ha sido enviada
         .row.align-items-end.bottom
             .col-md-6
                 .regular.font-12.white-color Copyright 2021 HIELO FRÍO INTERNACIONAL, S.A. de C.V., en Av. Brasilia 2003 Col. Nuevo San Isidro, 
                     | C.P.27100. Torreón, Coahuila. México. | Distribuidor Autorizado Hoshizaki.
-                .font-13.bold.white-color.mt-3 
+                .font-13.bold.white-color.mt-md-3.aviso
                     a(href="aviso-privacidad.html").white-color AVISO DE PRIVACIDAD Y COOKIES
             .col-md-6.text-end
-                a(href="index.html")
+                a(href="index.html").d-none.d-md-block
                     include ../../svg/logo.pug
 
 
