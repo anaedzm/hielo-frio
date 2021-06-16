@@ -2,14 +2,14 @@ extends templates/_default
 include helpers/_mixins
 
 block content
-  div.header-image
+  div.header-image(onmouseenter="hideCursor()")
     include templates/_navbar.pug
-    video(autoplay muted loop id="myVideo")
+    video(autoplay muted loop id="myVideo" onmouseenter="hideCursor()")
       source(src="assets/video/VideoPrueba_HF.mp4" type="video/mp4")
     
   include templates/content/home/slides-home.pug
   
-  .container.descanso
+  .container.descanso(onmouseenter="hideCursor()")
     div.row.align-items-center
       .col-md-6
         .subtitulo-2.primary-color CUANDO PIENSES EN 
@@ -17,10 +17,11 @@ block content
           span.secondary-color REFRESCAR TU NEGOCIO
           br
           | PIENSA EN HIELO FRÍO
+          br
           | INTERNACIONAL.
       .col-md-6
         p Somos una empresa con más de 25 años de experiencia equipando a más de 800 clientes con las mejores máquinas para la fabricación de hielo cristalino. 
         p Contamos con una amplia gama para venta, renta y mantenimiento de equipos altamente eficientes, complaciendo la mayor expectativa en servicio, precio y calidad del mercado.
 
-  .grid 
+  .grid(onmouseenter="hideCursor()")
     include templates/content/home/grid-servicios

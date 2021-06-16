@@ -1,13 +1,14 @@
 .slides-home.home-slides.slides-horizontal.container-fluid#slides-home-1
-    .slide.row.align-items-center
-        .image.col-md-5
+    .mas
+        include ../../../svg/icons/mas
+    .slide.row.align-items-center#show-cursor(onmousemove="changeCursor('mas')")
+        .image.col-md-5(onmouseover="removeHighlight()")
             img#image_CatalogHome(src="assets/images/catalogo/basica.png")
-        .info.col-md-7.d-md-flex.flex-column
-            div
+        .info.col-md-6.d-md-flex.flex-column
+            div(onmouseenter="highlightCursor(event)" onmouseleave="removeHighlight(event)")
                 .titulo-1.primary-color.mt-auto.d-flex.justify-content-between.align-items-center
                     span#titulo_CatalogHome BÁSICA
-                    button.mas#mas
-                        include ../../../svg/icons/mas
+                        
                 .subtitulo-1.secondary-color#subtitulo_CatalogHome Ideal para que tu negocio
                     br
                     | sea el más cool.
@@ -15,16 +16,16 @@
                     p Sus dimensiones son tan accesibles que ocupan muy poco espacio dentro de restaurantes pequeños, food courts o cafeterías, incluso puedes instalarla debajo de la barra del bar.
                     p Haz tu servicio más eficiente sirviendo el hielo directamente de la máquina, al ubicarla cerca de donde se preparan las bebidas. 
                     p De tamaño compacto y fácil manejo, tienes una alta eficiencia en producción de hielo con bajo consumo de energía.
-            .buttons.d-none.d-md-block
-                button(onmouseenter="changeHomeCatalog(1, event)").active#start
-                    include ../../../svg/home/maquinas/basica
-                    span Básica
-                button(onmouseenter="changeHomeCatalog(2, event)")
-                    include ../../../svg/home/maquinas/intermedia
-                    span Intermedia
-                button(onmouseenter="changeHomeCatalog(3, event)")
-                    include ../../../svg/home/maquinas/premium
-                    span Premium
+    .buttons.d-none.d-md-block(onmouseenter="hideCursor()")
+        //- button(onmouseenter="changeHomeCatalog(1, event)").active#start
+        //-     include ../../../svg/home/maquinas/basica
+        //-     span Básica
+        button.intermedia
+            include ../../../svg/home/maquinas/intermedia
+            span Intermedia
+        button.premium
+            include ../../../svg/home/maquinas/premium
+            span Premium
     //- .slide
     //-     .image.col-md-4
     //-         img(src="assets/images/catalogo/Inter_72.png")

@@ -4,18 +4,21 @@ div.navbar
           include ../svg/logo.pug
       div.menu
         button#hamburger(onclick="openMenu()")
-
+#follower
+  #circle1
+  #circle2
+  
 div#menu-expanded
   ul#menu-list
     li.titulo-1 CATÁLOGO
       .buttons
-        button(onclick="window.location.href='basico.html'")
+        button(onclick="window.location.href='basico.html'").basica
             include ../svg/home/maquinas/basica
             span Básica
-        button(onclick="window.location.href='intermedio.html'")
+        button(onclick="window.location.href='intermedio.html'").intermedia
             include ../svg/home/maquinas/intermedia
             span Intermedia
-        button(onclick="window.location.href='premium.html'") 
+        button(onclick="window.location.href='premium.html'").premium
             include ../svg/home/maquinas/premium
             span Premium
     li.titulo-1 

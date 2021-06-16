@@ -7,10 +7,10 @@ block content
 
   .slides-home.slides-horizontal.container-fluid.intermedio
     .slide.row.align-items-center
-        .image.col-md-6
+        .image.col-md-6.animate__animated.animate__fadeInDown
             include svg/catalogo/intermedio/medidas.pug
             img(src="assets/images/catalogo/Inter_72.png")
-        .info.col-md-6.d-md-flex.flex-column
+        .info.col-md-6.d-md-flex.flex-column.animate__animated.animate__fadeInUp
             .titulo-1.primary-color.mt-auto INTERMEDIA
             .subtitulo-1.secondary-color Refresca más de lo que 
                 br
@@ -19,33 +19,33 @@ block content
                 p Su elevado diseño la hace tan eficiente que es perfecta si requieres alta demanda para hoteles, expendios, restaurantes medianos y bares. Produce un excelente tamaño de hielo para enfriar cualquier tipo de bebida.
                 p Las tenemos disponibles en distintas capacidades y con dispensador opcional. 
                 p Con esta máquina obtienes un alto rendimiento en producción, al mismo tiempo que economizas en consumo de energía.
-        
-  .horizontal-info.kg
-    .content.container.slide-1
-      .d-flex
-        .icon
-          img(src="assets/images/catalogo/basico/Kilos_Hielo_B.svg")
-        .text.subtitulo-3
-          | De 180 a 300 kilos 
-          strong.secondary-color diarios.
-  .horizontal-info 
-    .content.container.slide-1
-      .d-flex
-        .icon
-          include svg/catalogo/diagrama.pug
-        .text.subtitulo-3
-          | Cubo tipo 
-          strong.secondary-color media luna 
-          | individual.
-  .horizontal-info 
-    .content.container.slide-1
-      .d-flex
-        .icon
-          include svg/catalogo/intermedio/deposito.pug
-        .text.subtitulo-3
-          | Hasta 
-          strong.secondary-color 180 Kilos 
-          | en su depósito.
+  #pinContainer
+    section.panel.horizontal-info.kg
+      .content.container.slide-1
+        .d-flex
+          .icon
+            img(src="assets/images/catalogo/basico/Kilos_Hielo_B.svg")
+          .text.subtitulo-3
+            | De 180 a 300 kilos 
+            strong.secondary-color diarios.
+    section.panel.horizontal-info.cubo 
+      .content.container.slide-1
+        .d-flex
+          .icon
+            include svg/catalogo/diagrama.pug
+          .text.subtitulo-3
+            | Cubo tipo 
+            strong.secondary-color media luna 
+            | individual.
+    section.panel.horizontal-info.hasta 
+      .content.container.slide-1
+        .d-flex
+          .icon
+            include svg/catalogo/intermedio/deposito.pug
+          .text.subtitulo-3
+            | Hasta 
+            strong.secondary-color 180 Kilos 
+            | en su depósito.
 
   .detalles.container-fluid.intermedio
     .row
@@ -95,3 +95,30 @@ block content
   .grid.mt-2.intermedio
     include templates/content/catalogo/grid-catalogo
     
+    script(src="https://code.jquery.com/jquery-3.6.0.min.js", integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=", crossorigin="anonymous")
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js")
+    
+    script.
+      (function() {
+        // init
+        var controller = new ScrollMagic.Controller();
+
+        // define movement of panels
+        var wipeAnimation = new TimelineMax()
+          .fromTo("section.panel.kg", 1, {x: "-100%"}, {x: "0%", ease: Linear.easeNone})  // in from left
+          .fromTo("section.panel.cubo",    1, {x:  "100%"}, {x: "0%", ease: Linear.easeNone})  // in from right
+          .fromTo("section.panel.hasta", 1, {y: "-100%"}, {y: "0%", ease: Linear.easeNone}); // in from top
+
+        // create scene to pin and link animation
+        new ScrollMagic.Scene({
+            triggerElement: "#pinContainer",
+            triggerHook: "onLeave",
+            duration: "300%"
+          })
+          .setPin("#pinContainer")
+          .setTween(wipeAnimation)
+          .addIndicators() // add indicators (requires plugin)
+          .addTo(controller);
+
+      })();
+        

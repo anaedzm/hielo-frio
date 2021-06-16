@@ -14,7 +14,7 @@
         text-align: right;
         button {
             span
-                {font-size: 16pt;
+                {font-size: 16px;
                 text-transform: uppercase;
                 font-family: 'Gilam-Bold';
                 color: white;
@@ -29,19 +29,19 @@
             border: 0;
             padding: 20px 0 35px;
             transition: all 0.3s;
-            &:first-child{
+            &:first-child, &.basica{
                 background: transparentize(#eaebed, 0.2);
                 &.active, &:hover{
                     background: transparentize(#55bff0, 0.2 )
                 }
             }
-            &:nth-child(2){
+            &:nth-child(2), &.intermedia{
                 background: transparentize(#eef1f3, 0.2);
                 &.active, &:hover{
                     background: transparentize(#4583a9, 0.2 )
                 }
             }
-            &:nth-child(3){
+            &:nth-child(3), &.premium{
                 background: transparentize(#eaebed, 0.2);
                 &.active, &:hover{
                     background: transparentize(#226c93, 0.2 )

@@ -1,15 +1,14 @@
 @import '../_includes'
 
 .slides-home
-    margin-top: 50px
     &.intermedio, &.premium
-        margin-top: 100px
+        margin-top: 50px
         
         .slide
-            height: calc(100vh - 100px)
+            min-height: 100vh
             overflow: visible
         .image
-            height: 100%
+            height: 80%
             svg
                 height: 95%
                 left: 42%
@@ -23,7 +22,7 @@
             position: absolute
             height: 105%
             top: 5%
-            left: 7%
+            left: -30px
 
 .horizontal-info 
     height: 100vh
@@ -35,9 +34,10 @@
         justify-content: center
     .icon
         max-width: 350px
+        margin-right: 50px
         width: 300px
     .text 
-        width: 754px
+        // width: 754px
         text-align: left
         padding-left: 50px
 
@@ -57,6 +57,7 @@
         background: $opaque-blue
         &> div
             padding: 80px
+            max-width: 470px
     &.intermedio
         .text
             background: $primary
@@ -88,3 +89,12 @@
             background: $primary
         &:before
             background: $primary
+
+#pinContainer 
+		width: 100%
+		height: 100%
+		overflow: hidden
+	.panel 
+		height: 100%
+		width: 100%
+		position: absolute

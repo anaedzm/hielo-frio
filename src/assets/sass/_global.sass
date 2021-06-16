@@ -1,33 +1,33 @@
 .titulo-1
-    font-size: 76pt
+    font-size: 80px
     text-transform: uppercase
-    line-height: 73pt
+    line-height: 78px
     font-family: 'Gilam-Heavy'
     @media (max-width: 640px)
-        font-size: 45pt
-        line-height: 41pt
+        font-size: 34pt
+        line-height: 32pt
 
 .subtitulo-1
-    font-size: 35pt
+    font-size: 40px
     letter-spacing: -0.03em
     font-family: 'Gilam-Bold'
-    line-height: 39pt
+    line-height: 45px
     @media (max-width: 640px)
         font-size: 21pt
         line-height: 22pt
 
 .subtitulo-2
-    font-size: 37pt
+    font-size: 34px
     letter-spacing: 0.02em
     font-family: 'Gilam-Bold'
     text-transform: uppercase
-    line-height: 41pt
+    line-height: 36px
     @media (max-width: 640px)
         line-height: 23pt
         font-size: 20pt
 
 .subtitulo-3
-    font-size: 36pt
+    font-size: 24px
     letter-spacing: -0.03em
     font-family: "Gilam-Regular"
     strong
@@ -36,40 +36,40 @@
         font-size: 15pt
 
 .pie-1
-    font-size: 19pt
+    font-size: 18px
     font-family: 'Gilam-Semibold'
     @media (max-width: 640px)
         font-size: 12pt
 
 .pie-2
     font-family: "Gilam-Semibold"
-    font-size: 15pt
+    font-size: 14px
 
 .texto-2
-    font-size: 19pt
+    font-size: 18px
     font-family: "Gilam-Semibold"
-    line-height: 25pt
+    line-height: 20px
     @media (max-width: 640px)
         font-size: 13pt
         line-height: 17pt
 
 .font-16
-    font-size: 16pt
+    font-size: 16px
     @media screen and ( max-width: 640px )
         font-size: 10pt
 
 .font-13
-    font-size: 13pt
+    font-size: 13px
     @media screen and ( max-width: 640px )
         font-size: 9pt
 
 .font-12
-    font-size: 12pt
+    font-size: 12px
     @media screen and ( max-width: 640px )
         font-size: 7pt
 
 .font-15
-    font-size: 15pt
+    font-size: 15px
     @media screen and ( max-width: 640px )
         font-size: 13pt
 
@@ -99,8 +99,8 @@
 
 body
     background-color: $light-gray
-    font-size: 18pt
-    line-height: 24pt
+    font-size: 18px
+    line-height: 24px 
     font-family: 'Gilam-Regular'
     color: $text
     @media (max-width: 640px)
@@ -131,8 +131,8 @@ p
 .navbar 
     padding: 15px
     @media screen and ( min-width: 641px  )
-        padding: 0px 50px
-        padding-top: 50px
+        padding: 0px 15px
+        padding-top: 15px
     position: fixed
     z-index: 2
     width: 100%
@@ -142,10 +142,10 @@ p
         width: 100%
 
 .logo 
-    max-width: 180px
+    max-width: 120px
     width: 100%
     @media screen and ( min-width: 641px  )
-        max-width: 250px
+        max-width: 180px
     svg 
         path, rect, polygon
             transition: 0.3s all ease-in-out
@@ -169,22 +169,22 @@ p
                 
             &:after
                 transform: rotate(45deg)
-                margin-top: -13px
+                margin-top: -8px
         &:after
             content: ""
             display: block
-            width: 40px
+            width: 24px
             height: 3px
             transition: all 0.3s ease-in-out
             background: white
         &:before
             content: ""
             display: block
-            width: 40px
+            width: 24px
             height: 3px
             transition: all 0.3s ease-in-out
             background: white
-            margin-bottom: 10px
+            margin-bottom: 5px
 
 #menu-expanded
     opacity: 0
@@ -200,13 +200,14 @@ p
         z-index: 1
         top: 0
     ul
+        position: absolute
         opacity: 0
+        right: 0
         text-align: right
-        margin-top: 150px
         padding-right: 200px
         transition-delay: 0.3s all
         transition: all 0.5s ease-in-out
-        transform: translateX(50px)
+        transform: translateY(-20%)
         li
             list-style-type: none
         @media screen and ( max-width: 640px)
@@ -220,8 +221,8 @@ p
             margin-right: -200px
             button
                 cursor: pointer
-                width: 204px
-                height: 204px
+                width: 170px
+                height: 170px
                 &:first-child
                     background: transparentize(#eaebed, 0.2)
                     &.active, &:hover
@@ -235,7 +236,7 @@ p
                     &.active, &:hover
                         background: transparentize(#226c93, 0.2 )
         button span    
-            margin-top: -30px
+            margin-top: -15px
             display: block
         button svg 
             transition: all .3s
@@ -244,11 +245,12 @@ p
             object-fit: contain
         &.open
             opacity: 1
-            transform: translateX(0)
+            top: 50%
+            transform: translateY(-50%)
         .titulo-1 
             color: $gray
             font-family: 'Gilam-Semibold'
-            font-size: 65pt
+            font-size: 65px
             @media screen and ( max-width: 640px)
                 display: block
                 font-size: 40pt
@@ -287,16 +289,17 @@ p
 .slides-horizontal
     .slide
         height: 100vh
-        min-height: 680px
+        min-height: 480px
     &.home-slides
         #titulo_CatalogHome
             line-height: 1.3em
         .slide
-            padding: 80px 0
+            padding: 120px 0 0
             height: auto
+            min-height: auto
             @media (min-width: 641px)
                 .info > div:first-child
-                    min-height: 552px
+                    min-height: 300px
         #image_CatalogHome 
             max-height: 530px
             margin: 0 auto
@@ -323,11 +326,11 @@ p
         height: 100%
         div 
             transition: all 0.3s ease-in-out
-        @include buttons-cat
-        svg
-            object-fit: contain
-            width: 100%
-            height: 100%
+    @include buttons-cat
+    svg
+        object-fit: contain
+        width: 100%
+        height: 100%
 
 .grid
     @media screen and ( min-width: 641px  )
@@ -350,7 +353,7 @@ p
             opacity: 0
             height: 0px
             overflow: hidden
-            margin-top: 35px
+            margin-top: 13px
             transition: all 0.3s ease-in-out
         @media screen and ( min-width: 641px  )
             &:nth-child(2n)
@@ -368,12 +371,16 @@ p
                         fill: white
         svg
             transition: all 0.3s
-            max-height: 150px
-            max-width: 100%
+            width: 100%
+            height: 100%
+            object-fit: contain
         .icon
             transition: all 0.3s
             text-align: center
             box-sizing: border-box
+            width: 85%
+            height: 85%
+            margin: 0 auto
         @media screen and ( max-width: 641px  )
             width: 100%
             background-image: url(../../images/mas.svg)
@@ -393,7 +400,7 @@ p
             .text
                 opacity: 1
                 height: auto
-                margin-top: 35px
+                margin-top: 13px
         
     
 
@@ -452,9 +459,9 @@ p
                 &:placeholder
                     color: white
             &> div.texto-2 
-                margin-bottom: 35px
+                margin-bottom: 15px
                 @media screen and ( min-width: 641px )    
-                    margin-bottom: 50px
+                    margin-bottom: 20px
     .info
         .subtitulo-2
             margin-bottom: 35px
@@ -467,11 +474,11 @@ p
                 width: 23px
             @media screen and ( min-width: 641px  )
                 svg
-                    width: 25px
+                    width: 18px
         svg
             width: 24px
             @media screen and ( min-width: 641px  )
-                width: 35px
+                width: 25px
             path
                 transition: all 0.3s ease-in-out
         .social
@@ -493,7 +500,7 @@ p
         margin-top: 80px
         padding-bottom: 35px
         svg
-            max-width: 300px
+            max-width: 150px
             path
                 fill: $opaque-blue
     button[type="submit"]
@@ -531,6 +538,37 @@ p
         .tel
             font-size: 15pt
             margin-top: 15px
+#show-cursor
+    overflow: hidden
+    cursor: none
+    .info:hover
+        .mas
+            width: 70px
+            height: 70px
+            transform: scale(1.2)
+            path, polygon, rect
+                fill: $secondary
+
+
+    
+.mas 
+    width: 50px
+    height: 50px
+    overflow: visible
+    border: 0
+    position: absolute
+    transform: translate(-50%, -50%) scale(0)
+    transition: width 0.3s ease-in-out, fill 0.3s ease-in-out, transform 0.3s ease-in-out, top 0.1s, left 0.1s
+    &.active
+        opacity: 1
+        transform: translate(-50%, -50%) scale(1)
+    &.highlight
+        width: 70px
+        height: 70px
+        transform: translate(-50%, -50%) scale(1.2)
+        path, polygon, rect
+            fill: $secondary
+
 @media (max-width: 640px)
     .slides-horizontal
         &.home-slides
