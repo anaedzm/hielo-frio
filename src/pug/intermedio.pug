@@ -46,47 +46,45 @@ block content
             | Hasta 
             strong.secondary-color 180 Kilos 
             | en su depósito.
+  #pinContainer2
+    section.panel.uno.detalles.container-fluid.intermedio
+      .row
+        .col-md-6.text.d-md-flex.align-items-center.justify-center
+          div
+            .subtitulo-2 
+              span.white-color HIELO
+                  br
+                  | SANITIZADO
+              br
+              span.secondary-color CADA 40 MINUTOS
 
-  .detalles.container-fluid.intermedio
-    .row
-      .col-md-6.text.d-md-flex.align-items-center.justify-center
-        div
-          .subtitulo-2 
-            span.white-color HIELO
-                br
-                | SANITIZADO
-            br
-            span.secondary-color CADA 40 MINUTOS
+            .texto-2.white-color Con su eficaz sistema higiénico puedes contar, de manera frecuente, con hielo totalmente purificado y listo para servirse.
+        .col-md-6.image.d-md-flex.align-items-center.justify-center
+          img(src="assets/images/catalogo/intermedio/Sanitizado_INT.svg")
+    section.panel.dos.detalles.container-fluid.intermedio
+      .row
+        .col-md-6.text.d-md-flex.align-items-center.justify-center
+          div
+            .subtitulo-2 
+              span.secondary-color EVAPORADOR 
+              br
+              span.white-color DE ACERO 
+                | INOXIDABLE
+            .texto-2.white-color Por medio de una constante regulación en la temperatura, se adapta al medio ambiente de tu establecimiento.
+        .col-md-6.image.d-md-flex.align-items-center.justify-center
+          img(src="assets/images/catalogo/basico/Evaporador_B.svg")
+    section.panel.tres.detalles.container-fluid.intermedio
+      .row
+        .col-md-6.text.d-md-flex.align-items-center.justify-center
+          div
+            .subtitulo-2 
+              span.secondary-color ALTO VOLUMEN
+              br
+              span.white-color EN ESPACIO LIMITADO
 
-          .texto-2.white-color Con su eficaz sistema higiénico puedes contar, de manera frecuente, con hielo totalmente purificado y listo para servirse.
-      .col-md-6.image.d-md-flex.align-items-center.justify-center
-        img(src="assets/images/catalogo/intermedio/Sanitizado_INT.svg")
-
-  .detalles.container-fluid.intermedio
-    .row
-      .col-md-6.text.d-md-flex.align-items-center.justify-center
-        div
-          .subtitulo-2 
-            span.secondary-color EVAPORADOR 
-            br
-            span.white-color DE ACERO 
-              | INOXIDABLE
-          .texto-2.white-color Por medio de una constante regulación en la temperatura, se adapta al medio ambiente de tu establecimiento.
-      .col-md-6.image.d-md-flex.align-items-center.justify-center
-        img(src="assets/images/catalogo/basico/Evaporador_B.svg")
-
-  .detalles.container-fluid.intermedio
-    .row
-      .col-md-6.text.d-md-flex.align-items-center.justify-center
-        div
-          .subtitulo-2 
-            span.secondary-color ALTO VOLUMEN
-            br
-            span.white-color EN ESPACIO LIMITADO
-
-          .texto-2.white-color Desafía el pronóstico del tiempo, sólo elige el sitio indicado y sorpréndete con su desempeño.
-      .col-md-6.image.d-md-flex.align-items-center.justify-center
-        img(src="assets/images/catalogo/basico/Espacio_B.svg")
+            .texto-2.white-color Desafía el pronóstico del tiempo, sólo elige el sitio indicado y sorpréndete con su desempeño.
+        .col-md-6.image.d-md-flex.align-items-center.justify-center
+          img(src="assets/images/catalogo/basico/Espacio_B.svg")
 
   include templates/content/catalogo/quotes
   
@@ -95,9 +93,6 @@ block content
   .grid.mt-2.intermedio
     include templates/content/catalogo/grid-catalogo
     
-    script(src="https://code.jquery.com/jquery-3.6.0.min.js", integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=", crossorigin="anonymous")
-    script(src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js")
-    
     script.
       (function() {
         // init
@@ -105,19 +100,31 @@ block content
 
         // define movement of panels
         var wipeAnimation = new TimelineMax()
-          .fromTo("section.panel.kg", 1, {x: "-100%"}, {x: "0%", ease: Linear.easeNone})  // in from left
-          .fromTo("section.panel.cubo",    1, {x:  "100%"}, {x: "0%", ease: Linear.easeNone})  // in from right
-          .fromTo("section.panel.hasta", 1, {y: "-100%"}, {y: "0%", ease: Linear.easeNone}); // in from top
+          .fromTo("section.panel.kg", 1, {x: "0%"}, {x: "-100%", ease: Linear.easeInOut})  // in from left
+          .fromTo("section.panel.cubo",    1, {x:  "100%"}, {x: "-100%", ease: Linear.easeInOut})  // in from right
+          .fromTo("section.panel.hasta", 1, {x: "100%"}, {x: "0%", ease: Linear.easeInOut}); // in from top
+
+        var verticalWipe = new TimelineMax()
+          .fromTo("section.panel.uno", 1, {Y: "100%"}, {y: "0%", ease: Linear.easeInOut})  // in from left
+          .fromTo("section.panel.dos",    1, {y:  "100%"}, {y: "0%", ease: Linear.easeInOut})  // in from right
+          .fromTo("section.panel.tres", 1, {y: "100%"}, {y: "0%", ease: Linear.easeInOut}); // in from top
 
         // create scene to pin and link animation
         new ScrollMagic.Scene({
             triggerElement: "#pinContainer",
             triggerHook: "onLeave",
-            duration: "300%"
+            duration: "200%"
           })
           .setPin("#pinContainer")
           .setTween(wipeAnimation)
-          .addIndicators() // add indicators (requires plugin)
+          .addTo(controller);
+          new ScrollMagic.Scene({
+            triggerElement: "#pinContainer2",
+            triggerHook: "onLeave",
+            duration: "200%"
+          })
+          .setPin("#pinContainer2")
+          .setTween(verticalWipe)
           .addTo(controller);
 
       })();
