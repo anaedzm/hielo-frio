@@ -19,81 +19,71 @@ block content
                 p Sus dimensiones son tan accesibles que ocupan muy poco espacio dentro de restaurantes pequeños, food courts o cafeterías, incluso puedes instalarla debajo de la barra del bar.
                 p Haz tu servicio más eficiente sirviendo el hielo directamente de la máquina, al ubicarla cerca de donde se preparan las bebidas. 
                 p De tamaño compacto y fácil manejo, tienes una alta eficiencia en producción de hielo con bajo consumo de energía.
-  .horizontal-info 
-    .content.container.slide-1
-      .d-flex
-        .icon
-          img(src="assets/images/catalogo/basico/Kilos_Hielo_B.svg")
-        .text.subtitulo-3
-          | De 70 a 120 Kilos 
-          strong.secondary-color diarios.
-  //- .horizontal-info 
-  //-   .content.container.slide-1
-  //-     .d-flex
-  //-       .icon
-  //-         include svg/catalogo/diagrama.pug
-  //-       .text.subtitulo-3
-  //-         | Cubo tipo 
-  //-         strong.secondary-color media luna 
-  //-         | individual.
-  //- .horizontal-info.kg
-  //-   .content.container.slide-1
-  //-     .d-flex
-  //-       .icon
-  //-         include svg/catalogo/deposito.pug
-  //-       .text.subtitulo-3
-  //-         | Concentra 
-  //-         strong.secondary-color 35 Kilos 
-  //-         | en su depósito.
-
-  .detalles.container-fluid 
-    .row
-      .col-md-6.text.d-md-flex.align-items-center.justify-center
-        div
-          .subtitulo-2 
-            span.white-color HIELO
-            br
-            span.primary-color SANITIZADO
-          .texto-2.white-color Con su eficaz sistema higiénico obtienes un excelente hielo purificado listo para consumo.
-      .col-md-6.image.d-md-flex.align-items-center.justify-center
-        img(src="assets/images/catalogo/basico/Sanitizado_B.svg")
-
-  //- .detalles.container-fluid 
-  //-   .row
-  //-     .col-md-6.text.d-md-flex.align-items-center.justify-center
-  //-       div
-  //-         .subtitulo-2 
-  //-           span.white-color EVAPORADOR 
-  //-           br
-  //-           span.primary-color DE ACERO 
-  //-             | INOXIDABLE
-  //-         .texto-2.white-color Por medio de una constante regulación en la temperatura, se adapta al medio ambiente de tu establecimiento.
-  //-     .col-md-6.image.d-md-flex.align-items-center.justify-center
-  //-       img(src="assets/images/catalogo/basico/Evaporador_B.svg")
-
-  //- .detalles.container-fluid 
-  //-   .row
-  //-     .col-md-6.text.d-md-flex.align-items-center.justify-center
-  //-       div
-  //-         .subtitulo-2 
-  //-           span.white-color ESPACIO 
-  //-           br
-  //-           span.primary-color REDUCIDO
-  //-         .texto-2.white-color Sólo elige el lugar para su instalación y comienza a refrescar el día de tus comensales.
-  //-     .col-md-6.image.d-md-flex.align-items-center.justify-center
-  //-       img(src="assets/images/catalogo/basico/Espacio_B.svg")
-
-  //- .detalles.container-fluid 
-  //-   .row
-  //-     .col-md-6.text.d-md-flex.align-items-center.justify-center
-  //-       div
-  //-         .subtitulo-2 
-  //-           span.white-color FÁCIL 
-  //-           br
-  //-           span.primary-color MANTENIMIENTO
-  //-         .texto-2.white-color Consérvala en óptimas condiciones y obtén el mayor rendimiento sin tantas complicaciones.
-  //-     .col-md-6.image.d-md-flex.align-items-center.justify-center
-  //-       img(src="assets/images/catalogo/basico/Mantenimiento_B.svg")
+     
+  #pinContainer
+    section.panel.horizontal-info.kg
+      .content.container.slide-1
+        .d-flex
+          .icon
+            img(src="assets/images/catalogo/basico/Kilos_Hielo_B.svg")
+          .text.subtitulo-3
+            | De 70 a 120 Kilos 
+            strong.secondary-color diarios.
+    section.panel.horizontal-info.cubo 
+      .content.container.slide-1
+        .d-flex
+          .icon
+            include svg/catalogo/diagrama.pug
+          .text.subtitulo-3
+            | Cubo tipo 
+            strong.secondary-color media luna 
+            | individual.    
+    section.panel.horizontal-info.hasta 
+      .content.container.slide-1
+        .d-flex
+          .icon
+            include svg/catalogo/deposito.pug
+          .text.subtitulo-3
+            | Concentra 
+            strong.secondary-color 35 Kilos 
+            | en su depósito.
+  #pinContainer2
+    .detalles.container-fluid
+      .row
+        section.panel.col-md-6.text.d-md-flex.align-items-center.justify-center.uno.vertical
+          div
+            .subtitulo-2
+              span.white-color HIELO
+              br
+              span.primary-color SANITIZADO
+            .texto-2.white-color Con su eficaz sistema higiénico obtienes un excelente hielo purificado listo para consumo.
+        section.panel.col-md-6.image.d-md-flex.align-items-center.justify-center.panel.dos.vertical
+          img(src="assets/images/catalogo/basico/Sanitizado_B.svg")
+  #pinContainer2b
+    .detalles.container-fluid
+      .row
+        section.panel.unoB.vertical.col-md-6.text.d-md-flex.align-items-center.justify-center
+          div
+            .subtitulo-2 
+              span.white-color EVAPORADOR 
+              br
+              span.primary-color DE ACERO 
+                | INOXIDABLE
+            .texto-2.white-color Por medio de una constante regulación en la temperatura, se adapta al medio ambiente de tu establecimiento.
+        section.panel.dosB.vertical.col-md-6.image.d-md-flex.align-items-center.justify-center
+          img(src="assets/images/catalogo/basico/Evaporador_B.svg")
+  #pinContainer2c
+    .detalles.container-fluid 
+      .row
+        section.panel.unoC.vertical.col-md-6.text.d-md-flex.align-items-center.justify-center
+          div
+            .subtitulo-2 
+              span.white-color FÁCIL 
+              br
+              span.primary-color MANTENIMIENTO
+            .texto-2.white-color Consérvala en óptimas condiciones y obtén el mayor rendimiento sin tantas complicaciones.
+        section.panel.dosC.vertical.col-md-6.image.d-md-flex.align-items-center.justify-center
+          img(src="assets/images/catalogo/basico/Mantenimiento_B.svg")
 
   include templates/content/catalogo/quotes
   
@@ -101,4 +91,72 @@ block content
 
   .grid.mt-2
     include templates/content/catalogo/grid-catalogo
-    
+  
+  script.
+      (function() {
+        // init
+        var controller = new ScrollMagic.Controller();
+
+        // define movement of panels
+        var wipeAnimation = new TimelineMax({addIndicators: true})
+          .fromTo("section.panel.cubo", 1, {x:  "100%"}, {x: "0%", ease: Linear.easeInOut}, 2)  // in from right
+          .fromTo("section.panel.hasta", 1, {x: "100%"}, {x: "0%", ease: Linear.easeInOut}); // in from top
+
+        var verticalWipe = new TimelineMax({addIndicators: true})
+          .fromTo("section.panel.uno", 1, {opacity: 0}, {opacity: 1, ease: Linear.easeInOut}, 0)  
+          .fromTo("section.panel.dos", 1, {opacity: 0}, {opacity: 1, ease: Linear.easeInOut}, 0)
+          .fromTo("section.panel.uno", 1, {opacity: 1}, {opacity: 0, ease: Linear.easeInOut}, 1)  
+          .fromTo("section.panel.dos", 1, {opacity: 1}, {opacity: 0, ease: Linear.easeInOut}, 1)
+        
+        var verticalWipe2 = new TimelineMax({addIndicators: true})  
+          .fromTo("section.panel.unoB", 1, {x: "-100%"}, {x: "0%", ease: Linear.easeInOut}, 0)  
+          .fromTo("section.panel.dosB", 1, {x:  "100%"}, {x: "0%", ease: Linear.easeInOut}, 0)
+
+        var verticalWipe3 = new TimelineMax({addIndicators: true})  
+          .fromTo("section.panel.unoC", 1, {opacity: 0}, {opacity: 1, ease: Linear.easeInOut}, 0)  
+          .fromTo("section.panel.dosC", 1, {x:  "100%"}, {x: "0%", ease: Linear.easeInOut}, 0)          
+        // create scene to pin and link animation
+        new ScrollMagic.Scene({
+            triggerElement: "#pinContainer",
+            triggerHook: "onLeave",
+            duration: "200%"
+          })
+          .addIndicators()
+          .setPin("#pinContainer")
+          .setTween(wipeAnimation)
+          .addTo(controller);
+          
+          new ScrollMagic.Scene({
+            triggerElement: "#pinContainer2",
+            triggerHook: "onLeave",
+            duration: "200%"
+          })
+          .addIndicators()
+          .setPin("#pinContainer2")
+          .setTween(verticalWipe)
+          .addTo(controller);
+
+          new ScrollMagic.Scene({
+            triggerElement: "#pinContainer2b",
+            triggerHook: "onLeave",
+            duration: "200%"
+          })
+          .addIndicators()
+          .setPin("#pinContainer2b")
+          .setTween(verticalWipe2)
+          .addTo(controller);
+
+          new ScrollMagic.Scene({
+            triggerElement: "#pinContainer2c",
+            triggerHook: "onLeave",
+            duration: "100%"
+          })
+          .addIndicators()
+          .setPin("#pinContainer2c")
+          .setTween(verticalWipe3)
+          .addTo(controller);
+
+       
+
+      })();
+        

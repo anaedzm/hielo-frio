@@ -1,6 +1,40 @@
 @import '../_includes'
 
-body
+#slides-home-1
+    overflow-x: hidden
+#image
+    z-index: -1
+#info a, a:hover, a:focus
+    cursor: none
+    color: inherit
+
+#info, #image, #buttons
+    opacity: 0
+    transition: all 1s ease-in-out
+    &.active
+        opacity: 1
+
+#basico-btn
+    display: none
+
+#info
+    transition-delay: 0.3s
+    transform: translateY(100px)
+    &.active
+        transform: translateY(0)
+
+#image
+    transform: translateY(-100px)
+    &.active
+        transform: translateY(0)
+
+#buttons
+    transition-delay: 0.5s
+    transform: translateX(100px)
+    button
+        cursor: pointer
+    &.active
+        transform: translateX(0)
 
 @include white-logo
 
