@@ -93,39 +93,39 @@ block content
   .grid.mt-2.intermedio
     include templates/content/catalogo/grid-catalogo
     
-    script.
-      (function() {
-        // init
-        var controller = new ScrollMagic.Controller();
+    //- script.
+    //-   (function() {
+    //-     // init
+    //-     var controller = new ScrollMagic.Controller();
 
-        // define movement of panels
-        var wipeAnimation = new TimelineMax()
-          .fromTo("section.panel.kg", 1, {x: "0%"}, {x: "-100%", ease: Linear.easeInOut})  // in from left
-          .fromTo("section.panel.cubo",    1, {x:  "100%"}, {x: "-100%", ease: Linear.easeInOut})  // in from right
-          .fromTo("section.panel.hasta", 1, {x: "100%"}, {x: "0%", ease: Linear.easeInOut}); // in from top
+    //-     // define movement of panels
+    //-     var wipeAnimation = new TimelineMax()
+    //-       .fromTo("section.panel.kg", 1, {x: "0%"}, {x: "-100%", ease: Linear.easeInOut})  // in from left
+    //-       .fromTo("section.panel.cubo",    1, {x:  "100%"}, {x: "-100%", ease: Linear.easeInOut})  // in from right
+    //-       .fromTo("section.panel.hasta", 1, {x: "100%"}, {x: "0%", ease: Linear.easeInOut}); // in from top
 
-        var verticalWipe = new TimelineMax()
-          .fromTo("section.panel.uno", 1, {Y: "100%"}, {y: "0%", ease: Linear.easeInOut})  // in from left
-          .fromTo("section.panel.dos",    1, {y:  "100%"}, {y: "0%", ease: Linear.easeInOut})  // in from right
-          .fromTo("section.panel.tres", 1, {y: "100%"}, {y: "0%", ease: Linear.easeInOut}); // in from top
+    //-     var verticalWipe = new TimelineMax()
+    //-       .fromTo("section.panel.uno", 1, {Y: "100%"}, {y: "0%", ease: Linear.easeInOut})  // in from left
+    //-       .fromTo("section.panel.dos",    1, {y:  "100%"}, {y: "0%", ease: Linear.easeInOut})  // in from right
+    //-       .fromTo("section.panel.tres", 1, {y: "100%"}, {y: "0%", ease: Linear.easeInOut}); // in from top
 
-        // create scene to pin and link animation
-        new ScrollMagic.Scene({
-            triggerElement: "#pinContainer",
-            triggerHook: "onLeave",
-            duration: "200%"
-          })
-          .setPin("#pinContainer")
-          .setTween(wipeAnimation)
-          .addTo(controller);
-          new ScrollMagic.Scene({
-            triggerElement: "#pinContainer2",
-            triggerHook: "onLeave",
-            duration: "200%"
-          })
-          .setPin("#pinContainer2")
-          .setTween(verticalWipe)
-          .addTo(controller);
+    //-     // create scene to pin and link animation
+    //-     new ScrollMagic.Scene({
+    //-         triggerElement: "#pinContainer",
+    //-         triggerHook: "onLeave",
+    //-         duration: "200%"
+    //-       })
+    //-       .setPin("#pinContainer")
+    //-       .setTween(wipeAnimation)
+    //-       .addTo(controller);
+    //-       new ScrollMagic.Scene({
+    //-         triggerElement: "#pinContainer2",
+    //-         triggerHook: "onLeave",
+    //-         duration: "200%"
+    //-       })
+    //-       .setPin("#pinContainer2")
+    //-       .setTween(verticalWipe)
+    //-       .addTo(controller);
 
-      })();
+    //-   })();
         
