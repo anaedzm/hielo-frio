@@ -32,12 +32,20 @@ body
             width: 25px
             display: inline-block
             margin: 0 5px
+            cursor: pointer
             background-image: url('../../images/servicios/Centro.svg')
             svg
                 width: 25px
                 path
-                    stroke-dasharray: 154
+                    opacity: 0
+                    transition: stroke-dashoffset 4s ease-out
+                    stroke-dasharray: 75
+                    stroke-dashoffset: -74
+            &.active
+                svg path
+                    opacity: 1
                     stroke-dashoffset: 0
+                
     .slide
         transition: all 0.5s ease-in-out
         position: absolute

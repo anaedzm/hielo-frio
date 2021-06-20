@@ -5,16 +5,14 @@ block content
   div.header-image.slider
     include templates/_navbar.pug
     #slider
-      ul 
-        li.active
+      ul#btns
+        li(onclick="changeSlides(0)")
           include svg/servicios/sliderload.pug
-        li 
+        li(onclick="changeSlides(1)")
           include svg/servicios/sliderload.pug
-        li 
+        li(onclick="changeSlides(2)")
           include svg/servicios/sliderload.pug
-        li 
-          include svg/servicios/sliderload.pug
-        li 
+        li(onclick="changeSlides(3)")
           include svg/servicios/sliderload.pug
       .slide.active 
         .bg
@@ -134,9 +132,14 @@ block content
 
       const slider = document.getElementById("slider")
       let slides = document.querySelectorAll('.slide')
+      let btns = document.querySelectorAll('#btns li')
+      btns[0].classList.add("active")
       let i = 0; 
-      var intervalID = window.setInterval(checkWeatherAPI, 4000);
-      function checkWeatherAPI() {
+      var intervalID = window.setInterval(slideInterval, 4000);
+      function slideInterval() {
+        for(let b = 0; b < btns.length; b++) {
+          btns[b].classList.remove("active")
+        }
         i++
         if(i === 4){
           for(let a = 0; a < slides.length; a++){
@@ -146,8 +149,20 @@ block content
           i = 0
         }
         slides[i].classList.add("active")
+        btns[i].classList.add("active")
       
       }
+      function changeSlides(idx, event) {
+        for(let b = 0; b < btns.length; b++) {
+          btns[b].classList.remove("active")
+          slides[b].classList.remove("active")
+        }
+        i = idx
+        slides[idx].classList.add("active")
+        btns[idx].classList.add("active")
+        window.clearInterval(slideInterval)
+      }
+     
 
       
 
