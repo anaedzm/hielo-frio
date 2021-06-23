@@ -52,6 +52,12 @@ body
         width: 100%
         height: 100%
         opacity: 0
+        .text
+            @media(min-width: 641px)
+                padding-left: 40px
+        .image
+            img
+                max-width: 480px
         &.active
             opacity: 1
                        
@@ -98,8 +104,9 @@ body
                 margin: 50px auto 0
         .pie-1
             margin-top: 15px
+            letter-spacing: 0em
             @media screen and ( min-width:  641px)
-                margin-top: 80px
+                margin-top: 45px
         .text, .image
             position: relative
     .bg

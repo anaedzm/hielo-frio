@@ -22,7 +22,9 @@ block content
             .col-md-6.ps-md-5
               .text
                 .titulo-1.bright-color
-                  | COMIENZA A ENFRIAR
+                  | COMIENZA 
+                  br
+                  | A ENFRIAR
                 .subtitulo-1.white-color
                   | en un abrir 
                   br
@@ -41,7 +43,7 @@ block content
           .row.align-items-center
             .col-md-6.ps-5
               .text
-                .titulo-1.secondary-color
+                .titulo-1.bright-color
                   | ¿CUÁL
                   br
                   | PREFIERES?
@@ -59,7 +61,7 @@ block content
           .row.align-items-center
             .col-md-6.ps-5
               .text
-                .titulo-1.secondary-color
+                .titulo-1.bright-color
                   | LLEGAMOS
                 .subtitulo-1.white-color
                   | hasta donde estés. 
@@ -77,7 +79,7 @@ block content
           .row.align-items-center
             .col-md-6.ps-5
               .text
-                .titulo-1.secondary-color
+                .titulo-1.bright-color
                   | TENEMOS
                 .subtitulo-1.white-color
                   | para todos. 
@@ -90,7 +92,7 @@ block content
   
   .container.descanso#fade
     div.row.align-items-start
-      .col-md-6#fadeLeft
+      .col-md-6#fadeLeft.d-flex.align-items-center.justify-content-center
         .subtitulo-2.primary-color SOMOS EL ALIADO 
           br
           span.secondary-color QUE ESTABAS
@@ -135,7 +137,39 @@ block content
       let btns = document.querySelectorAll('#btns li')
       btns[0].classList.add("active")
       let i = 0; 
-      var intervalID = window.setInterval(slideInterval, 4000);
+      
+
+      function Timer(fn, t) {
+        var timerObj = setInterval(fn, t);
+
+        this.stop = function() {
+            if (timerObj) {
+                clearInterval(timerObj);
+                timerObj = null;
+            }
+            return this;
+        }
+
+        // start timer using current settings (if it's not already running)
+        this.start = function() {
+            if (!timerObj) {
+                this.stop();
+                timerObj = setInterval(fn, t);
+            }
+            return this;
+        }
+
+        // start with new or original interval, stop current interval
+        this.reset = function(newT = t) {
+            t = newT;
+            return this.stop().start();
+        }
+      
+      }
+      var timer = new Timer(function() {
+          slideInterval()
+      }, 4000);
+
       function slideInterval() {
         for(let b = 0; b < btns.length; b++) {
           btns[b].classList.remove("active")
@@ -160,8 +194,18 @@ block content
         i = idx
         slides[idx].classList.add("active")
         btns[idx].classList.add("active")
-        window.clearInterval(slideInterval)
+        timer.reset(4000)
       }
+
+
+      // switch interval to 10 seconds
+//-       timer.reset(10000);
+
+//-       // stop the timer
+//-       timer.stop();
+
+//-       // start the timer
+//- timer.start();
      
 
       

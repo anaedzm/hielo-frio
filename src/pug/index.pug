@@ -10,8 +10,8 @@ block content
   include templates/content/home/slides-home.pug
   
   .container.descanso(onmouseenter="hideCursor()")#fade
-    div.row.align-items-center
-      .col-md-6#fadeLeft
+    div.row.align-items-start
+      .col-md-6#fadeLeft.d-flex.align-items-center.justify-content-center
         .subtitulo-2.primary-color CUANDO PIENSES EN 
           br
           span.secondary-color REFRESCAR TU NEGOCIO
@@ -53,8 +53,8 @@ block content
 
       let options = {
         root: null,
-        rootMargin: '300px',
-        threshold: 1.0
+        rootMargin: '-50px',
+        threshold: 0
       }
       
       // Instancing a new IntersectionObserver

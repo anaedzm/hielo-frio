@@ -5,12 +5,14 @@ block content
   div
     include templates/_navbar.pug
 
-  .slides-home.slides-horizontal.container-fluid
+  .slides-home.slides-horizontal.container-fluid#first
+    .abajo#abajo
+      img(src="assets/images/catalogo/Abajo_B.svg")
     .slide.row.align-items-center
-        .image.col-md-6.animate__animated.animate__fadeInDown
+        .image.col-md-6.animate__animated.animate__fadeIn
             include svg/catalogo/basico/medidas.pug
             img(src="assets/images/catalogo/basica.png")
-        .info.col-md-6.d-md-flex.flex-column.animate__animated.animate__fadeInUp
+        .info.col-md-6.d-md-flex.flex-column.animate__animated.animate__fadeIn
             .titulo-1.primary-color.mt-auto Básica
             .subtitulo-1.secondary-color Ideal para que tu negocio
                 br
@@ -20,16 +22,23 @@ block content
                 p Haz tu servicio más eficiente sirviendo el hielo directamente de la máquina, al ubicarla cerca de donde se preparan las bebidas. 
                 p De tamaño compacto y fácil manejo, tienes una alta eficiencia en producción de hielo con bajo consumo de energía.
      
-  #pinContainer
-    section.panel.horizontal-info.kg
+  
+  #cursorChange.hori
+    //- .horizontal
+    //-   img(src="assets/images/catalogo/Lados_B.svg")
+    section.panel.horizontal-info.kg#detalles.first
+      
       .content.container.slide-1
         .d-flex
-          .icon
+          .icon.circle#circle
+            include svg/catalogo/basico/circle.pug
             img(src="assets/images/catalogo/basico/Kilos_Hielo_B.svg")
+            img(src="assets/images/catalogo/Kilos_Contorno_B.svg").contorno
           .text.subtitulo-3
             | De 70 a 120 Kilos 
             strong.secondary-color diarios.
-    section.panel.horizontal-info.cubo 
+  #section2H.hori
+    section.panel.horizontal-info.cubo#cubo
       .content.container.slide-1
         .d-flex
           .icon
@@ -38,6 +47,7 @@ block content
             | Cubo tipo 
             strong.secondary-color media luna 
             | individual.    
+  #section3H.hori
     section.panel.horizontal-info.hasta 
       .content.container.slide-1
         .d-flex
@@ -50,19 +60,19 @@ block content
   #pinContainer2
     .detalles.container-fluid
       .row
-        section.panel.col-md-6.text.d-md-flex.align-items-center.justify-center.uno.vertical
+        section.panel.col-md-6.text.d-md-flex.align-items-center.justify-content-center.uno.vertical
           div
             .subtitulo-2
               span.white-color HIELO
               br
               span.primary-color SANITIZADO
             .texto-2.white-color Con su eficaz sistema higiénico obtienes un excelente hielo purificado listo para consumo.
-        section.panel.col-md-6.image.d-md-flex.align-items-center.justify-center.panel.dos.vertical
+        section.panel.col-md-6.image.d-md-flex.align-items-center.justify-content-center.panel.dos.vertical
           img(src="assets/images/catalogo/basico/Sanitizado_B.svg")
   #pinContainer2b
     .detalles.container-fluid
       .row
-        section.panel.unoB.vertical.col-md-6.text.d-md-flex.align-items-center.justify-center
+        section.panel.unoB.vertical.col-md-6.text.d-md-flex.align-items-center.justify-content-center
           div
             .subtitulo-2 
               span.white-color EVAPORADOR 
@@ -70,12 +80,12 @@ block content
               span.primary-color DE ACERO 
                 | INOXIDABLE
             .texto-2.white-color Por medio de una constante regulación en la temperatura, se adapta al medio ambiente de tu establecimiento.
-        section.panel.dosB.vertical.col-md-6.image.d-md-flex.align-items-center.justify-center
+        section.panel.dosB.vertical.col-md-6.image.d-md-flex.align-items-center.justify-content-center
           img(src="assets/images/catalogo/basico/Evaporador_B.svg")
   #pinContainer2c
     .detalles.container-fluid 
       .row
-        section.panel.unoC.vertical.col-md-6.text.d-md-flex.align-items-center.justify-center
+        section.panel.unoC.vertical.col-md-6.text.d-md-flex.align-items-center.justify-content-center
           div
             .subtitulo-2 
               span.white-color FÁCIL 
@@ -92,71 +102,80 @@ block content
   .grid.mt-2
     include templates/content/catalogo/grid-catalogo
   
-  //- script.
-      (function() {
-        // init
-        var controller = new ScrollMagic.Controller();
+  script.
+    const div = document.querySelector("#detalles")
+    let circle = document.getElementById("pathCircle")
+    let body = document.getElementById("bodyCatalogo")
+    document.getElementById("abajo").addEventListener("click", () => {
+      document.getElementById("cursorChange").scrollIntoView()
+    }, false)
 
-        // define movement of panels
-        var wipeAnimation = new TimelineMax({addIndicators: true})
-          .fromTo("section.panel.cubo", 1, {x:  "100%"}, {x: "0%", ease: Linear.easeInOut}, 2)  // in from right
-          .fromTo("section.panel.hasta", 1, {x: "100%"}, {x: "0%", ease: Linear.easeInOut}); // in from top
+    //- var controller = new ScrollMagic.Controller();
+    //- var wipeAnimation = new TimelineMax()
+    //-   .fromTo("section.panel.kg", 1, {x: "-100%"}, {x: "0%", ease: Linear.easeNone})  // in from left
+    //-   .fromTo("section.panel.green",    1, {x:  "100%"}, {x: "0%", ease: Linear.easeNone})  // in from right
+    //-   .fromTo("section.panel.bordeaux", 1, {y: "-100%"}, {y: "0%", ease: Linear.easeNone}); // in from top
 
-        var verticalWipe = new TimelineMax({addIndicators: true})
-          .fromTo("section.panel.uno", 1, {opacity: 0}, {opacity: 1, ease: Linear.easeInOut}, 0)  
-          .fromTo("section.panel.dos", 1, {opacity: 0}, {opacity: 1, ease: Linear.easeInOut}, 0)
-          .fromTo("section.panel.uno", 1, {opacity: 1}, {opacity: 0, ease: Linear.easeInOut}, 1)  
-          .fromTo("section.panel.dos", 1, {opacity: 1}, {opacity: 0, ease: Linear.easeInOut}, 1)
-        
-        var verticalWipe2 = new TimelineMax({addIndicators: true})  
-          .fromTo("section.panel.unoB", 1, {x: "-100%"}, {x: "0%", ease: Linear.easeInOut}, 0)  
-          .fromTo("section.panel.dosB", 1, {x:  "100%"}, {x: "0%", ease: Linear.easeInOut}, 0)
+      //- new ScrollMagic.Scene({
+      //-   triggerElement: "#cursorChange",
+      //-   triggerHook: "onEnter",
+      //-   offset: 10,
+      //- })
+      //- .setClassToggle("#detalles, #pathCircle", "active")
+      //- //- .setTween(wipeAnimation)
+      //- .addIndicators() // add indicators (requires plugin)
+      //- .addTo(controller);
 
-        var verticalWipe3 = new TimelineMax({addIndicators: true})  
-          .fromTo("section.panel.unoC", 1, {opacity: 0}, {opacity: 1, ease: Linear.easeInOut}, 0)  
-          .fromTo("section.panel.dosC", 1, {x:  "100%"}, {x: "0%", ease: Linear.easeInOut}, 0)          
-        // create scene to pin and link animation
-        new ScrollMagic.Scene({
-            triggerElement: "#pinContainer",
-            triggerHook: "onLeave",
-            duration: "200%"
-          })
-          .addIndicators()
-          .setPin("#pinContainer")
-          .setTween(wipeAnimation)
-          .addTo(controller);
+      //- new ScrollMagic.Scene({
+      //-   triggerElement: "#cursorChange2",
+      //-   triggerHook: "onEnter",
+      //-   offset: 5,
+      //- })
+      //- .setClassToggle("#detalles", "go")
+      //- .setTween(wipeAnimation)
+      //- .addIndicators() // add indicators (requires plugin)
+      //- .addTo(controller);
+
+     
+    function callback(entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          circle.classList.add("active")
+          document.getElementById("detalles").classList.add("active")
+        } else {
+          circle.classList.remove("active")
+          document.getElementById("detalles").classList.remove("active")
           
-          new ScrollMagic.Scene({
-            triggerElement: "#pinContainer2",
-            triggerHook: "onLeave",
-            duration: "200%"
-          })
-          .addIndicators()
-          .setPin("#pinContainer2")
-          .setTween(verticalWipe)
-          .addTo(controller);
+        }
+      });
+    }
 
-          new ScrollMagic.Scene({
-            triggerElement: "#pinContainer2b",
-            triggerHook: "onLeave",
-            duration: "200%"
-          })
-          .addIndicators()
-          .setPin("#pinContainer2b")
-          .setTween(verticalWipe2)
-          .addTo(controller);
-
-          new ScrollMagic.Scene({
-            triggerElement: "#pinContainer2c",
-            triggerHook: "onLeave",
-            duration: "100%"
-          })
-          .addIndicators()
-          .setPin("#pinContainer2c")
-          .setTween(verticalWipe3)
-          .addTo(controller);
-
+    let options = {
+      root: null,
+      rootMargin: '100px',
+      threshold: 1,
+    }
        
+      // Instancing a new IntersectionObserver
+      const observer = new IntersectionObserver(callback, options);
+      observer.observe(div);
 
-      })();
-        
+    //- function scrollToDiv() {
+    //-   if (event.deltaY < 0)
+    //-     {
+    //-       if(window.pageYOffset < document.getElementById("cursorChange").offsetTop) {
+    //-         document.getElementById("first").scrollIntoView()
+    //-       } 
+    //-     }
+    //-     else if (event.deltaY > 0)
+    //-     {
+    //-       if(window.pageYOffset === 0) {
+    //-         document.getElementById("cursorChange").scrollIntoView()
+    //-       } 
+    //-     }
+      
+    //- }
+
+    //- window.addEventListener("wheel", scrollToDiv, false)
+    
+    

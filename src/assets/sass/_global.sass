@@ -8,20 +8,20 @@
         line-height: 32pt
 
 .subtitulo-1
-    font-size: 40px
+    font-size: 31px
     letter-spacing: -0.03em
     font-family: 'Gilam-Bold'
-    line-height: 45px
+    line-height: 36px
     @media (max-width: 640px)
         font-size: 21pt
         line-height: 22pt
 
 .subtitulo-2
-    font-size: 34px
-    letter-spacing: 0.02em
-    font-family: 'Gilam-Bold'
+    font-size: 27px
+    letter-spacing: .0em
+    font-family: Gilam-Bold
     text-transform: uppercase
-    line-height: 36px
+    line-height: 29px
     @media (max-width: 640px)
         line-height: 23pt
         font-size: 20pt
@@ -110,7 +110,7 @@ body
             margin-bottom: 7pt
 
 a:hover 
-    color: inherit
+    color: $secondary
 
 p
     margin-bottom: 11pt
@@ -131,9 +131,9 @@ p
 .navbar 
     padding: 15px
     @media screen and ( min-width: 641px  )
-        padding: 0px 15px
-        padding-top: 15px
-    position: absolute
+        padding: 0px 18px
+        padding-top: 18px
+    position: fixed
     z-index: 9999
     width: 100%
     top: 0
@@ -145,7 +145,7 @@ p
     max-width: 120px
     width: 100%
     @media screen and ( min-width: 641px  )
-        max-width: 180px
+        max-width: 190px
     svg 
         path, rect, polygon
             transition: 0.3s all ease-in-out
@@ -156,7 +156,6 @@ p
 
 .menu
     button
-        position: relative
         padding: 10px
         width: 50px
         border: 0
@@ -169,36 +168,40 @@ p
                 
             &:after
                 transform: rotate(45deg)
-                margin-top: -8px
+                margin-top: -7px
         &:after
             content: ""
             display: block
-            width: 24px
-            height: 3px
+            width: 32px
+            height: 2px
             transition: all 0.3s ease-in-out
             background: white
         &:before
             content: ""
             display: block
-            width: 24px
-            height: 3px
+            width: 32px
+            height: 2px
             transition: all 0.3s ease-in-out
             background: white
             margin-bottom: 5px
-
+#logo
+    transition: all 0.3s ease-in-out
+    &.active
+        opacity: 0
+        transform: translateY(-100%)
 #menu-expanded
     opacity: 0
-    background: transparentize($dark-blue, .1)
+    background: transparentize($dark-blue, 0 )
     position: fixed
-    top: 100%
-    left: 0
+    top: 0
+    left: 100%
     width: 100%
     height: 100%
     transition: all 0.3s ease-in-out
     &.open
         opacity: 1
         z-index: 99
-        top: 0
+        left: 0
     ul
         position: absolute
         opacity: 0
@@ -217,7 +220,7 @@ p
         .buttons
             width: auto
             margin-top: 15px
-            margin-bottom: 50px
+            margin-bottom: 20px
             margin-right: -200px
             button
                 cursor: pointer
@@ -284,7 +287,7 @@ p
             a
                 color: $gray
                 &:hover 
-                    color: $primary
+                    color: $secondary
 
 .slides-horizontal
     .slide
@@ -353,6 +356,7 @@ p
             opacity: 0
             height: 0px
             overflow: hidden
+            line-height: 1.1em
             margin-top: 13px
             transition: all 0.3s ease-in-out
         @media screen and ( min-width: 641px  )
@@ -383,7 +387,7 @@ p
             margin: 0 auto
         @media screen and ( max-width: 641px  )
             width: 100%
-            background-image: url(../../images/mas.svg)
+            // background-image: url(../../images/mas.svg)
             background-repeat: no-repeat
             background-size: 35px
             background-position-x: 85%
@@ -427,13 +431,13 @@ p
         position: relative
     li::before 
         content: ""
-        background: $secondary
+        background: url(../../images/Punto_AP.svg)
         border-radius: 15px
         font-weight: bold
         display: inline-block
         width: 15px
         height: 15px
-        top: 8px
+        top: 4px
         position: absolute
         margin-left: -31px
 
@@ -441,6 +445,7 @@ p
     background: $dark-blue
     min-height: 600px
     padding: 50px 35px 0
+
     @media screen and ( min-width: 641px  )
         padding: 80px 0
     .main
@@ -450,6 +455,7 @@ p
             .send
                 margin-top: 50px
             input
+                outline: none
                 color: white
                 background: transparent
                 border: 0
@@ -473,6 +479,9 @@ p
             svg
                 margin-right: 10px
                 width: 23px
+            a:hover span
+                transition: all 0.3s
+                color: $secondary
             @media screen and ( min-width: 641px  )
                 svg
                     width: 18px
@@ -509,9 +518,9 @@ p
         color: $dark-blue
         padding: 2px 15px
         border: 0
-        font-size: 12pt
+        font-size: 12px
         @media screen and ( min-width: 641px  )
-            font-size: 15pt
+            font-size: 15px
             
         transition: all 0.3s ease-in-out
         font-family: "Gilam-Semibold"
@@ -581,6 +590,11 @@ p
                     svg
 
     .descanso
+        .row
+            .col-md-6:first-child
+                display: flex
+                align-items: center
+                justify-content: center
         .subtitulo-2
             margin-bottom: 45px
 

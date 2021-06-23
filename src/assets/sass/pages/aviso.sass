@@ -1,6 +1,11 @@
 @import '../_includes'
 @include white-logo
-
+a 
+    i
+        transition: all 0.3s
+        color: $text
+    &:hover i
+        color: $secondary
 .descanso
     @media screen and ( max-width: 640px )
         padding: 35px 15px
