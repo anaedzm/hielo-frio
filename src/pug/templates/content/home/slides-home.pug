@@ -1,22 +1,23 @@
 .slides-home.home-slides.slides-horizontal.container-fluid#slides-home-1
-    .mas
+    .mas#mas
         include ../../../svg/icons/mas
-    .slide.row.align-items-center#show-cursor(onmousemove="changeCursor('mas')")
-        #image.image.col-md-5(onmouseover="removeHighlight()").animate__animated
-            img#image_CatalogHome(src="assets/images/catalogo/basica.png")
-        #info.info.col-md-6.d-md-flex.flex-column.animate__animated
-            div(onmouseenter="highlightCursor(event)" onmouseleave="removeHighlight(event)")
-                a(href="basico.html")#link
-                    .titulo-1.primary-color.mt-auto.d-flex.justify-content-between.align-items-center
-                        span#titulo_CatalogHome BÁSICA
-                            
-                    .subtitulo-1.secondary-color#subtitulo_CatalogHome Ideal para que tu negocio
-                        br
-                        | sea el más cool.
-                    .content.mb-auto.pe-5#info_CatalogHome.d-none.d-md-block
-                        p Sus dimensiones son tan accesibles que ocupan muy poco espacio dentro de restaurantes pequeños, food courts o cafeterías, incluso puedes instalarla debajo de la barra del bar.
-                        p Haz tu servicio más eficiente sirviendo el hielo directamente de la máquina, al ubicarla cerca de donde se preparan las bebidas. 
-                        p De tamaño compacto y fácil manejo, tienes una alta eficiencia en producción de hielo con bajo consumo de energía.
+    a(href="basico.html")#link
+        .slide.row.align-items-center#show-cursor(onmousemove="changeCursor('mas')")
+            #image.image.col-md-5(onmouseover="removeHighlight()").animate__animated
+                img#image_CatalogHome(src="assets/images/catalogo/basica.png")
+            #info.info.col-md-6.d-md-flex.flex-column.animate__animated
+                div(onmouseenter="highlightCursor(event)" onmouseleave="removeHighlight(event)")
+                
+                        .titulo-1.primary-color.mt-auto.d-flex.justify-content-between.align-items-center
+                            span#titulo_CatalogHome BÁSICA
+                                
+                        .subtitulo-1.secondary-color#subtitulo_CatalogHome Ideal para que tu negocio
+                            br
+                            | sea el más cool.
+                        .content.mb-auto.pe-5#info_CatalogHome.d-none.d-md-block
+                            p Sus dimensiones son tan accesibles que ocupan muy poco espacio dentro de restaurantes pequeños, food courts o cafeterías, incluso puedes instalarla debajo de la barra del bar.
+                            p Haz tu servicio más eficiente sirviendo el hielo directamente de la máquina, al ubicarla cerca de donde se preparan las bebidas. 
+                            p De tamaño compacto y fácil manejo, tienes una alta eficiencia en producción de hielo con bajo consumo de energía.
     .buttons.d-none.d-md-block(onmouseenter="hideCursor()")#buttons
         button(onclick="load('basico')")#basico-btn
             include ../../../svg/home/maquinas/basica

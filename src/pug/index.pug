@@ -35,6 +35,13 @@ block content
       let fadeLeft = document.getElementById("fadeLeft")
       let fadeRight = document.getElementById("fadeRight")
       let fadeDown = document.getElementById("fadeDown")
+
+      let masVar = document.getElementById("mas")
+
+      masVar.addEventListener("click", ()=> {
+        window.location = "basico.html"
+      })
+
       function callback (entries, observer) {
         entries.forEach(entry => {
           // If our target enters the viewport, add an “active” class to it
@@ -53,7 +60,7 @@ block content
 
       let options = {
         root: null,
-        rootMargin: '-50px',
+        rootMargin: '-300px',
         threshold: 0
       }
       
@@ -74,11 +81,10 @@ block content
 
       observer2 = new IntersectionObserver(fadeIn, {
         root: null,
-        rootMargin: '0px',
+        rootMargin: '400px',
         threshold: 1.0
       })
       observer2.observe(fade)
-
       function load(type) {
         info.classList.remove("active")
         image.classList.remove("active")
@@ -86,6 +92,9 @@ block content
           info.classList.add("active")
           image.classList.add("active")
           if(type === "intermedia") {
+            masVar.addEventListener("click", ()=> {
+              window.location = "intermedio.html"
+            })
             document.getElementById("basico-btn").style.display = "inline"
             document.getElementById("intermedio-btn").style.display = "none"
             document.getElementById("link").href= 'intermedio.html';
@@ -98,6 +107,9 @@ block content
             + '<p>Con esta máquina obtienes un alto rendimiento en producción, al mismo tiempo que economizas en consumo de energía.</p>'
           }
           if(type === "basico") {
+            masVar.addEventListener("click", ()=> {
+              window.location = "basico.html"
+            })
             document.getElementById("basico-btn").style.display = "none"
             document.getElementById("intermedio-btn").style.display = "inline"
             document.getElementById("premium-btn").style.display = "inline"
@@ -110,6 +122,9 @@ block content
             + '<p>De tamaño compacto y fácil manejo, tienes una alta eficiencia en producción de hielo con bajo consumo de energía.</p>'      
           }
           if(type === "premium") {
+            masVar.addEventListener("click", ()=> {
+              window.location = "premium.html"
+            })
             document.getElementById("premium-btn").style.display = "none"
             document.getElementById("basico-btn").style.display = "inline"
             document.getElementById("intermedio-btn").style.display = "inline"

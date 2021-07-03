@@ -1,11 +1,17 @@
 @import '../_includes'
-body
-    // overflow: hidden
+body.active
+    overflow: hidden
 #first
     .slide
         pointer-events: none
         z-index: -1
 .slides-home
+    .content
+        margin-top: 31px
+    .titulo-1
+        line-height: 1.3em
+    .subtitulo-1
+        margin-top: 7px
     &.intermedio, &.premium
         margin-top: 50px
         
@@ -13,7 +19,6 @@ body
             min-height: 100vh
             overflow: visible
         .image
-            
             svg
                 height: 95%
                 left: 42%
@@ -38,15 +43,15 @@ body
     display: flex
     align-items: center
     justify-content: center
-    max-width: 1000px
     margin: 0 auto
     .subtitulo-3
         font-size: 36px
     .d-flex
         align-items: center
         justify-content: center
+        width: 100%
     .icon
-        max-width: 250px
+        max-width: 200px
         margin-right: 50px
         width: 100%
         position: relative
@@ -65,7 +70,7 @@ body
                 position: absolute
                 top: 0
                 right: 0
-                transform: translate(20%,-32%)
+                transform: translate(18%,-29%)
                 z-index: 9
                 width: 66%
                 max-width: unset
@@ -88,12 +93,23 @@ body
         display: flex
         align-items: center
         justify-content: center
-
+#vertical
+    height: 100%
 .detalles
     height: 100vh
     
+    .panel > div, .panel img 
+        opacity: 0
+        transition: all 0.3s
+    &.active
+        z-index: 0
     .row
+        z-index: -1
         height: 100%
+        &.active
+            z-index: 0
+            .panel > div, .panel img
+                opacity: 1
     .text
         background: $opaque-blue
         &> div
@@ -109,6 +125,7 @@ body
         margin-top: 35px
         max-width: 400px
     .image
+        background: $gray
         img
             padding: 80px
             margin: 0 auto
@@ -138,7 +155,7 @@ body
     position: absolute
     left: 70%
     bottom: 15px
-    z-index: 99
+    z-index: 9
     transition: width 0.1s ease-in-out
     animation: bigger 2s ease-in-out alternate infinite
     &.active
@@ -155,11 +172,66 @@ body
         transform: translateY(0)
     to
         transform: translateY(-20px)
-#cursorChange
+#quotes
+    position: relative
+    display: block
+    overflow-x: hidden
+    .content
+        position: absolute
+        left: 100%
+        margin: 0 auto
+        top: 50%
+        transition: all 0.3s ease-in-out
+        transform: translateY(-50%)
+        &.active
+            left: 0
+            right: 0
+        &.remove
+            left: -100%
+#loader
+    &.vertical
+        width: 50px
+        position: absolute
+        left: 0
+        top: 50%
+        transform: translateY(-50%)
+        text-align: center
+    li
+        list-style-type: none
+        width: 25px
+        display: inline-block
+        margin: 0 5px 5px
+        cursor: pointer
+        background-image: url('../../images/catalogo/basico/Centro.svg')
+        svg
+            width: 25px
+            path
+                stroke: $secondary
+                opacity: 0
+                // transition: stroke-dashoffset 1s ease-out
+                // stroke-dasharray: 75
+                // stroke-dashoffset: -74
+        &.active
+            svg path
+                opacity: 1
+                // stroke-dashoffset: 0
+section.panel
+        z-index: -1
+section.horizontal
+    width: 100%
+    height: 100vh
     overflow-x: hidden
     // cursor: none
+    position: relative
     section.panel
-        z-index: -1
+        position: absolute
+        width: 100%
+        left: 150%
+        transition: all 0.5s ease-in-out
+        &.active
+            left: 0
+        &.remove
+            left: -150%
     .horizontal
         top: 0
         width: 50px
@@ -176,6 +248,10 @@ body
         transform: translateX(0)
     0%
         transform: translateX(-20px)
+section.panel
+    z-index: -1
+    *
+        z-index: -1
 
 #cursorChange, #cursorChange2
     // height: 300vh
@@ -195,21 +271,24 @@ body
             //     top: 0
             //     left: 100%
             
-            &#cubo.active
-                left: 0
-            &#detalles.active
-                left: 0
-                width: 100%
-                top: 0
-                &.go
-                    left: -100%
-            &:nth-child(2)
-                top: 100%
-                &.active
-                    left: 0
-            &:nth-child(3)
-                // left: 200%
-                
+            
+#medidas           
+    #left, #bottom, #corner
+        transition: all 1s ease-in-out
+        opacity: 0
+    #animate, #animate2, #animate3
+        stroke-dashoffset: 1
+        stroke-dasharray: 1
+        transition: all 1s ease-in-out
+    #animate2, #bottom
+        transition-delay: 2s
+    #animate3, #corner
+        transition-delay: 1s
+    &.active
+        #animate, #animate2, #animate3
+            stroke-dashoffset: 0
+        #left, #bottom, #corner
+            opacity: 1
 
 #pinContainer2
     position: relative
