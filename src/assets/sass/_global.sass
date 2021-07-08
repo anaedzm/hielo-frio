@@ -201,16 +201,17 @@ p
     &.open
         opacity: 1
         z-index: 99
+        transition: all 0.3s ease-in-out
         left: 0
     ul
         position: absolute
         opacity: 0
         right: 0
+        top: 50%
         text-align: right
         padding-right: 200px
-        transition-delay: 0.3s all
-        transition: all 0.5s ease-in-out
-        transform: translateY(-20%)
+        transition: all 0.3s ease-in-out
+        transform: translateX(20%) translateY(-50%)
         li
             list-style-type: none
         @media screen and ( max-width: 640px)
@@ -226,6 +227,7 @@ p
                 cursor: pointer
                 width: 170px
                 height: 170px
+                position: relative
                 &:first-child
                     background: transparentize(#eaebed, 0.2)
                     &.active, &:hover
@@ -241,6 +243,10 @@ p
         button span    
             margin-top: -15px
             display: block
+            position: absolute
+            left: 0
+            right: 0
+            height: 0
         button svg 
             transition: all .3s
             width: 100%
@@ -249,7 +255,8 @@ p
         &.open
             opacity: 1
             top: 50%
-            transform: translateY(-50%)
+            transition: all 0.3s ease-in-out
+            transform: translateX(0%) translateY(-50%)
         .titulo-1 
             color: $gray
             font-family: 'Gilam-Semibold'

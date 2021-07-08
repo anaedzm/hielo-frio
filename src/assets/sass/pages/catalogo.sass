@@ -157,7 +157,7 @@ body.active
     bottom: 15px
     z-index: 9
     transition: width 0.1s ease-in-out
-    animation: bigger 2s ease-in-out alternate infinite
+    animation: bigger 0.8s ease-in-out alternate infinite
     &.active
         opacity: 1
         transform: translate(-50%, -50%) scale(1)
@@ -168,10 +168,12 @@ body.active
         path, polygon, rect
             fill: $secondary
 @keyframes bigger
-    from
+    0%
         transform: translateY(0)
-    to
+    30%
         transform: translateY(-20px)
+    80%
+        transform: translateY(0)
 #quotes
     position: relative
     display: block
@@ -183,6 +185,7 @@ body.active
         top: 50%
         transition: all 0.3s ease-in-out
         transform: translateY(-50%)
+        max-width: 800px
         &.active
             left: 0
             right: 0
@@ -196,6 +199,18 @@ body.active
         top: 50%
         transform: translateY(-50%)
         text-align: center
+    &.no-animate
+        li
+            svg
+                path
+                    stroke: $secondary
+                    opacity: 0
+                    stroke-dasharray: 0
+                    stroke-dashoffset: 0
+            &.active
+                svg path
+                    opacity: 1
+                    stroke-dashoffset: 0
     li
         list-style-type: none
         width: 25px
@@ -208,13 +223,13 @@ body.active
             path
                 stroke: $secondary
                 opacity: 0
-                // transition: stroke-dashoffset 1s ease-out
-                // stroke-dasharray: 75
-                // stroke-dashoffset: -74
+                transition: stroke-dashoffset 4s ease-out
+                stroke-dasharray: 75
+                stroke-dashoffset: -74
         &.active
             svg path
                 opacity: 1
-                // stroke-dashoffset: 0
+                stroke-dashoffset: 0
 section.panel
         z-index: -1
 section.horizontal

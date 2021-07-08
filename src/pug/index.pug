@@ -5,8 +5,11 @@ block content
   div.header-image(onmouseenter="hideCursor()")
     include templates/_navbar.pug
     video(autoplay muted loop id="myVideo" onmouseenter="hideCursor()")
-      source(src="assets/video/VideoLow_HF_New.mp4" type="video/mp4")
+      source(src="assets/video/Video_HF_VFinal.mp4" type="video/mp4")
     
+    script.
+      document.getElementById('myVideo').play();
+
   include templates/content/home/slides-home.pug
   
   .container.descanso(onmouseenter="hideCursor()")#fade
@@ -88,6 +91,13 @@ block content
       function load(type) {
         info.classList.remove("active")
         image.classList.remove("active")
+        if(type === "intermedia") {
+          document.getElementById('image_CatalogHome').src = 'assets/images/catalogo/Inter_72.png';
+        } else if(type==="premium"){
+            document.getElementById('image_CatalogHome').src = 'assets/images/catalogo/Premium_72.png';
+        } else if(type === "basico"){
+            document.getElementById('image_CatalogHome').src = 'assets/images/catalogo/basica.png';
+        }
         setTimeout(()=> {
           info.classList.add("active")
           image.classList.add("active")
@@ -99,7 +109,6 @@ block content
             document.getElementById("intermedio-btn").style.display = "none"
             document.getElementById("link").href= 'intermedio.html';
             document.getElementById("premium-btn").style.display = "inline"
-            document.getElementById('image_CatalogHome').src = 'assets/images/catalogo/Inter_72.png';
             document.getElementById("titulo_CatalogHome").innerHTML = 'INTERMEDIA';
             document.getElementById("subtitulo_CatalogHome").innerHTML = 'Refresca más de lo que<br> puedes imaginar.';
             document.getElementById("info_CatalogHome").innerHTML = '<p>Su elevado diseño la hace tan eficiente que es perfecta si requieres alta demanda para hoteles, expendios, restaurantes medianos y bares. Produce un excelente tamaño de hielo para enfriar cualquier tipo de bebida.</p>'
@@ -114,7 +123,6 @@ block content
             document.getElementById("intermedio-btn").style.display = "inline"
             document.getElementById("premium-btn").style.display = "inline"
             document.getElementById("link").href= 'basico.html';
-            document.getElementById('image_CatalogHome').src = 'assets/images/catalogo/basica.png';
             document.getElementById("titulo_CatalogHome").innerHTML = 'BÁSICA';
             document.getElementById("subtitulo_CatalogHome").innerHTML = 'Ideal para que tu negocio <br>sea el más cool.';
             document.getElementById("info_CatalogHome").innerHTML = '<p>Sus dimensiones son tan accesibles que ocupan muy poco espacio dentro de restaurantes pequeños, food courts o cafeterías, incluso puedes instalarla debajo de la barra del bar.</p>'
@@ -129,7 +137,6 @@ block content
             document.getElementById("basico-btn").style.display = "inline"
             document.getElementById("intermedio-btn").style.display = "inline"
             document.getElementById("link").href= 'premium.html';
-            document.getElementById('image_CatalogHome').src = 'assets/images/catalogo/Premium_72.png';
             document.getElementById("titulo_CatalogHome").innerHTML = 'PREMIUM';
             document.getElementById("subtitulo_CatalogHome").innerHTML = 'La única capaz de congelar<br>tus sentidos.';
             document.getElementById("info_CatalogHome").innerHTML = '<p>Su poderosa estructura y alta potencia la convierten en una extraordinaria opción para comedores industriales, hoteles, restaurantes grandes, expendios y bares.<p>'
