@@ -4,8 +4,8 @@
     line-height: 78px
     font-family: 'Gilam-Heavy'
     @media (max-width: 640px)
-        font-size: 34pt
-        line-height: 32pt
+        font-size: 35px
+        line-height: 33px
 
 .subtitulo-1
     font-size: 31px
@@ -13,8 +13,8 @@
     font-family: 'Gilam-Bold'
     line-height: 36px
     @media (max-width: 640px)
-        font-size: 21pt
-        line-height: 22pt
+        font-size: 21px
+        line-height: 26px
 
 .subtitulo-2
     font-size: 27px
@@ -39,7 +39,7 @@
     font-size: 18px
     font-family: 'Gilam-Semibold'
     @media (max-width: 640px)
-        font-size: 12pt
+        font-size: 15px
 
 .pie-2
     font-family: "Gilam-Semibold"
@@ -215,8 +215,16 @@ p
         li
             list-style-type: none
         @media screen and ( max-width: 640px)
+            margin-top: 20px
             padding-right: 80px
             line-height: 1em
+        @media screen and ( max-width: 480px)
+            padding-right: 20px
+            line-height: 1em
+            top: 40px
+            transform: translateX(20%) translateY(0%)
+
+            
         @include buttons-cat
         .buttons
             width: auto
@@ -230,15 +238,15 @@ p
                 position: relative
                 &:first-child
                     background: transparentize(#eaebed, 0.2)
-                    &.active, &:hover
+                    &.active, &:hover, &:focus
                         background: transparentize(#55bff0, 0.2 )
                 &:nth-child(2)
                     background: transparentize(#eef1f3, 0.2)
-                    &.active, &:hover
+                    &.active, &:hover, &:focus
                         background: transparentize(#4583a9, 0.2 )
                 &:nth-child(3)
                     background: transparentize(#eaebed, 0.2)
-                    &.active, &:hover
+                    &.active, &:hover, &:focus
                         background: transparentize(#226c93, 0.2 )
         button span    
             margin-top: -15px
@@ -257,13 +265,17 @@ p
             top: 50%
             transition: all 0.3s ease-in-out
             transform: translateX(0%) translateY(-50%)
+            @media screen and ( max-width:  480px)
+                top: 40px
+                transform: translateX(0) translateY(0)
+                
         .titulo-1 
             color: $gray
             font-family: 'Gilam-Semibold'
             font-size: 65px
             @media screen and ( max-width: 640px)
                 display: block
-                font-size: 40pt
+                font-size: 40px
                 line-height: 1em
                 .buttons 
                     margin-right: -166px
@@ -273,12 +285,14 @@ p
                         width: 80%
                         height: 120px
                         padding: 5px
-                        display: block
                         display: flex
                         text-align: left
                         align-items: center
                         flex-direction: row
                         justify-content: space-between
+                        // &:active, &:focus
+                        //     span
+                        //         color: white
                         svg
                             padding: 15px
                         span 
@@ -291,7 +305,17 @@ p
                             margin-top: auto
                             flex-grow: 1
                             display: block
-                            width: 100%              
+                            width: 100%
+                            height: auto
+                            margin-left: 15px    
+            @media screen and ( max-width: 480px)
+                font-size: 30px
+                .buttons 
+                    button 
+                        svg
+                            padding: 15px
+                        span 
+                            font-size: 15px    
             a
                 color: $gray
                 &:hover 
@@ -369,11 +393,11 @@ p
             line-height: 1.1em
             margin-top: 13px
             transition: all 0.3s ease-in-out
-        @media screen and ( min-width: 641px  )
+        @media screen and ( min-width: 641px )
             &:nth-child(2n)
                 background: $gray
         &:hover
-            @media screen and ( min-width: 641px  )
+            @media screen and ( min-width: 641px )
                 width: 300px
                 .text
                     opacity: 1

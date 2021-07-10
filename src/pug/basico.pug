@@ -19,13 +19,13 @@ block content
                 .subtitulo-1.secondary-color Ideal para que tu negocio
                     br
                     | sea el más cool.
-                .content.mb-auto.pe-5
+                .content.mb-auto.pe-md-5
                     p Sus dimensiones son tan accesibles que ocupan muy poco espacio dentro de restaurantes pequeños, food courts o cafeterías, incluso puedes instalarla debajo de la barra del bar.
                     p Haz tu servicio más eficiente sirviendo el hielo directamente de la máquina, al ubicarla cerca de donde se preparan las bebidas. 
                     p De tamaño compacto y fácil manejo, tienes una alta eficiencia en producción de hielo con bajo consumo de energía.   
     section.horizontal#horizontal
       #loader.vertical.no-animate
-        li.uno
+        li.uno.active
           include svg/servicios/sliderload.pug
         li.dos
           include svg/servicios/sliderload.pug
@@ -37,7 +37,7 @@ block content
 
       section.panel.horizontal-info.kg#detalles.first.active
         .content.container.slide-1
-          .d-flex.w-100
+          .d-flex.w-md-100
             .icon.circle#circle
               include svg/catalogo/basico/circle.pug
               img(src="assets/images/catalogo/basico/Kilos_Hielo_B.svg")
@@ -47,7 +47,7 @@ block content
               strong.secondary-color diarios.
       section.panel.horizontal-info.cubo#cubo
         .content.container.slide-1
-          .d-flex.w-100
+          .d-flex.w-md-100
             .icon
               include svg/catalogo/diagrama.pug
             .text.subtitulo-3
@@ -57,7 +57,7 @@ block content
   
       section.panel.horizontal-info.hasta#kilos
         .content.container.slide-1
-          .d-flex.w-100
+          .d-flex.w-md-100
             .icon
               include svg/catalogo/deposito.pug
             .text.subtitulo-3
@@ -315,6 +315,7 @@ block content
     // QUOTES SLIDER
     let slides = document.querySelectorAll('#quotes .content')
     let btns = document.querySelectorAll('#loader.quotes li')
+    let btnsH = document.querySelectorAll('#loader.no-animate li')
     let num = 0
     let start = false
     let timer
@@ -376,44 +377,100 @@ block content
 
       var controller = new ScrollMagic.Controller();
 
-      var wipeAnimation = new TimelineMax()
-      .fromTo("#detalles", 1, {x: "0%"}, {x: "-100%", ease: Linear.easeInOut}, 1)  // in from left
-      .to("#loader .uno svg path", 0, {strokeDashoffset: "0", opacity: 1, ease: Linear.easeInOut}, 1)  // in from left
-      .to("#loader .dos svg path", 0, {strokeDashoffset: "0", opacity: 1, ease: Linear.easeInOut}, 2)  // in from left
-      .to("#loader .uno svg path", 0, {strokeDashoffset: "-76", opacity: 0, ease: Linear.easeInOut}, 2)  // in from left
-      .to("#loader .tres svg path", 0, {strokeDashoffset: "0", opacity: 1, ease: Linear.easeInOut}, 3)  // in from left
-      .to("#loader .dos svg path", 0, {strokeDashoffset: "-76", opacity: 0, ease: Linear.easeInOut}, 3)  // in from left
-      .fromTo("#cubo", 2, {x: "0%"}, {x: "-200%", ease: Linear.easeInOut}, 2)  // in from left
-      .fromTo("#kilos", 2, {x: "0%"}, {x: "-200%", ease: Linear.easeInOut}, 3)  // in from left
+      //- var wipeAnimation = new TimelineMax()
+      //- .fromTo("#detalles", 1, {x: "0%"}, {x: "-100%", ease: Linear.easeInOut}, 1)  // in from left
+      //- .to("#loader .uno svg path", 0, {strokeDashoffset: "0", opacity: 1, ease: Linear.easeInOut}, 1)  // in from left
+      //- .to("#loader .dos svg path", 0, {strokeDashoffset: "0", opacity: 1, ease: Linear.easeInOut}, 2)  // in from left
+      //- .to("#loader .uno svg path", 0, {strokeDashoffset: "-76", opacity: 0, ease: Linear.easeInOut}, 2)  // in from left
+      //- .to("#loader .tres svg path", 0, {strokeDashoffset: "0", opacity: 1, ease: Linear.easeInOut}, 3)  // in from left
+      //- .to("#loader .dos svg path", 0, {strokeDashoffset: "-76", opacity: 0, ease: Linear.easeInOut}, 3)  // in from left
+      //- .to("#cubo", 2, {x: "-200%", ease: Linear.easeInOut}, 2)  // in from left
+      //- .fromTo("#kilos", 2, {x: "0%"}, {x: "-200%", ease: Linear.easeInOut}, 3)  // in from left
 
       new ScrollMagic.Scene({
         triggerElement: "#horizontal",
         triggerHook: "onLeave",
-        duration: "300%"
+        duration: "200%"
       })
       .setPin("#horizontal")
-      .setTween(wipeAnimation)
+      .on("progress", (event) => {
+        console.log(event)
+        let once = true
+        if(once && event.progress > 0.3 && event.progress < 0.7 && event.scrollDirection === "FORWARD"){
+          document.getElementById("detalles").style.transform = "translateX(-100%)"
+          document.getElementById("cubo").style.transform = "translateX(-100%)"
+          btnsH[0].classList.remove("active")
+          btnsH[1].classList.add("active")
+          once = false 
+          setTimeout(()=>{
+            once = true
+          }, 200)
+        }
+        if(event.progress > 0.7 && event.scrollDirection === "FORWARD"){
+          document.getElementById("cubo").style.transform = "translateX(-200%)"
+          document.getElementById("kilos").style.transform = "translateX(-200%)"
+          btnsH[1].classList.remove("active")
+          btnsH[2].classList.add("active")
+          once = false 
+          setTimeout(()=>{
+            once = true
+          }, 200)
+        }
+        if(event.progress > 0.3 && event.progress < 0.5 && event.scrollDirection === "FORWARD"){
+          document.getElementById("detalles").style.transform = "translateX(-100%)"
+          document.getElementById("cubo").style.transform = "translateX(-100%)"
+          once = false 
+          setTimeout(()=>{
+            once = true
+          }, 200)
+        }
+        if(event.progress < 0.7 && event.progress > 0.5 && event.scrollDirection === "REVERSE"){
+          document.getElementById("cubo").style.transform = "translateX(-100%)"
+          document.getElementById("kilos").style.transform = "translateX(0%)"
+          btnsH[1].classList.add("active")
+          btnsH[2].classList.remove("active")
+          once = false 
+          setTimeout(()=>{
+            once = true
+          }, 200)
+        }
+        if(event.progress < 0.5 && event.scrollDirection === "REVERSE"){
+          document.getElementById("detalles").style.transform = "translateX(0%)"
+          document.getElementById("cubo").style.transform = "translateX(0%)"
+          btnsH[0].classList.add("active")
+          btnsH[1].classList.remove("active")
+        }
+        //- if(event.progress < 0.3 && event.scrollDirection === "REVERSE"){
+        //-   document.getElementById("detalles").classList.add("active")
+        //-   document.getElementById("detalles").classList.remove("remove")
+        //- }
+        //- if(event.progress < 0.5 > event.scrollDirection === "REVERSE"){
+        //-   document.getElementById("cubo").classList.add("active")
+        //-   document.getElementById("cubo").classList.remove("remove")
+        //- }
+      })
+      //- .setTween(wipeAnimation)
       .setClassToggle("#pathCircle", "active")
       .addTo(controller);
 
       var wipeAnimation2 = new TimelineMax()
       .fromTo("#vertical-1 .panel.text #uno", 0.5, {y: "50%"}, {y: "-150%", ease: Linear.easeNone}, 1)  // in from left
-      .fromTo("#vertical-1 .panel.text #uno", 2, {opacity: "1"}, {opacity: "0", ease: Linear.easeNone}, 1)  // in from left
-      .fromTo("#vertical-1 .panel.text #dos", 2, {opacity: "0"}, {opacity: "1", ease: Linear.easeNone}, 1)  // in from left
-      .fromTo("#vertical-1 .panel.text #dos", 2, {opacity: "1"}, {opacity: "0", ease: Linear.easeNone}, 3)  // in from left
-      .fromTo("#vertical-1 .panel.text #tres", 2, {opacity: "1"}, {opacity: "1", ease: Linear.easeNone}, 3)  // in from left
-      .fromTo("#vertical-1 .panel.text #dos", 2, {y: "100%"}, {y: "-250%", ease: Linear.easeNone}, 2)  // in from left
-      .fromTo("#vertical-1 .panel.text #tres", 2, {y: "100%"}, {y: "-170%", ease: Linear.easeNone}, 3)  // in from left
+      .fromTo("#vertical-1 .panel.text #uno", 1, {opacity: "1"}, {opacity: "0", ease: Linear.easeNone}, 1)  // in from left
+      .fromTo("#vertical-1 .panel.text #dos", 1, {opacity: "0"}, {opacity: "1", ease: Linear.easeNone}, 1)  // in from left
+      .fromTo("#vertical-1 .panel.text #dos", 1, {opacity: "1"}, {opacity: "0", ease: Linear.easeNone}, 3)  // in from left
+      .fromTo("#vertical-1 .panel.text #tres", 1, {opacity: "1"}, {opacity: "1", ease: Linear.easeNone}, 3)  // in from left
+      .fromTo("#vertical-1 .panel.text #dos", 1, {y: "100%"}, {y: "-250%", ease: Linear.easeNone}, 2)  // in from left
+      .fromTo("#vertical-1 .panel.text #tres", 1, {y: "100%"}, {y: "-150%", ease: Linear.easeNone}, 3)  // in from left
       .fromTo("#vertical-1 img#uno", 1, {opacity: "1"}, {opacity: "1", ease: Linear.easeNone}, 1)
       .fromTo("#vertical-1 img#uno", 1, {opacity: "1"}, {opacity: "0", ease: Linear.easeNone}, 1)
       .fromTo("#vertical-1 img#dos", 1, {opacity: "0"}, {opacity: "0", ease: Linear.easeNone}, 1)
       .fromTo("#vertical-1 img#tres", 1, {opacity: "0"}, {opacity: "0", ease: Linear.easeNone}, 1)
       
-      .fromTo("#vertical-1 img#dos", 1, {opacity: "0"}, {opacity: "1", ease: Linear.easeNone}, 2)
+      .fromTo("#vertical-1 img#dos", 1, {opacity: "0"}, {opacity: "1", ease: Linear.easeNone}, 1)
       .fromTo("#vertical-1 img#dos", 1, {opacity: "1"}, {opacity: "0", ease: Linear.easeNone}, 3)
 
       
-      .fromTo("#vertical-1 img#tres", 1, {opacity: "0"}, {opacity: "1", ease: Linear.easeNone}, 4)
+      .fromTo("#vertical-1 img#tres", 1, {opacity: "0"}, {opacity: "1", ease: Linear.easeNone}, 3)
 
       new ScrollMagic.Scene({
         triggerElement: "#vertical-div-1",
