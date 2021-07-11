@@ -133,7 +133,7 @@ block content
       const slider = document.getElementById("slider")
       let slides = document.querySelectorAll('.slide')
       let btns = document.querySelectorAll('#btns li')
-      btns[0].classList.add("active")
+      
       let i = 0; 
       
 
@@ -164,6 +164,9 @@ block content
         }
       
       }
+      if(i === 0) {
+          btns[i].classList.add("active")
+        }
       var timer = new Timer(function() {
           slideInterval()
       }, 4000);
@@ -172,6 +175,7 @@ block content
         for(let b = 0; b < btns.length; b++) {
           btns[b].classList.remove("active")
         }
+        
         i++
         if(i === 4){
           for(let a = 0; a < slides.length; a++){

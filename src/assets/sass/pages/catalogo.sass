@@ -32,6 +32,7 @@ body.active
                 margin: 0 auto
     .image
         max-height: 80%
+        height: 100%
         position: relative
         img
             margin: 0 auto
@@ -114,7 +115,11 @@ body.active
         display: flex
         flex-direction: column
         #uno
-            margin-top: 45%
+            margin-top: 15%
+            flex-grow: 1
+            height: 100%
+        #dos
+            margin-top: 15%
             flex-grow: 1
             height: 100%
 .detalles
@@ -283,6 +288,7 @@ section.horizontal
         // background: $light-gray
         // left: 150%
         transition: all 1s ease-in-out
+        &:first-child
         &.active
             left: 0
         &.remove
@@ -291,6 +297,7 @@ section.horizontal
             
         &#detalles
             z-index: 1
+
              
     .horizontal
         top: 0
