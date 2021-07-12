@@ -126,21 +126,7 @@ block content
       .container.subtitulo-2.primary-color REQUERIMIENTOS
       .grid.mt-2
         include templates/content/catalogo/grid-catalogo
-
-  //- #scroll
-    
-  
-  //- #cursorChange.hori
-    
-  //- #vertical.vertical.vertical-1
-    
-  //- #vertical.vertical
-    
-  //- #vertical.vertical.verticalLast
-    
-
-  
-  
+ 
   script.
     const div = document.querySelector("#detalles")
     const test = document.querySelector("body")
@@ -470,10 +456,10 @@ block content
       .fromTo("#vertical-1 img#dos", 0.5, {opacity: "0"}, {opacity: "1", ease: Linear.easeNone}, 2)
       .to("#vertical-1 img#dos", 0.3, {opacity: "0", ease: Linear.easeNone}, 3)
       .to("#vertical-1 .panel.text #dos", 1, {y:"-220%", ease: Linear.easeNone}, 3)
-      .to("#vertical-1 .panel.text #dos", 1, {opacity:"0", ease: Linear.easeNone}, 4)
-      .fromTo("#vertical-1 .panel.text #tres", 1, {y: "15%"}, {y: "-160%", ease: Linear.easeNone}, 3)
-      .to("#vertical-1 .panel.text #dos", 1, {y:"-250%", ease: Linear.easeNone}, 4)
-      .to("#vertical-1 .panel.text #tres", 0.5,  {y: "-210%", ease: Linear.easeNone}, 4)
+      .to("#vertical-1 .panel.text #dos", 1, {opacity:"0", ease: Linear.easeNone}, 3)
+      .fromTo("#vertical-1 .panel.text #tres", 1, {y: "150%", opacity: 0}, {y: "-100%", opacity: 1, ease: Linear.easeNone}, 3)
+      .to("#vertical-1 .panel.text #dos", 1, {y:"-250%", opacity: 0, ease: Linear.easeNone}, 4)
+      .to("#vertical-1 .panel.text #tres", 1,  {y: "-210%", opacity: 1, ease: Linear.easeNone}, 4)
       .fromTo("#vertical-1 img#tres", 0.7, {opacity: "0"}, {opacity: "1", ease: Linear.easeNone}, 4)
       //- .to("#vertical-1 img#tres", 0.3, {opacity: "1", ease: Linear.easeNone}, 3)
 
