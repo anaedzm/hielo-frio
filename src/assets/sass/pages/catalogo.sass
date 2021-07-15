@@ -89,10 +89,10 @@ body.active
                 width: 66%
                 max-width: unset
                 height: auto
-                path
-                    stroke-dashoffset: 1000
-                    stroke-dasharray: 1000
-                    transition: all 3s ease-in-out
+                path, circle
+                    stroke-dashoffset: 1
+                    stroke-dasharray: 1
+                    transition: all 2s ease-in-out
                     &.active
                         stroke-dashoffset: 0 
         
@@ -258,6 +258,9 @@ body.active
         width: 101%
         max-width: unset
         height: auto
+
+    #medidas
+
 #loader
     &.vertical
         width: 50px
@@ -448,7 +451,10 @@ section.panel
 #scroll.intermedio, #scroll.premium
     #medidas
         #animate
-            transition: all 2.6s ease-in-out
+            transition: all 3s ease
+#scroll.premium
+    #circle #circle
+        transform: rotate(90deg)
 @media screen and ( max-width: 768px )
     #first 
         margin-top: 60px
