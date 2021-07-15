@@ -83,7 +83,14 @@ block content
                     span.primary-color DE ACERO 
                       | INOXIDABLE
               .texto-2.white-color Por medio de una constante regulación en la temperatura, se adapta al medio ambiente de tu establecimiento.
-            #tres
+            #tres 
+              .subtitulo-2
+                span.white-color ESPACIO
+                br
+                span.primary-color REDUCIDO
+              .texto-2.white-color Sólo elige el lugar para su instalación 
+                | y comienza a refrescar el día de tus comensales. 
+            #cuatro
               .subtitulo-2
                 span.white-color FÁCIL 
                 br
@@ -92,35 +99,9 @@ block content
           section.panel.col-md-6.image.d-md-flex.align-items-center.justify-content-center.panel.dos.vertical
             img(src="assets/images/catalogo/basico/Sanitizado_B.svg")#uno
             img(src="assets/images/catalogo/basico/Evaporador_B.svg")#dos
-            img(src="assets/images/catalogo/basico/Mantenimiento_B.svg")#tres
+            img(src="assets/images/catalogo/basico/Espacio_B.svg")#tres
+            img(src="assets/images/catalogo/basico/Mantenimiento_B.svg")#cuatro
 
-
-    //- section.vertical#vertical-2
-    //-   .detalles.container-fluid
-    //-     .row
-    //-       section.panel.unoB.vertical.col-md-6.text.d-md-flex.align-items-center.justify-content-center
-    //-         div
-    //-           .subtitulo-2 
-    //-             span.white-color EVAPORADOR 
-    //-             br
-    //-             span.primary-color DE ACERO 
-    //-               | INOXIDABLE
-    //-           .texto-2.white-color Por medio de una constante regulación en la temperatura, se adapta al medio ambiente de tu establecimiento.
-    //-       section.panel.dosB.vertical.col-md-6.image.d-md-flex.align-items-center.justify-content-center
-    //-         img(src="assets/images/catalogo/basico/Evaporador_B.svg")
-
-    //- section.vertical#vertical-3
-    //-   .detalles.container-fluid
-    //-     .row
-    //-       section.panel.unoC.vertical.col-md-6.text.d-md-flex.align-items-center.justify-content-center
-    //-         div
-    //-           .subtitulo-2
-    //-             span.white-color FÁCIL 
-    //-             br
-    //-             span.primary-color MANTENIMIENTO
-    //-           .texto-2.white-color Consérvala en óptimas condiciones y obtén el mayor rendimiento sin tantas complicaciones.
-    //-       section.panel.dosC.vertical.col-md-6.image.d-md-flex.align-items-center.justify-center
-    //-         img(src="assets/images/catalogo/basico/Mantenimiento_B.svg")
     section.scroll
       include templates/content/catalogo/quotes
       .container.subtitulo-2.primary-color REQUERIMIENTOS
@@ -145,111 +126,7 @@ block content
       scrollDivs[2].scrollIntoView()
     }, false)
 
-    // CHECK FIRST DIV
-    const observerFirst = new IntersectionObserver((entries) => {
-       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          first = true
-          //- document.body.classList.add("active")
-        } else {
-          first = false
-        }
-      });
-    }, {
-      root: null,
-      rootMargin: '0px',
-      threshold: 1,
-    }).observe(scrollDivs[1]);
 
-    function doMagic(e) {
-      if(!scrolled){
-        scrolled = true;
-        goTo(e)
-        setTimeout(function () { scrolled = false; }, 1000);
-      };
-    }
-
-    document.body.addEventListener('wheel', doMagic)
-    
-
-    function changeSlidesH(slide) {
-      counter = slide
-      slideBtns.forEach(slide => {
-        if(slide.classList.contains("active")){
-          slide.classList.remove("active")
-        }
-      });
-      slideBtns[counter].classList.add("active");
-      scrollDivs[2].childNodes.forEach((slide, index) => {
-        if(index > 0) {
-          if(slide.classList.contains("active")){
-            slide.classList.remove("active");
-          }
-          if(slide.classList.contains("remove")){
-            slide.classList.remove("remove");
-          }
-        }
-        
-      });
-      scrollDivs[2].childNodes[counter + 2].classList.add("active")
-      scrollDivs[2].childNodes[counter + 1].classList.add("remove")
-    }
-
-
-
-    function goTo(e){
-      if(e.deltaY < 0){
-        //SCROLL UP
-        if(vertical && counter === 0) {
-          counter === 2
-          //- window.scrollTo(0, scrollDivs[2].offsetTop)
-        } else if(horizontal && counter === 0) {
-          //- window.scrollTo(0, scrollDivs[1].offsetTop)
-        } else if(horizontal && !vertical){
-          slideBtns.forEach(slide => {
-            if(slide.classList.contains("active")){
-              slide.classList.remove("active")
-            }
-          });
-          counter--
-          slideBtns[counter].classList.add("active");
-          scrollDivs[2].childNodes[counter + 3].classList.remove("active")
-          scrollDivs[2].childNodes[counter + 2].classList.add("active")
-          scrollDivs[2].childNodes[counter + 3].classList.remove("remove")
-          scrollDivs[2].childNodes[counter + 2].classList.remove("remove")
-        } else if(vertical && counter > 0){
-          
-          counter--
-          //- window.scrollTo(0, scrollDivs[counter + 3].offsetTop)
-          scrollDivs[counter + 3].childNodes[0].classList.add("active")
-          scrollDivs[counter + 3].childNodes[0].childNodes[0].classList.add("active")
-        }
-      } else {
-        // SCROLL DOWN
-        if(first){
-          //- window.scrollTo(0, scrollDivs[2].offsetTop)
-        }
-        if(horizontal) {
-          slideBtns.forEach(slide => {
-            if(slide.classList.contains("active")){
-              slide.classList.remove("active")
-            }
-          });
-        }
-        if(vertical) {
-          counter++
-          if(counter === 3) {
-            //- window.scrollTo(0, scrollDivs[6].offsetTop)
-          } else {
-            //- window.scrollTo(0, scrollDivs[counter + 3].offsetTop)
-            scrollDivs[counter + 3].childNodes[0].classList.add("active")
-            scrollDivs[counter + 3].childNodes[0].childNodes[0].classList.add("active")
-            scrollDivs[counter + 2].childNodes[0].classList.remove("active")
-            scrollDivs[counter + 2].childNodes[0].childNodes[0].classList.remove("active")
-          }
-        }
-      }
-    }
 
 
     function Timer(fn, t) {
@@ -263,7 +140,6 @@ block content
             return this;
         }
 
-        // start timer using current settings (if it's not already running)
         this.start = function() {
             if (!timerObj) {
                 this.stop();
@@ -293,7 +169,6 @@ block content
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           counter = 4
-          //- document.body.classList.add("active")
         }
       });
     }
@@ -305,42 +180,12 @@ block content
     let num = 0
     let start = false
     let timer
-    //- const observerOverflow = new IntersectionObserver((entries) => {
-    //-    entries.forEach(entry => {
-    //-     if (entry.isIntersecting) {
-    //-       vertical = false
-    //-       //- document.body.classList.remove("active")
-    //-       for(let b = 0; b < btns.length; b++) {
-    //-         btns[b].classList.remove("active")
-    //-       }
-    //-       for(let a = 0; a < slides.length; a++){
-    //-         slides[a].classList.remove("active")
-    //-         slides[a].classList.remove("remove")
-    //-       }
-    //-       slides[0].classList.add("active")
-    //-       btns[0].classList.add("active")
-    //-       if(!start) {
-    //-         timer = new Timer(function() {
-    //-             slideInterval()
-    //-         }, 4000);
-    //-       }
-    //-       if(start && timer){
-    //-         timer.start();
-    //-       }
-    //-       scrollOver = true
-    //-       start = true  
-    //-     }
-    //-   });
-    //- }, {
-    //-   root: null,
-    //-   rootMargin: '0px',
-    //-   threshold: 1,
-    //- }).observe(scroll);
 
     
     function slideInterval() {
         for(let b = 0; b < btns.length; b++) {
           btns[b].classList.remove("active")
+          slides[b].classList.remove("active")
         }
         num++
         if(num === 5){
@@ -433,21 +278,14 @@ block content
           btnsH[0].classList.add("active")
           btnsH[1].classList.remove("active")
         }
-        //- if(event.progress < 0.3 && event.scrollDirection === "REVERSE"){
-        //-   document.getElementById("detalles").classList.add("active")
-        //-   document.getElementById("detalles").classList.remove("remove")
-        //- }
-        //- if(event.progress < 0.5 > event.scrollDirection === "REVERSE"){
-        //-   document.getElementById("cubo").classList.add("active")
-        //-   document.getElementById("cubo").classList.remove("remove")
-        //- }
+        
       })
       //- .setTween(wipeAnimation)
       .setClassToggle("#pathCircle", "active")
       .addTo(controller);
 
       var wipeAnimation2 = new TimelineMax()
-      .fromTo("#vertical-1 .panel.text #uno", 1, {y: "25%"}, {y: "-150%", ease: Linear.easeNone}, 1)
+      .fromTo("#vertical-1 .panel.text #uno", 1, {y: "20%"}, {y: "-150%", ease: Linear.easeNone}, 1)
       .to("#vertical-1 .panel.text #uno", 1, {opacity: "0", ease: Linear.easeNone}, 1)
       .fromTo("#vertical-1 img#uno", 0.3, {opacity: "1"}, {opacity: "1", ease: Linear.easeNone}, 1)
       .fromTo("#vertical-1 img#uno", 0.7, {opacity: "1"}, {opacity: "0", ease: Linear.easeNone}, 1)
@@ -457,28 +295,17 @@ block content
       .to("#vertical-1 img#dos", 0.3, {opacity: "0", ease: Linear.easeNone}, 3)
       .to("#vertical-1 .panel.text #dos", 1, {y:"-220%", ease: Linear.easeNone}, 3)
       .to("#vertical-1 .panel.text #dos", 1, {opacity:"0", ease: Linear.easeNone}, 3)
-      .fromTo("#vertical-1 .panel.text #tres", 1, {y: "150%", opacity: 0}, {y: "-100%", opacity: 1, ease: Linear.easeNone}, 3)
+      .fromTo("#vertical-1 .panel.text #tres", 1, {y: "-100%", opacity: 0}, {y: "-180%", opacity: 1, ease: Linear.easeNone}, 3)
       .to("#vertical-1 .panel.text #dos", 1, {y:"-250%", opacity: 0, ease: Linear.easeNone}, 4)
-      .to("#vertical-1 .panel.text #tres", 1,  {y: "-210%", opacity: 1, ease: Linear.easeNone}, 4)
-      .fromTo("#vertical-1 img#tres", 0.7, {opacity: "0"}, {opacity: "1", ease: Linear.easeNone}, 4)
-      //- .to("#vertical-1 img#tres", 0.3, {opacity: "1", ease: Linear.easeNone}, 3)
-
-
-      //- .fromTo("#vertical-1 .panel.text #dos", 1, {opacity: "0"}, {opacity: "0", ease: Linear.easeNone}, 1)  // in from left
-      //- .fromTo("#vertical-1 .panel.text #dos", 0.5, {opacity: "1"}, {opacity: "0", ease: Linear.easeNone}, 2)  // in from left
-      //- .fromTo("#vertical-1 .panel.text #tres", 1, {opacity: "1"}, {opacity: "1", ease: Linear.easeNone}, 3)  // in from left
-      //- .fromTo("#vertical-1 .panel.text #dos", 1, {y: "100%"},{y: "-40%", ease: Linear.easeNone}, 1)  // in from left
-      //- //- .fromTo("#vertical-1 .panel.text #dos", 1, {y: "-40%"}, {y: "-250%", ease: Linear.easeNone}, 3)  // in from left
-      //- .fromTo("#vertical-1 .panel.text #tres", 1, {y: "100%"}, {y: "-150%", ease: Linear.easeNone}, 3)  // in from left
-      
-      //- .fromTo("#vertical-1 img#tres", 1, {opacity: "0"}, {opacity: "0", ease: Linear.easeNone}, 1)
-      
-      //- .fromTo("#vertical-1 img#dos", 1, {opacity: "0"}, {opacity: "1", ease: Linear.easeNone}, 2)
-      //- .fromTo("#vertical-1 img#dos", 1, {opacity: "1"}, {opacity: "0", ease: Linear.easeNone}, 3)
-
-      
-      //- .fromTo("#vertical-1 img#tres", 1, {opacity: "0"}, {opacity: "1", ease: Linear.easeNone}, 4)
-
+      .to("#vertical-1 .panel.text #tres", 1,  {y: "-250%", opacity: 1, ease: Linear.easeNone}, 4)
+      .fromTo("#vertical-1 img#tres", 0.5, {opacity: "0"}, {opacity: "1", ease: Linear.easeNone}, 4)
+      .to("#vertical-1 img#tres", 0.3, {opacity: 0, ease: Linear.easeNone}, 5)
+      .to("#vertical-1 .panel.text #tres", 1,  {y: "-310%", opacity: 0, ease: Linear.easeNone}, 5)
+      .fromTo("#vertical-1 .panel.text #cuatro", 1,{y: "-200%", opacity: 0},  {y: "-250%", opacity: 1, ease: Linear.easeNone}, 5)
+      .to("#vertical-1 .panel.text #cuatro", 1,{y: "-320%", ease: Linear.easeNone}, 6)
+      .fromTo("#vertical-1 img#cuatro", 0.7, {opacity: "0"}, {opacity: 0, ease: Linear.easeNone}, 6)
+      .to("#vertical-1 img#cuatro", 0.3, {opacity: 1, ease: Linear.easeNone}, 6)
+     
       new ScrollMagic.Scene({
         triggerElement: "#vertical-div-1",
         triggerHook: "onLeave",
@@ -486,14 +313,11 @@ block content
       })
       .setPin("#vertical-div-1", {pushFollowes: false,})
       .setTween(wipeAnimation2)
-      //- .setClassToggle("#pathCircle", "active")
-      //- .addIndicators() // add indicators (requires plugin)
       .addTo(controller);
 
       timer = new Timer(function() {
-          
             slideInterval()
-        }, 4000);
+        }, 6000);
 
       new ScrollMagic.Scene({
         triggerElement: "#quotes",
@@ -506,8 +330,23 @@ block content
       }).on("leave", function(){
         timer.stop()
       })
-      //- .addIndicators() // add indicators (requires plugin)
       .addTo(controller);
+
+       function changeSlides(idx, event) {
+        for(let b = 0; b < btns.length; b++) {
+          btns[b].classList.remove("active")
+          slides[b].classList.remove("active")
+          slides[b].classList.remove("remove")
+        }
+        i = idx
+        if(i === 0 && slides[i].classList.contains("remove")) {
+          slides[idx].classList.remove("remove")
+        }
+        slides[idx].classList.add("active")
+        btns[idx].classList.add("active")
+        num = idx
+        timer.reset(6000)
+      }
 
       
     

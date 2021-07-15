@@ -3,8 +3,10 @@
         include ../../../svg/icons/mas
     a(href="basico.html")#link
         .slide.row.align-items-center#show-cursor(onmousemove="changeCursor('mas')")
-            #image.image.col-md-5(onmouseover="removeHighlight()").animate__animated
-                img#image_CatalogHome(src="assets/images/catalogo/basica.png")
+            #image.image.col-md-5(onmouseover="removeHighlight()").animate__animated.active
+                img#image_CatalogHome(src="assets/images/catalogo/basica.png").active
+                img#image_CatalogHome2(src="assets/images/catalogo/Inter_72.png")
+                img#image_CatalogHome3(src="assets/images/catalogo/Premium_72.png")
             #info.info.col-md-6.d-md-flex.flex-column.animate__animated
                 div(onmouseenter="highlightCursor(event)" onmouseleave="removeHighlight(event)")
                 

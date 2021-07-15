@@ -36,11 +36,11 @@ block content
         .content.container.slide-1
           .d-flex.w-md-100
             .icon.circle#circle
-              //- include svg/catalogo/intermedio/circle.pug
+              include svg/catalogo/premium/circle.pug
               img(src="assets/images/catalogo/basico/Kilos_Hielo_B.svg")
               img(src="assets/images/catalogo/Kilos_Contorno_B.svg").contorno
             .text.subtitulo-3
-              | De 180 a 300 kilos 
+              | Hasta 900 kilos 
               strong.secondary-color diarios.
       section.panel.horizontal-info.cubo#cubo
         .content.container.slide-1
@@ -97,7 +97,7 @@ block content
     section.scroll
       include templates/content/catalogo/quotes
       .container.subtitulo-2.primary-color REQUERIMIENTOS
-      .grid.mt-2
+      .grid.mt-2.premium
         include templates/content/catalogo/grid-catalogo
     
   script.
@@ -353,7 +353,7 @@ block content
 
         timer = new Timer(function() {
               slideInterval()
-          }, 4000);
+          }, 6000);
 
         new ScrollMagic.Scene({
           triggerElement: "#quotes",
@@ -368,3 +368,20 @@ block content
         })
         //- .addIndicators() // add indicators (requires plugin)
         .addTo(controller);
+
+        function changeSlides(idx, event) {
+          for(let b = 0; b < btns.length; b++) {
+            btns[b].classList.remove("active")
+            slides[b].classList.remove("active")
+            slides[b].classList.remove("remove")
+          }
+          i = idx
+          if(i === 0 && slides[i].classList.contains("remove")) {
+            slides[idx].classList.remove("remove")
+          }
+          slides[idx].classList.add("active")
+          btns[idx].classList.add("active")
+          num = idx
+          timer.reset(6000)
+        }
+

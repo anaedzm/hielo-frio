@@ -339,10 +339,12 @@ p
             @media (min-width: 641px)
                 .info > div:first-child
                     min-height: 300px
-        #image_CatalogHome 
+        #image_CatalogHome, #image_CatalogHome2, #image_CatalogHome3
             max-height: 530px
             margin: 0 auto
-            transition: all 0.3s ease-in-out
+            display: none
+            &.active
+                display: block
         .hide
             display: none
         #mas
@@ -361,6 +363,7 @@ p
                 width: 100% 
     
     .image
+        height: 100%
     .info
         height: 100%
         div 
@@ -441,8 +444,6 @@ p
                 opacity: 1
                 height: auto
                 margin-top: 13px
-        
-    
 
 .descanso
     overflow-x: hidden
@@ -552,7 +553,7 @@ p
     button[type="submit"]
         background: $opaque-blue
         color: $dark-blue
-        padding: 2px 15px 1px
+        padding: 2px 15px 1px 16px
         border: 0
         font-size: 12px
         @media screen and ( min-width: 641px  )
@@ -614,6 +615,40 @@ p
         transform: translate(-50%, -50%) scale(1.2)
         path, polygon, rect
             fill: $secondary
+#cookies
+    position: absolute
+    bottom: 0
+    left: 0
+    background-color: transparentize($dark-blue, 0.1)
+    color: white
+    font-weight: bold
+    z-index: 99
+    width: 100%
+    padding: 12px 15px
+    text-align: center
+    transition: all 0.3s ease-in-out
+    &.remove 
+        opacity: 0
+    span
+        color: $secondary
+        letter-spacing: 3px
+        font-size: 24px
+    button
+        width: 40px
+        height: 40px
+        background-color: transparent
+        border: 0
+        display: inline
+        vertical-align: middle
+        margin-left: 15px
+        &:hover
+            svg
+                .cls-1, .cls-2
+                    transition: all 0.3s ease-in-out
+                .cls-1
+                    fill: $secondary
+                .cls-2
+                    fill: white
 
 @media (max-width: 640px)
     .slides-horizontal

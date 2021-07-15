@@ -7,6 +7,13 @@ block content
     video(autoplay muted loop id="myVideo" onmouseenter="hideCursor()")
       source(src="assets/video/VideoLow_HF_New.mp4" type="video/mp4" media="all and (max-width: 640px)")
       source(src="assets/video/Video_HF_VFinal.mp4" type="video/mp4")
+
+    #cookies 
+      span Freeze! 
+      | Usamos cookies en nuestro sitio web para una mejor experiencia de usuario. Si aceptas nuestro uso de cookies, continúa navegando.
+      button 
+        include svg/okBtn.pug
+
     
     script.
       document.getElementById('myVideo').play();
@@ -39,6 +46,17 @@ block content
       let fadeLeft = document.getElementById("fadeLeft")
       let fadeRight = document.getElementById("fadeRight")
       let fadeDown = document.getElementById("fadeDown")
+      let cookies = document.getElementById("cookies")
+
+      cookies.addEventListener("click", () => {
+        cookies.classList.add("remove");
+        cookies.remove();
+        window.localStorage.setItem("cookies", true)
+      })
+      
+      if(window.localStorage.getItem("cookies")){
+          cookies.remove()
+      }
 
       let masVar = document.getElementById("mas")
 
@@ -53,11 +71,6 @@ block content
            info.classList.add("active")
            image.classList.add("active")
            buttons.classList.add("active")
-          // Otherwise, remove the “active” class
-          } else {
-            //- info.classList.remove("active")
-            //- image.classList.remove("active")
-            //- buttons.classList.remove("active")
           }
         });
       }
@@ -82,7 +95,6 @@ block content
 
       function fadeIn (entries, observer) {
         entries.forEach(entry => {
-          // If our target enters the viewport, add an “active” class to it
           if (entry.isIntersecting) {
            fadeLeft.classList.add("active")
            fadeRight.classList.add("active")
@@ -100,16 +112,25 @@ block content
       function load(type) {
         info.classList.remove("active")
         image.classList.remove("active")
+        let images = document.querySelectorAll("#image img")
+        
+        let currImage
         if(type === "intermedia") {
-          document.getElementById('image_CatalogHome').src = 'assets/images/catalogo/Inter_72.png';
+          currImage = images[1]
         } else if(type==="premium"){
-            document.getElementById('image_CatalogHome').src = 'assets/images/catalogo/Premium_72.png';
+          currImage = images[2]
         } else if(type === "basico"){
-            document.getElementById('image_CatalogHome').src = 'assets/images/catalogo/basica.png';
+          currImage = images[0]
         }
         setTimeout(()=> {
           info.classList.add("active")
           image.classList.add("active")
+          images.forEach(image => {
+          if(image.classList.contains("active")){
+            image.classList.remove("active")
+            }
+          })
+          currImage.classList.add("active")
           if(type === "intermedia") {
             masVar.addEventListener("click", ()=> {
               window.location = "intermedio.html"

@@ -233,7 +233,31 @@ body.active
             right: 0
         &.remove
             opacity: 0
-            // left: -100%
+
+.hide-intermedia, .hide-premium
+    display: none    
+.grid.intermedio  
+    .first
+        .icon
+            display: none
+    .icon.hide-intermedia
+        display: flex
+.grid.premium  
+    .first
+        .icon
+            display: none
+    .icon.hide-premium
+        display: flex
+#scroll.intermedio
+    svg#circle
+        position: absolute
+        top: 21%
+        right: 6%
+        transform: translate(18%,-29%)
+        z-index: 9
+        width: 101%
+        max-width: unset
+        height: auto
 #loader
     &.vertical
         width: 50px
@@ -252,10 +276,6 @@ body.active
                     stroke-dasharray: 76
                     stroke-dashoffset: -76
                     transition: all 0s
-            // &:first-child
-            //     svg  path
-            //         opacity: 1
-            //         stroke-dashoffset: 0
             &.active
                 svg path
                     opacity: 1
@@ -272,7 +292,7 @@ body.active
             path
                 stroke: $secondary
                 opacity: 0
-                transition: stroke-dashoffset 4s ease-out
+                transition: stroke-dashoffset 6s ease-out
                 stroke-dasharray: 75
                 stroke-dashoffset: -74
         &.active
@@ -425,7 +445,10 @@ section.panel
     position: absolute
     &.vertical
         width: 50%
-
+#scroll.intermedio, #scroll.premium
+    #medidas
+        #animate
+            transition: all 2.6s ease-in-out
 @media screen and ( max-width: 768px )
     #first 
         margin-top: 60px
