@@ -1,182 +1,182 @@
-extends templates/_default
-include helpers/_mixins
+//- extends templates/_default
+//- include helpers/_mixins
 
-block content
-  div.header-image(onmouseenter="hideCursor()").home
-    include templates/_navbar.pug
-    video(autoplay muted loop id="myVideo" onmouseenter="hideCursor()")
-      source(src="assets/video/VideoLow_HF_New.mp4" type="video/mp4" media="all and (max-width: 640px)")
-      source(src="assets/video/Video_HF_VFinal.mp4" type="video/mp4")
+//- block content
+//-   div.header-image(onmouseenter="hideCursor()").home
+//-     include templates/_navbar.pug
+//-     video(autoplay muted loop id="myVideo" onmouseenter="hideCursor()")
+//-       source(src="assets/video/VideoLow_HF_New.mp4" type="video/mp4" media="all and (max-width: 640px)")
+//-       source(src="assets/video/Video_HF_VFinal.mp4" type="video/mp4")
 
-    #cookies 
-      span Freeze! 
-      | Usamos cookies en nuestro sitio web para una mejor experiencia de usuario. Si aceptas nuestro uso de cookies, continúa navegando.
-      button 
-        include svg/okBtn.pug
+//-     #cookies 
+//-       span Freeze! 
+//-       | Usamos cookies en nuestro sitio web para una mejor experiencia de usuario. Si aceptas nuestro uso de cookies, continúa navegando.
+//-       button 
+//-         include svg/okBtn.pug
 
     
-    script.
-      document.getElementById('myVideo').play();
+//-     script.
+//-       document.getElementById('myVideo').play();
 
-  include templates/content/home/slides-home.pug
+//-   include templates/content/home/slides-home.pug
   
-  .container.descanso(onmouseenter="hideCursor()")#fade
-    div.row.align-items-start
-      .col-md-6#fadeLeft.d-md-flex.align-items-md-center.justify-content-md-center
-        .subtitulo-2.primary-color.mb-3.mb-md-0 CUANDO PIENSES EN 
-          br
-          span.secondary-color REFRESCAR TU NEGOCIO
-          br
-          | PIENSA EN HIELO FRÍO
-          br
-          | INTERNACIONAL.
-      .col-md-6#fadeRight
-        p Somos una empresa con más de 25 años de experiencia equipando a más de 800 clientes con las mejores máquinas para la fabricación de hielo cristalino. 
-        p Contamos con una amplia gama para venta, renta y mantenimiento de equipos altamente eficientes, complaciendo la mayor expectativa en servicio, precio y calidad del mercado.
+//-   .container.descanso(onmouseenter="hideCursor()")#fade
+//-     div.row.align-items-start
+//-       .col-md-6#fadeLeft.d-md-flex.align-items-md-center.justify-content-md-center
+//-         .subtitulo-2.primary-color.mb-3.mb-md-0 CUANDO PIENSES EN 
+//-           br
+//-           span.secondary-color REFRESCAR TU NEGOCIO
+//-           br
+//-           | PIENSA EN HIELO FRÍO
+//-           br
+//-           | INTERNACIONAL.
+//-       .col-md-6#fadeRight
+//-         p Somos una empresa con más de 25 años de experiencia equipando a más de 800 clientes con las mejores máquinas para la fabricación de hielo cristalino. 
+//-         p Contamos con una amplia gama para venta, renta y mantenimiento de equipos altamente eficientes, complaciendo la mayor expectativa en servicio, precio y calidad del mercado.
 
-  .grid(onmouseenter="hideCursor()")#fadeDown
-    include templates/content/home/grid-servicios
+//-   .grid(onmouseenter="hideCursor()")#fadeDown
+//-     include templates/content/home/grid-servicios
 
-  script.
-      const div = document.querySelector("#slides-home-1")
-      const fade = document.querySelector("#fade")
-      let info = document.getElementById("info")
-      let image = document.getElementById("image")
-      let buttons = document.getElementById("buttons")
-      let fadeLeft = document.getElementById("fadeLeft")
-      let fadeRight = document.getElementById("fadeRight")
-      let fadeDown = document.getElementById("fadeDown")
-      let cookies = document.getElementById("cookies")
+//-   script.
+//-       const div = document.querySelector("#slides-home-1")
+//-       const fade = document.querySelector("#fade")
+//-       let info = document.getElementById("info")
+//-       let image = document.getElementById("image")
+//-       let buttons = document.getElementById("buttons")
+//-       let fadeLeft = document.getElementById("fadeLeft")
+//-       let fadeRight = document.getElementById("fadeRight")
+//-       let fadeDown = document.getElementById("fadeDown")
+//-       let cookies = document.getElementById("cookies")
 
-      cookies.addEventListener("click", () => {
-        cookies.classList.add("remove");
-        cookies.remove();
-        window.localStorage.setItem("cookies", true)
-      })
+//-       cookies.addEventListener("click", () => {
+//-         cookies.classList.add("remove");
+//-         cookies.remove();
+//-         window.localStorage.setItem("cookies", true)
+//-       })
       
-      if(window.localStorage.getItem("cookies")){
-          cookies.remove()
-      }
+//-       if(window.localStorage.getItem("cookies")){
+//-           cookies.remove()
+//-       }
 
-      let masVar = document.getElementById("mas")
+//-       let masVar = document.getElementById("mas")
 
-      masVar.addEventListener("click", ()=> {
-        window.location = "basico.html"
-      })
+//-       masVar.addEventListener("click", ()=> {
+//-         window.location = "basico.html"
+//-       })
 
-      function callback (entries, observer) {
-        entries.forEach(entry => {
-          // If our target enters the viewport, add an “active” class to it
-          if (entry.isIntersecting) {
-           info.classList.add("active")
-           image.classList.add("active")
-           buttons.classList.add("active")
-          }
-        });
-      }
+//-       function callback (entries, observer) {
+//-         entries.forEach(entry => {
+//-           // If our target enters the viewport, add an “active” class to it
+//-           if (entry.isIntersecting) {
+//-            info.classList.add("active")
+//-            image.classList.add("active")
+//-            buttons.classList.add("active")
+//-           }
+//-         });
+//-       }
 
-      let options = {
-        root: null,
-        rootMargin: '50%',
-        threshold: 1.0
-      }
+//-       let options = {
+//-         root: null,
+//-         rootMargin: '50%',
+//-         threshold: 1.0
+//-       }
 
-    window.addEventListener("scroll", () => {
-      if(window.pageYOffset > 50){
-        info.classList.add("active")
-        image.classList.add("active")
-        buttons.classList.add("active")
-      }  
-    }, false)
+//-     window.addEventListener("scroll", () => {
+//-       if(window.pageYOffset > 50){
+//-         info.classList.add("active")
+//-         image.classList.add("active")
+//-         buttons.classList.add("active")
+//-       }  
+//-     }, false)
       
-      // Instancing a new IntersectionObserver
-      const observer = new IntersectionObserver(callback, options);
-      observer.observe(div);
+//-       // Instancing a new IntersectionObserver
+//-       const observer = new IntersectionObserver(callback, options);
+//-       observer.observe(div);
 
-      function fadeIn (entries, observer) {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-           fadeLeft.classList.add("active")
-           fadeRight.classList.add("active")
-           fadeDown.classList.add("active")
-          }
-        });
-      }
+//-       function fadeIn (entries, observer) {
+//-         entries.forEach(entry => {
+//-           if (entry.isIntersecting) {
+//-            fadeLeft.classList.add("active")
+//-            fadeRight.classList.add("active")
+//-            fadeDown.classList.add("active")
+//-           }
+//-         });
+//-       }
 
-      observer2 = new IntersectionObserver(fadeIn, {
-        root: null,
-        rootMargin: '400px',
-        threshold: 1.0
-      })
-      observer2.observe(fade)
-      function load(type) {
-        info.classList.remove("active")
-        image.classList.remove("active")
-        let images = document.querySelectorAll("#image img")
+//-       observer2 = new IntersectionObserver(fadeIn, {
+//-         root: null,
+//-         rootMargin: '400px',
+//-         threshold: 1.0
+//-       })
+//-       observer2.observe(fade)
+//-       function load(type) {
+//-         info.classList.remove("active")
+//-         image.classList.remove("active")
+//-         let images = document.querySelectorAll("#image img")
         
-        let currImage
-        if(type === "intermedia") {
-          currImage = images[1]
-        } else if(type==="premium"){
-          currImage = images[2]
-        } else if(type === "basico"){
-          currImage = images[0]
-        }
-        setTimeout(()=> {
-          info.classList.add("active")
-          image.classList.add("active")
-          images.forEach(image => {
-          if(image.classList.contains("active")){
-            image.classList.remove("active")
-            }
-          })
-          currImage.classList.add("active")
-          if(type === "intermedia") {
-            masVar.addEventListener("click", ()=> {
-              window.location = "intermedio.html"
-            })
-            document.getElementById("basico-btn").style.display = "inline"
-            document.getElementById("intermedio-btn").style.display = "none"
-            document.getElementById("link").href= 'intermedio.html';
-            document.getElementById("premium-btn").style.display = "inline"
-            document.getElementById("titulo_CatalogHome").innerHTML = 'INTERMEDIA';
-            document.getElementById("subtitulo_CatalogHome").innerHTML = 'Refresca más de lo que<br> puedes imaginar.';
-            document.getElementById("info_CatalogHome").innerHTML = '<p>Su elevado diseño la hace tan eficiente que es perfecta si requieres alta demanda para hoteles, expendios, restaurantes medianos y bares. Produce un excelente tamaño de hielo para enfriar cualquier tipo de bebida.</p>'
-            + '<p>Las tenemos disponibles en distintas capacidades y con dispensador opcional.</p>'
-            + '<p>Con esta máquina obtienes un alto rendimiento en producción, al mismo tiempo que economizas en consumo de energía.</p>'
-          }
-          if(type === "basico") {
-            masVar.addEventListener("click", ()=> {
-              window.location = "basico.html"
-            })
-            document.getElementById("basico-btn").style.display = "none"
-            document.getElementById("intermedio-btn").style.display = "inline"
-            document.getElementById("premium-btn").style.display = "inline"
-            document.getElementById("link").href= 'basico.html';
-            document.getElementById("titulo_CatalogHome").innerHTML = 'BÁSICA';
-            document.getElementById("subtitulo_CatalogHome").innerHTML = 'Ideal para que tu negocio <br>sea el más cool.';
-            document.getElementById("info_CatalogHome").innerHTML = '<p>Sus dimensiones son tan accesibles que ocupan muy poco espacio dentro de restaurantes pequeños, food courts o cafeterías, incluso puedes instalarla debajo de la barra del bar.</p>'
-            + '<p>Haz tu servicio más eficiente sirviendo el hielo directamente de la máquina, al ubicarla cerca de donde se preparan las bebidas.</p>'
-            + '<p>De tamaño compacto y fácil manejo, tienes una alta eficiencia en producción de hielo con bajo consumo de energía.</p>'      
-          }
-          if(type === "premium") {
-            masVar.addEventListener("click", ()=> {
-              window.location = "premium.html"
-            })
-            document.getElementById("premium-btn").style.display = "none"
-            document.getElementById("basico-btn").style.display = "inline"
-            document.getElementById("intermedio-btn").style.display = "inline"
-            document.getElementById("link").href= 'premium.html';
-            document.getElementById("titulo_CatalogHome").innerHTML = 'PREMIUM';
-            document.getElementById("subtitulo_CatalogHome").innerHTML = 'La única capaz de congelar<br>tus sentidos.';
-            document.getElementById("info_CatalogHome").innerHTML = '<p>Su poderosa estructura y alta potencia la convierten en una extraordinaria opción para comedores industriales, hoteles, restaurantes grandes, expendios y bares.<p>'
-            + '<p>Tiene la carga ideal para enfriar hieleras con cervezas y regalarle hielo a los clientes.</p>'
-            + '<p>Disponible con una amplia gama de capacidades en producción.</p>'
-            + '<p>Altamente eficiente, competitiva y ahorra energía.</p>'      
-          }
-        }, 800)
+//-         let currImage
+//-         if(type === "intermedia") {
+//-           currImage = images[1]
+//-         } else if(type==="premium"){
+//-           currImage = images[2]
+//-         } else if(type === "basico"){
+//-           currImage = images[0]
+//-         }
+//-         setTimeout(()=> {
+//-           info.classList.add("active")
+//-           image.classList.add("active")
+//-           images.forEach(image => {
+//-           if(image.classList.contains("active")){
+//-             image.classList.remove("active")
+//-             }
+//-           })
+//-           currImage.classList.add("active")
+//-           if(type === "intermedia") {
+//-             masVar.addEventListener("click", ()=> {
+//-               window.location = "intermedio.html"
+//-             })
+//-             document.getElementById("basico-btn").style.display = "inline"
+//-             document.getElementById("intermedio-btn").style.display = "none"
+//-             document.getElementById("link").href= 'intermedio.html';
+//-             document.getElementById("premium-btn").style.display = "inline"
+//-             document.getElementById("titulo_CatalogHome").innerHTML = 'INTERMEDIA';
+//-             document.getElementById("subtitulo_CatalogHome").innerHTML = 'Refresca más de lo que<br> puedes imaginar.';
+//-             document.getElementById("info_CatalogHome").innerHTML = '<p>Su elevado diseño la hace tan eficiente que es perfecta si requieres alta demanda para hoteles, expendios, restaurantes medianos y bares. Produce un excelente tamaño de hielo para enfriar cualquier tipo de bebida.</p>'
+//-             + '<p>Las tenemos disponibles en distintas capacidades y con dispensador opcional.</p>'
+//-             + '<p>Con esta máquina obtienes un alto rendimiento en producción, al mismo tiempo que economizas en consumo de energía.</p>'
+//-           }
+//-           if(type === "basico") {
+//-             masVar.addEventListener("click", ()=> {
+//-               window.location = "basico.html"
+//-             })
+//-             document.getElementById("basico-btn").style.display = "none"
+//-             document.getElementById("intermedio-btn").style.display = "inline"
+//-             document.getElementById("premium-btn").style.display = "inline"
+//-             document.getElementById("link").href= 'basico.html';
+//-             document.getElementById("titulo_CatalogHome").innerHTML = 'BÁSICA';
+//-             document.getElementById("subtitulo_CatalogHome").innerHTML = 'Ideal para que tu negocio <br>sea el más cool.';
+//-             document.getElementById("info_CatalogHome").innerHTML = '<p>Sus dimensiones son tan accesibles que ocupan muy poco espacio dentro de restaurantes pequeños, food courts o cafeterías, incluso puedes instalarla debajo de la barra del bar.</p>'
+//-             + '<p>Haz tu servicio más eficiente sirviendo el hielo directamente de la máquina, al ubicarla cerca de donde se preparan las bebidas.</p>'
+//-             + '<p>De tamaño compacto y fácil manejo, tienes una alta eficiencia en producción de hielo con bajo consumo de energía.</p>'      
+//-           }
+//-           if(type === "premium") {
+//-             masVar.addEventListener("click", ()=> {
+//-               window.location = "premium.html"
+//-             })
+//-             document.getElementById("premium-btn").style.display = "none"
+//-             document.getElementById("basico-btn").style.display = "inline"
+//-             document.getElementById("intermedio-btn").style.display = "inline"
+//-             document.getElementById("link").href= 'premium.html';
+//-             document.getElementById("titulo_CatalogHome").innerHTML = 'PREMIUM';
+//-             document.getElementById("subtitulo_CatalogHome").innerHTML = 'La única capaz de congelar<br>tus sentidos.';
+//-             document.getElementById("info_CatalogHome").innerHTML = '<p>Su poderosa estructura y alta potencia la convierten en una extraordinaria opción para comedores industriales, hoteles, restaurantes grandes, expendios y bares.<p>'
+//-             + '<p>Tiene la carga ideal para enfriar hieleras con cervezas y regalarle hielo a los clientes.</p>'
+//-             + '<p>Disponible con una amplia gama de capacidades en producción.</p>'
+//-             + '<p>Altamente eficiente, competitiva y ahorra energía.</p>'      
+//-           }
+//-         }, 800)
         
 
-      }      
+//-       }      
 
     
