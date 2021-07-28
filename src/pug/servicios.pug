@@ -1,214 +1,214 @@
-//- extends templates/_servicios
-//- include helpers/_mixins
+extends templates/_servicios
+include helpers/_mixins
 
-//- block content
-//-   div.header-image.slider
-//-     include templates/_navbar.pug
-//-     #slider
-//-       ul#btns
-//-         li(onclick="changeSlides(0)")
-//-           include svg/servicios/sliderload.pug
-//-         li(onclick="changeSlides(1)")
-//-           include svg/servicios/sliderload.pug
-//-         li(onclick="changeSlides(2)")
-//-           include svg/servicios/sliderload.pug
-//-         li(onclick="changeSlides(3)")
-//-           include svg/servicios/sliderload.pug
-//-       .slide.active 
-//-         .bg
-//-           img(src="assets/images/servicios/Back1_72.png")
-//-         .container-fluid
-//-           .row.align-items-center
-//-             .col-md-6.ps-md-5
-//-               .text
-//-                 .titulo-1.bright-color
-//-                   | COMIENZA 
-//-                   br
-//-                   | A ENFRIAR
-//-                 .subtitulo-1.white-color
-//-                   | en un abrir y cerrar de ojos.
-//-                 .image.d-md-none.d-block
-//-                   img.mx-auto(src="assets/images/servicios/Vaso1_72.png")
-//-                 .pie-1.white-color
-//-                   | CONTAMOS CON DISPONIBILIDAD INMEDIATA.
-//-             .col-md-6.d-none.d-md-block
-//-               .image
-//-                 img.mx-auto(src="assets/images/servicios/Vaso1_72.png")
-//-       .slide 
-//-         .bg
-//-           img(src="assets/images/servicios/Back2_72.png")
-//-         .container-fluid
-//-           .row.align-items-center
-//-             .col-md-6.ps-md-5
-//-               .text
-//-                 .titulo-1.bright-color
-//-                   | ¿CUÁL
-//-                   br
-//-                   | PREFIERES?
-//-                 .subtitulo-1.white-color
-//-                   | Estamos para servirte.
-//-                 .pie-1.white-color
-//-                   | COTIZACIONES SIN COMPROMISO.
-//-             .col-md-6
-//-               .image
-//-                 img.mx-auto(src="assets/images/servicios/Carpeta2_72.png")
-//-       .slide 
-//-         .bg
-//-           img(src="assets/images/servicios/Back3_72.png")
-//-         .container-fluid
-//-           .row.align-items-center
-//-             .col-md-6.ps-md-5
-//-               .text
-//-                 .titulo-1.bright-color
-//-                   | LLEGAMOS
-//-                 .subtitulo-1.white-color
-//-                   | hasta donde estés. 
-//-                 .pie-1.white-color
-//-                   | NUESTRO SERVICIO CUENTA CON COBERTURA 
-//-                   br
-//-                   | A NIVEL NACIONAL.
-//-             .col-md-6
-//-               .image
-//-                 img.mx-auto(src="assets/images/servicios/Caja3_72.png") 
-//-       .slide 
-//-         .bg
-//-           img(src="assets/images/servicios/Back4_72.png")
-//-         .container-fluid
-//-           .row.align-items-center
-//-             .col-md-6.ps-md-5
-//-               .text
-//-                 .titulo-1.bright-color
-//-                   | TENEMOS
-//-                 .subtitulo-1.white-color
-//-                   | para todos. 
-//-                 .pie-1.white-color
-//-                   | AMPLIA VARIEDAD DE INVENTARIO.
-//-             .col-md-6
-//-               .image
-//-                 img.mx-auto(src="assets/images/servicios/Tabla4_72.png") 
+block content
+  div.header-image.slider
+    include templates/_navbar.pug
+    #slider
+      ul#btns
+        li(onclick="changeSlides(0)")
+          include svg/servicios/sliderload.pug
+        li(onclick="changeSlides(1)")
+          include svg/servicios/sliderload.pug
+        li(onclick="changeSlides(2)")
+          include svg/servicios/sliderload.pug
+        li(onclick="changeSlides(3)")
+          include svg/servicios/sliderload.pug
+      .slide.active 
+        .bg
+          img(src="assets/images/servicios/Back1_72.png")
+        .container-fluid
+          .row.align-items-center
+            .col-md-6.ps-md-5
+              .text
+                .titulo-1.bright-color
+                  | COMIENZA 
+                  br
+                  | A ENFRIAR
+                .subtitulo-1.white-color
+                  | en un abrir y cerrar de ojos.
+                .image.d-md-none.d-block
+                  img.mx-auto(src="assets/images/servicios/Vaso1_72.png")
+                .pie-1.white-color
+                  | CONTAMOS CON DISPONIBILIDAD INMEDIATA.
+            .col-md-6.d-none.d-md-block
+              .image
+                img.mx-auto(src="assets/images/servicios/Vaso1_72.png")
+      .slide 
+        .bg
+          img(src="assets/images/servicios/Back2_72.png")
+        .container-fluid
+          .row.align-items-center
+            .col-md-6.ps-md-5
+              .text
+                .titulo-1.bright-color
+                  | ¿CUÁL
+                  br
+                  | PREFIERES?
+                .subtitulo-1.white-color
+                  | Estamos para servirte.
+                .pie-1.white-color
+                  | COTIZACIONES SIN COMPROMISO.
+            .col-md-6
+              .image
+                img.mx-auto(src="assets/images/servicios/Carpeta2_72.png")
+      .slide 
+        .bg
+          img(src="assets/images/servicios/Back3_72.png")
+        .container-fluid
+          .row.align-items-center
+            .col-md-6.ps-md-5
+              .text
+                .titulo-1.bright-color
+                  | LLEGAMOS
+                .subtitulo-1.white-color
+                  | hasta donde estés. 
+                .pie-1.white-color
+                  | NUESTRO SERVICIO CUENTA CON COBERTURA 
+                  br
+                  | A NIVEL NACIONAL.
+            .col-md-6
+              .image
+                img.mx-auto(src="assets/images/servicios/Caja3_72.png") 
+      .slide 
+        .bg
+          img(src="assets/images/servicios/Back4_72.png")
+        .container-fluid
+          .row.align-items-center
+            .col-md-6.ps-md-5
+              .text
+                .titulo-1.bright-color
+                  | TENEMOS
+                .subtitulo-1.white-color
+                  | para todos. 
+                .pie-1.white-color
+                  | AMPLIA VARIEDAD DE INVENTARIO.
+            .col-md-6
+              .image
+                img.mx-auto(src="assets/images/servicios/Tabla4_72.png") 
       
   
-//-   .container.descanso#fade
-//-     div.row.align-items-start
-//-       .col-md-6#fadeLeft.d-flex.align-items-md-center.justify-content-md-center
-//-         .subtitulo-2.primary-color.mb-3.mb-md-0 SOMOS EL ALIADO 
-//-           br
-//-           span.secondary-color QUE ESTABAS
-//-           br
-//-           | BUSCANDO.
-//-       .col-md-6#fadeRight
-//-         p En Hielo Frío Internacional cuidamos hasta el último detalle de tu máquina.
-//-         p Queremos demostrarte con nuestra experiencia, la dedicación que ponemos a cada equipo.
-//-         p Acércate a nosotros y conoce todos los planes de arrendamiento que tenemos para tu negocio con opciones de mantenimiento incluido.
-//-         p Tenemos la flexibilidad de adaptarnos a tus necesidades y presupuesto.
+  .container.descanso#fade
+    div.row.align-items-start
+      .col-md-6#fadeLeft.d-flex.align-items-md-center.justify-content-md-center
+        .subtitulo-2.primary-color.mb-3.mb-md-0 SOMOS EL ALIADO 
+          br
+          span.secondary-color QUE ESTABAS
+          br
+          | BUSCANDO.
+      .col-md-6#fadeRight
+        p En Hielo Frío Internacional cuidamos hasta el último detalle de tu máquina.
+        p Queremos demostrarte con nuestra experiencia, la dedicación que ponemos a cada equipo.
+        p Acércate a nosotros y conoce todos los planes de arrendamiento que tenemos para tu negocio con opciones de mantenimiento incluido.
+        p Tenemos la flexibilidad de adaptarnos a tus necesidades y presupuesto.
 
-//-   .grid#fadeDown
-//-     include templates/content/servicios/grid-servicios
+  .grid#fadeDown
+    include templates/content/servicios/grid-servicios
 
-//-   script.
-//-       const fade = document.querySelector("#fade")
-//-       let fadeLeft = document.getElementById("fadeLeft")
-//-       let fadeRight = document.getElementById("fadeRight")
-//-       let fadeDown = document.getElementById("fadeDown")
+  script.
+      const fade = document.querySelector("#fade")
+      let fadeLeft = document.getElementById("fadeLeft")
+      let fadeRight = document.getElementById("fadeRight")
+      let fadeDown = document.getElementById("fadeDown")
       
-//-       function fadeIn (entries, observer) {
-//-         entries.forEach(entry => {
-//-           // If our target enters the viewport, add an “active” class to it
-//-           if (entry.isIntersecting) {
-//-            fadeLeft.classList.add("active")
-//-            fadeRight.classList.add("active")
-//-            fadeDown.classList.add("active")
-//-           }
-//-         });
-//-       }
+      function fadeIn (entries, observer) {
+        entries.forEach(entry => {
+          // If our target enters the viewport, add an “active” class to it
+          if (entry.isIntersecting) {
+           fadeLeft.classList.add("active")
+           fadeRight.classList.add("active")
+           fadeDown.classList.add("active")
+          }
+        });
+      }
 
-//-       observer2 = new IntersectionObserver(fadeIn, {
-//-         root: null,
-//-         rootMargin: '300px',
-//-         threshold: 1.0
-//-       })
-//-       observer2.observe(fade)
+      observer2 = new IntersectionObserver(fadeIn, {
+        root: null,
+        rootMargin: '300px',
+        threshold: 1.0
+      })
+      observer2.observe(fade)
 
 
-//-       const slider = document.getElementById("slider")
-//-       let slides = document.querySelectorAll('.slide')
-//-       let btns = document.querySelectorAll('#btns li')
+      const slider = document.getElementById("slider")
+      let slides = document.querySelectorAll('.slide')
+      let btns = document.querySelectorAll('#btns li')
       
-//-       let i = 0; 
+      let i = 0; 
       
 
-//-       function Timer(fn, t) {
-//-         var timerObj = setInterval(fn, t);
+      function Timer(fn, t) {
+        var timerObj = setInterval(fn, t);
 
-//-         this.stop = function() {
-//-             if (timerObj) {
-//-                 clearInterval(timerObj);
-//-                 timerObj = null;
-//-             }
-//-             return this;
-//-         }
+        this.stop = function() {
+            if (timerObj) {
+                clearInterval(timerObj);
+                timerObj = null;
+            }
+            return this;
+        }
 
-//-         // start timer using current settings (if it's not already running)
-//-         this.start = function() {
-//-             if (!timerObj) {
-//-                 this.stop();
-//-                 timerObj = setInterval(fn, t);
-//-             }
-//-             return this;
-//-         }
+        // start timer using current settings (if it's not already running)
+        this.start = function() {
+            if (!timerObj) {
+                this.stop();
+                timerObj = setInterval(fn, t);
+            }
+            return this;
+        }
 
-//-         // start with new or original interval, stop current interval
-//-         this.reset = function(newT = t) {
-//-             t = newT;
-//-             return this.stop().start();
-//-         }
+        // start with new or original interval, stop current interval
+        this.reset = function(newT = t) {
+            t = newT;
+            return this.stop().start();
+        }
       
-//-       }
-//-       if(i === 0) {
-//-           btns[i].classList.remove("active")
-//-           btns[i].classList.add("active")
-//-         }
-//-       var timer = new Timer(function() {
-//-           slideInterval()
-//-       }, 4000);
+      }
+      if(i === 0) {
+          btns[i].classList.remove("active")
+          btns[i].classList.add("active")
+        }
+      var timer = new Timer(function() {
+          slideInterval()
+      }, 4000);
 
-//-       function slideInterval() {
-//-         for(let b = 0; b < btns.length; b++) {
-//-           btns[b].classList.remove("active")
-//-         }
+      function slideInterval() {
+        for(let b = 0; b < btns.length; b++) {
+          btns[b].classList.remove("active")
+        }
         
-//-         i++
-//-         if(i === 4){
-//-           for(let a = 0; a < slides.length; a++){
-//-             slides[a].classList.remove("active")
-//-           }
-//-           slides[0].classList.add("active")
-//-           i = 0
-//-         }
-//-         slides[i].classList.add("active")
-//-         btns[i].classList.add("active")
+        i++
+        if(i === 4){
+          for(let a = 0; a < slides.length; a++){
+            slides[a].classList.remove("active")
+          }
+          slides[0].classList.add("active")
+          i = 0
+        }
+        slides[i].classList.add("active")
+        btns[i].classList.add("active")
       
-//-       }
-//-       function changeSlides(idx, event) {
-//-         for(let b = 0; b < btns.length; b++) {
-//-           btns[b].classList.remove("active")
-//-           slides[b].classList.remove("active")
-//-         }
-//-         i = idx
-//-         slides[idx].classList.add("active")
-//-         btns[idx].classList.add("active")
-//-         timer.reset(4000)
-//-       }
+      }
+      function changeSlides(idx, event) {
+        for(let b = 0; b < btns.length; b++) {
+          btns[b].classList.remove("active")
+          slides[b].classList.remove("active")
+        }
+        i = idx
+        slides[idx].classList.add("active")
+        btns[idx].classList.add("active")
+        timer.reset(4000)
+      }
 
 
-//-       // switch interval to 10 seconds
-//- //-       timer.reset(10000);
+      // switch interval to 10 seconds
+//-       timer.reset(10000);
 
-//- //-       // stop the timer
-//- //-       timer.stop();
+//-       // stop the timer
+//-       timer.stop();
 
-//- //-       // start the timer
-//- //- timer.start();
+//-       // start the timer
+//- timer.start();
      
 
       

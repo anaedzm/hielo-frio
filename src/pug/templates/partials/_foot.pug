@@ -20,9 +20,8 @@
                         //-         include ../../svg/icons/tw.pug
                 .d-flex.d-md-block.align-items-baseline
                     .map 
-                        a(href="https://www.google.com/maps/place/Brasilia+2003,+Nuevo+San+Isidro,+27100+Torre%C3%B3n,+Coah./data=!4m2!3m1!1s0x868fda48b14e2dbf:0x3b636a67deaf5db8?sa=X&ved=2ahUKEwj2gLeu-4XxAhXQhK0KHSbeDM8Q8gEwAHoECAUQAQ"  target="_blank")
-                            include ../../svg/icons/maps.pug  
-                            span.regular.font-16.white-color | &nbsp;  Torreón, Coahuila.
+                        include ../../svg/icons/maps.pug  
+                        span.regular.font-16.white-color | &nbsp;  Torreón, Coahuila.
                     .text-end.d-sm-none.d-block.logo
                         a(href="index.html")
                             include ../../svg/logo.pug
@@ -31,7 +30,9 @@
             
             .col-md-6.form 
                 .texto-2.white-color.mt-md-0.mt-3 Nuestro equipo está listo para ayudarte.
-                form(action="")
+                include ./form.pug
+
+                //- form(action="")
                     .row
                         .col-md-12
                             input(type="text" name="mail" id="mail" placeholder="Correo electrónico*" required) 
@@ -54,8 +55,9 @@
                             //- .font-15.semibold.white-color Tu solicitud ha sido enviada
         .row.align-items-end.bottom
             .col-md-6
-                .regular.font-12.white-color Copyright 2021 HIELO FRÍO INTERNACIONAL, S.A. de C.V., en Av. Brasilia 2003 Col. Nuevo San Isidro, 
-                    | C.P.27100. Torreón, Coahuila. México. | Distribuidor Autorizado Hoshizaki.
+                .regular.font-12.white-color Copyright 2021 HIELO FRÍO INTERNACIONAL. Torreón, Coahuila. México. 
+                    br
+                    | Distribuidor Autorizado Hoshizaki.
                 .font-13.bold.white-color.mt-md-3.aviso
                     a(href="aviso-privacidad.html").white-color AVISO DE PRIVACIDAD Y COOKIES
             .col-md-6.text-end
