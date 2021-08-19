@@ -1,3 +1,8 @@
+#cookies.hide
+      span Freeze! 
+      | Usamos cookies en nuestro sitio web para una mejor experiencia de usuario. Si aceptas nuestro uso de cookies, continúa navegando.
+      button 
+        include ../../svg/okBtn.pug
 .footer#contacto
     .container 
         .row.main
@@ -12,12 +17,6 @@
                         li.fb
                             a(href="https://www.facebook.com/FABRICASDEHIELO" target="_blank") 
                                 include ../../svg/icons/fb.pug
-                        //- li.ig
-                        //-     a(href="#" target="_blank") 
-                        //-         include ../../svg/icons/ig.pug
-                        //- li.tw
-                        //-     a(href="#" target="_blank")
-                        //-         include ../../svg/icons/tw.pug
                 .d-flex.d-md-block.align-items-baseline
                     .map 
                         include ../../svg/icons/maps.pug  
@@ -69,3 +68,20 @@
 
 link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300")
 script(async src="/assets/js/app.js")
+
+script.
+    let cookies = document.getElementById("cookies");
+
+    cookies.addEventListener("click", () => {
+        cookies.classList.add("remove");
+        cookies.remove();
+        window.localStorage.setItem("cookies", true)
+    })
+
+    if(!window.localStorage.getItem("cookies")){
+        cookies.classList.remove('hide');
+    }
+
+    if(window.localStorage.getItem("cookies")){
+        cookies.remove()
+    }

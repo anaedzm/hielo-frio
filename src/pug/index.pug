@@ -4,21 +4,20 @@ include helpers/_mixins
 block content
   div.header-image(onmouseenter="hideCursor()").home
     include templates/_navbar.pug
-    video(autoplay muted loop id="myVideo" onmouseenter="hideCursor()")
+    include svg/loader.pug
+    video(autoplay onload="doWhatYouNeedTo()" muted loop id="myVideo" onmouseenter="hideCursor()")
       source(src="assets/video/VideoLow_HF_New.mp4" type="video/mp4" media="all and (max-width: 640px)")
       source(src="assets/video/Video_HF_VFinal.mp4" type="video/mp4")
 
-    #cookies 
-      span Freeze! 
-      | Usamos cookies en nuestro sitio web para una mejor experiencia de usuario. Si aceptas nuestro uso de cookies, continúa navegando.
-      button 
-        include svg/okBtn.pug
-
-    
     script.
+      let video = document.getElementById('myVideo')
       document.getElementById('myVideo').play();
+      video.addEventListener('loadeddata', function() {
+        document.getElementById("loader").remove()
+      }, false);
 
   include templates/content/home/slides-home.pug
+  include templates/content/home/slides-home-mobile.pug
   
   .container.descanso(onmouseenter="hideCursor()")#fade
     div.row.align-items-start
@@ -39,6 +38,7 @@ block content
 
   script.
       const div = document.querySelector("#slides-home-1")
+      const mobile = document.querySelector("#slides-home-1")
       const fade = document.querySelector("#fade")
       let info = document.getElementById("info")
       let image = document.getElementById("image")
@@ -46,17 +46,7 @@ block content
       let fadeLeft = document.getElementById("fadeLeft")
       let fadeRight = document.getElementById("fadeRight")
       let fadeDown = document.getElementById("fadeDown")
-      let cookies = document.getElementById("cookies")
-
-      cookies.addEventListener("click", () => {
-        cookies.classList.add("remove");
-        cookies.remove();
-        window.localStorage.setItem("cookies", true)
-      })
       
-      if(window.localStorage.getItem("cookies")){
-          cookies.remove()
-      }
 
       let masVar = document.getElementById("mas")
 
@@ -92,6 +82,10 @@ block content
       // Instancing a new IntersectionObserver
       const observer = new IntersectionObserver(callback, options);
       observer.observe(div);
+
+      // Instancing a new IntersectionObserver
+      const observermobile = new IntersectionObserver(callback, options);
+      observer.observe(mobile);
 
       function fadeIn (entries, observer) {
         entries.forEach(entry => {

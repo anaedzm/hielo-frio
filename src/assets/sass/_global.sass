@@ -2,15 +2,49 @@
     font-size: 80px
     text-transform: uppercase
     line-height: 78px
-    font-family: 'Gilam-Heavy'
+    font-family: 'Gilam-Heavy', sans-serif
+    font-weight: 800
     @media (max-width: 640px)
         font-size: 35px
         line-height: 33px
 
+#loader
+    position: absolute
+    top: 50%
+    left: 0
+    right: 0
+    margin: 0 auto
+    transform: translateY(-50%)
+    z-index: 99999
+    max-width: 60px
+    path
+        opacity: 0.3
+        &#dos
+            animation: opacity 2s alternate
+            animation-iteration-count: infinite
+
+        &#uno
+            animation: opacity 2s alternate
+            animation-delay: 0.5s
+            animation-iteration-count: infinite
+        &#tres
+            animation: opacity 2s alternate
+            animation-delay: 1s
+            animation-iteration-count: infinite
+
+    @keyframes opacity 
+        0%
+            opacity: 0.3
+        70%
+            opacity: 1
+        100%
+            opacity: 0.3    
+    
+
 .subtitulo-1
     font-size: 31px
     letter-spacing: -0.03em
-    font-family: 'Gilam-Bold'
+    font-family: 'Gilam-Bold', sans-serif
     line-height: 36px
     @media (max-width: 640px)
         font-size: 21px
@@ -19,7 +53,7 @@
 .subtitulo-2
     font-size: 27px
     letter-spacing: .0em
-    font-family: Gilam-Bold
+    font-family: Gilam-Bold, sans-serif
     text-transform: uppercase
     line-height: 29px
     @media (max-width: 640px)
@@ -29,25 +63,25 @@
 .subtitulo-3
     font-size: 24px
     letter-spacing: -0.03em
-    font-family: "Gilam-Regular"
+    font-family: "Gilam-Regular", sans-serif
     strong
-        font-family: "Gilam-Bold"
+        font-family: "Gilam-Bold", sans-serif
     @media (max-width: 640px)
         font-size: 15pt
 
 .pie-1
     font-size: 18px
-    font-family: 'Gilam-Semibold'
+    font-family: 'Gilam-Semibold', sans-serif
     @media (max-width: 640px)
         font-size: 15px
 
 .pie-2
-    font-family: "Gilam-Semibold"
+    font-family: "Gilam-Semibold", sans-serif
     font-size: 14px
 
 .texto-2
     font-size: 18px
-    font-family: "Gilam-Semibold"
+    font-family: "Gilam-Semibold", sans-serif
     line-height: 20px
     @media (max-width: 640px)
         font-size: 13pt
@@ -74,13 +108,13 @@
         font-size: 13pt
 
 .regular
-    font-family: "Gilam-Regular"
+    font-family: "Gilam-Regular", sans-serif
 
 .semibold
-    font-family: "Gilam-Semibold"
+    font-family: "Gilam-Semibold", sans-serif
 
 .bold
-    font-family: "Gilam-Semibold"
+    font-family: "Gilam-Semibold", sans-serif
 
 .primary-color
     color: $primary
@@ -101,7 +135,7 @@ body
     background-color: $light-gray
     font-size: 18px
     line-height: 24px 
-    font-family: 'Gilam-Regular'
+    font-family: 'Gilam-Regular', sans-serif
     color: $text
     @media (max-width: 640px)
         line-height: 16pt
@@ -269,16 +303,18 @@ p
             transform: translateX(0%) translateY(-50%)
             @media screen and ( max-width:  480px)
                 top: 40px
+                width: 100%
                 transform: translateX(0) translateY(0)
                 
         .titulo-1 
             color: $gray
-            font-family: 'Gilam-Semibold'
+            font-family: 'Gilam-Semibold', sans-serif
             font-size: 65px
             @media screen and ( max-width: 640px)
                 display: block
                 font-size: 40px
                 line-height: 1em
+                margin-bottom: 5px
                 .buttons 
                     margin-right: -166px
                     margin-left: 45px
@@ -560,7 +596,7 @@ p
             font-size: 15px
             
         transition: all 0.3s ease-in-out
-        font-family: "Gilam-Semibold"
+        font-family: "Gilam-Semibold", sans-serif
         &:hover
             background-color: $bright-blue
     @media screen and ( max-width: 640px  )
@@ -627,13 +663,20 @@ p
     text-align: center
     font-size: 17px
     transition: all 0.3s ease-in-out
+    &.hide
+        display: none
+    @media only screen and ( max-width: 640px )
+        font-size: 14px
     &.remove 
         opacity: 0
     span
-        font-family: 'Gilam-Semibold'
+        font-family: 'Gilam-Semibold', sans-serif
         color: $secondary
         letter-spacing: 3px
         font-size: 20px
+        @media only screen and ( max-width: 640px )
+            display: block
+            font-size: 16px
     button
         width: 40px
         height: 40px
@@ -642,6 +685,9 @@ p
         display: inline
         vertical-align: middle
         margin-left: 15px
+        @media only screen and ( max-width: 640px )
+            display: block
+            margin: 0 auto
         &:hover
             svg
                 .cls-1, .cls-2
