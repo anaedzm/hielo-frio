@@ -55,12 +55,13 @@ body
         .text
             @media(min-width: 641px)
                 padding-left: 40px
+                height: calc(100% - 185px)
         .image
             img
                 max-width: 480px
                 width: 100%
                 @media(max-width: 641px)
-                    width: 85%
+                    width: 100%
         &.active
             opacity: 1
                        
@@ -85,9 +86,33 @@ body
             @media screen and ( min-width:  640px)
                 width: 400px
 @media screen and ( max-width:  640px)
+    .container-fluid
+        height: 100%
+        > div
+            margin-top: 35px
+            height: 100%
+    .titulo-1
+        font-size: 45px
+        line-height: 48px
+    .subtitulo-1
+        font-size: 23px
+        line-height: 25px
     .grid .grid-element:first-child, .grid .grid-element:last-child, .grid .grid-element:nth-child(2)
         height: auto
         background-color: $secondary
+@media screen and ( max-width: 480px )
+    .pie-1
+        font-size: 11px
+    .titulo-1
+        font-size: 40px
+        line-height: 42px
+    .subtitulo-1
+        font-size: 18px
+        line-height: 21px
+    .container-fluid
+        > div
+            margin-top: 15px
+    
 
 .header-image.slider
     position: relative
@@ -105,8 +130,12 @@ body
                 margin-bottom: 15px
         .image
             @media screen and ( max-width:  640px)
-                max-width: 250px
+                max-width: 80%
                 margin: 35px auto 0
+            @media screen and (max-width: 480px)
+                .image 
+                    margin: 15px auto 0
+                    max-width: 200px
         .pie-1
             margin-top: 15px
             letter-spacing: 0em

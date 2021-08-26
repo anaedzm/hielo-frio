@@ -664,10 +664,18 @@ p
     text-align: center
     font-size: 17px
     transition: all 0.3s ease-in-out
+    display: flex
+    align-items: center
     &.hide
         display: none
     @media only screen and ( max-width: 640px )
-        font-size: 14px
+        text-align: left
+        font-size: 12px
+        align-items: flex-end
+        line-height: 17px
+    > div
+        @media only screen and ( max-width: 640px )
+            padding-right: 10px
     &.remove 
         opacity: 0
     span
@@ -678,6 +686,8 @@ p
         @media only screen and ( max-width: 640px )
             display: block
             font-size: 16px
+            margin-bottom: 10px
+            text-align: left
     button
         width: 40px
         height: 40px
@@ -689,6 +699,8 @@ p
         @media only screen and ( max-width: 640px )
             display: block
             margin: 0 auto
+            flex-basis: 35px
+            flex-shrink: 0
         &:hover
             svg
                 .cls-1, .cls-2

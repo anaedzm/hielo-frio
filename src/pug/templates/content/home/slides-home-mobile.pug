@@ -6,54 +6,54 @@
         include ../../../svg/servicios/sliderload.pug
       li(onclick="changeSlides(2)")
         include ../../../svg/servicios/sliderload.pug
-
-    a(href="basico.html")#link
-        .slide.row.align-items-center#show-cursor
-            #image.image.col-md-5.active
-                img#image_CatalogHome(src="assets/images/catalogo/basica.png").active
-            #info.info.col-md-6.d-md-flex.flex-column
-                div
-                        .titulo-1.primary-color.mt-auto.d-flex.justify-content-between.align-items-center
-                            span#titulo_CatalogHome BÁSICA
-                                
-                        .subtitulo-1.secondary-color#subtitulo_CatalogHome Ideal para que tu negocio
-                            br
-                            | sea el más cool.
-                        .content.mb-auto.pe-5#info_CatalogHome.d-none.d-md-block
-                            p Sus dimensiones son tan accesibles que ocupan muy poco espacio dentro de restaurantes pequeños, food courts o cafeterías, incluso puedes instalarla debajo de la barra del bar.
-                            p Haz tu servicio más eficiente sirviendo el hielo directamente de la máquina, al ubicarla cerca de donde se preparan las bebidas. 
-                            p De tamaño compacto y fácil manejo, tienes una alta eficiencia en producción de hielo con bajo consumo de energía.
-    a(href="intermedio.html")#link
-        .slide.row.align-items-center#show-cursor(onmousemove="changeCursor('mas')")
-            #image.image.col-md-5(onmouseover="removeHighlight()").active
-                img#image_CatalogHome2(src="assets/images/catalogo/Inter_72.png").active
-            #info.info.col-md-6.d-md-flex.flex-column
-                div
-                        .titulo-1.primary-color.mt-auto.d-flex.justify-content-between.align-items-center
-                            span#titulo_CatalogHome INTERMEDIA
-                        .subtitulo-1.secondary-color#subtitulo_CatalogHome Refresca más de lo que 
-                            br
-                            | puedes imaginar.
-                        .content.mb-auto.pe-5#info_CatalogHome.d-none.d-md-block
-                            p Su elevado diseño la hace tan eficiente que es perfecta si requieres alta demanda para hoteles, expendios, restaurantes medianos y bares. Produce un excelente tamaño de hielo para enfriar cualquier tipo de bebida.
-                            p Las tenemos disponibles en distintas capacidades y con dispensador opcional. 
-                            p Con esta máquina obtienes un alto rendimiento en producción, al mismo tiempo que economizas en consumo de energía.
-    a(href="premium.html")#link
-        .slide.row.align-items-center#show-cursor
-            #image.image.col-md-5.active
-                img#image_CatalogHome2(src="assets/images/catalogo/Premium_72.png").active
-            #info.info.col-md-6.d-md-flex.flex-column
-                        .titulo-1.primary-color.mt-auto.d-flex.justify-content-between.align-items-center
-                            span#titulo_CatalogHome PREMIUM
-                                
-                        .subtitulo-1.secondary-color#subtitulo_CatalogHome La única capaz de congelar 
-                            br
-                            | tus sentidos.
-                        .content.mb-auto.pe-5#info_CatalogHome.d-none.d-md-block
-                            p Su poderosa estructura y alta potencia la convierten en una extraordinaria opción para comedores industriales, hoteles, restaurantes grandes, expendios y bares.
-                            p Tiene la carga ideal para enfriar hieleras con cervezas y regalarle hielo a los clientes.
-                            p Disponible con una amplia gama de capacidades en producción.
-                            p Altamente eficiente, competitiva y ahorra energía.
-    
+    div.slides
+        a(href="basico.html")#link.active
+            .slide.row.align-items-center#show-cursor
+                #image.image.col-md-5.active
+                    img#image_CatalogHome(src="assets/images/catalogo/basica.png").active
+                #info.info.col-md-6.d-md-flex.flex-column
+                    div
+                            .titulo-1.primary-color.mt-auto.d-flex.justify-content-between.align-items-center
+                                span#titulo_CatalogHome BÁSICA
+                                    
+                            .subtitulo-1.secondary-color#subtitulo_CatalogHome Ideal para que tu negocio
+                                br
+                                | sea el más cool.
+                            .content.mb-auto.pe-5#info_CatalogHome.d-none.d-md-block
+                                p Sus dimensiones son tan accesibles que ocupan muy poco espacio dentro de restaurantes pequeños, food courts o cafeterías, incluso puedes instalarla debajo de la barra del bar.
+                                p Haz tu servicio más eficiente sirviendo el hielo directamente de la máquina, al ubicarla cerca de donde se preparan las bebidas. 
+                                p De tamaño compacto y fácil manejo, tienes una alta eficiencia en producción de hielo con bajo consumo de energía.
+        a(href="intermedio.html")#link
+            .slide.row.align-items-center#show-cursor(onmousemove="changeCursor('mas')")
+                #image.image.col-md-5(onmouseover="removeHighlight()").active
+                    img#image_CatalogHome2(src="assets/images/catalogo/Inter_72.png").active
+                #info.info.col-md-6.d-md-flex.flex-column
+                    div
+                            .titulo-1.primary-color.mt-auto.d-flex.justify-content-between.align-items-center
+                                span#titulo_CatalogHome INTERMEDIA
+                            .subtitulo-1.secondary-color#subtitulo_CatalogHome Refresca más de lo que 
+                                br
+                                | puedes imaginar.
+                            .content.mb-auto.pe-5#info_CatalogHome.d-none.d-md-block
+                                p Su elevado diseño la hace tan eficiente que es perfecta si requieres alta demanda para hoteles, expendios, restaurantes medianos y bares. Produce un excelente tamaño de hielo para enfriar cualquier tipo de bebida.
+                                p Las tenemos disponibles en distintas capacidades y con dispensador opcional. 
+                                p Con esta máquina obtienes un alto rendimiento en producción, al mismo tiempo que economizas en consumo de energía.
+        a(href="premium.html")#link
+            .slide.row.align-items-center#show-cursor
+                #image.image.col-md-5.active
+                    img#image_CatalogHome2(src="assets/images/catalogo/Premium_72.png").active
+                #info.info.col-md-6.d-md-flex.flex-column
+                            .titulo-1.primary-color.mt-auto.d-flex.justify-content-between.align-items-center
+                                span#titulo_CatalogHome PREMIUM
+                                    
+                            .subtitulo-1.secondary-color#subtitulo_CatalogHome La única capaz de congelar 
+                                br
+                                | tus sentidos.
+                            .content.mb-auto.pe-5#info_CatalogHome.d-none.d-md-block
+                                p Su poderosa estructura y alta potencia la convierten en una extraordinaria opción para comedores industriales, hoteles, restaurantes grandes, expendios y bares.
+                                p Tiene la carga ideal para enfriar hieleras con cervezas y regalarle hielo a los clientes.
+                                p Disponible con una amplia gama de capacidades en producción.
+                                p Altamente eficiente, competitiva y ahorra energía.
+        
     
     

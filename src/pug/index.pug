@@ -38,7 +38,7 @@ block content
 
   script.
       const div = document.querySelector("#slides-home-1")
-      const mobile = document.querySelector("#slides-home-1")
+      const mobile = document.querySelector("#slides-home-mobile")
       const fade = document.querySelector("#fade")
       let info = document.getElementById("info")
       let image = document.getElementById("image")
@@ -46,7 +46,13 @@ block content
       let fadeLeft = document.getElementById("fadeLeft")
       let fadeRight = document.getElementById("fadeRight")
       let fadeDown = document.getElementById("fadeDown")
-      
+      // QUOTES SLIDER
+      let slides = document.querySelectorAll('#slides-home-mobile #link')
+      let btns = document.querySelectorAll('#loader.quotes li')
+      let num = 0
+      let start = false
+      let timer
+      let enter = true
 
       let masVar = document.getElementById("mas")
 
@@ -71,6 +77,12 @@ block content
         threshold: 1.0
       }
 
+      let optionsMobile = {
+        root: null,
+        rootMargin: '0%',
+        threshold: 1.0
+      }
+
     window.addEventListener("scroll", () => {
       if(window.pageYOffset > 50){
         info.classList.add("active")
@@ -83,9 +95,25 @@ block content
       const observer = new IntersectionObserver(callback, options);
       observer.observe(div);
 
+      function mobileCallback(entries, observer) {
+        entries.forEach(entry => {
+          // If our target enters the viewport, add an “active” class to it
+          if (entry.isIntersecting) {
+            if(enter) {
+              timer = new Timer(function() {
+                slideInterval()
+              }, 6000);              
+              enter = false
+              btns[0].classList.add("active")
+            }
+            
+          }
+        });
+      }
+
       // Instancing a new IntersectionObserver
-      const observermobile = new IntersectionObserver(callback, options);
-      observer.observe(mobile);
+      const observermobile = new IntersectionObserver(mobileCallback, optionsMobile);
+      observermobile.observe(mobile);
 
       function fadeIn (entries, observer) {
         entries.forEach(entry => {
@@ -172,5 +200,80 @@ block content
         
 
       }      
+
+      
+
+    function Timer(fn, t) {
+        var timerObj = setInterval(fn, t);
+
+        this.stop = function() {
+            if (timerObj) {
+                clearInterval(timerObj);
+                timerObj = null;
+            }
+            return this;
+        }
+
+        this.start = function() {
+            if (!timerObj) {
+                this.stop();
+                timerObj = setInterval(fn, t);
+            }
+            return this;
+        }
+
+        // start with new or original interval, stop current interval
+        this.reset = function(newT = t) {
+            t = newT;
+            return this.stop().start();
+        }
+      
+      }
+
+    let once = true
+    
+    function slideInterval() {
+        for(let b = 0; b < btns.length; b++) {
+          btns[b].classList.remove("active")
+          slides[b].classList.remove("active")
+        }
+        num++
+        if(num === 3){
+          for(let a = 0; a < slides.length; a++){
+            slides[a].classList.remove("active")
+            slides[a].classList.remove("remove")
+          }
+          slides[0].classList.add("active")
+          num = 0
+        }
+        btns[num].classList.add("active")
+        slides[num].classList.add("active")      
+        slides[num].classList.remove("remove")
+        if(num != 0) {
+          slides[num - 1].classList.remove("active")      
+          slides[num - 1].classList.add("remove")   
+        }     
+        console.log(num)
+           
+      }
+
+      function changeSlides(idx, event) {
+        for(let b = 0; b < btns.length; b++) {
+          btns[b].classList.remove("active")
+          slides[b].classList.remove("active")
+          slides[b].classList.remove("remove")
+        }
+        i = idx
+        if(i === 0 && slides[i].classList.contains("remove")) {
+          slides[idx].classList.remove("remove")
+        }
+        slides[idx].classList.add("active")
+        btns[idx].classList.add("active")
+        num = idx
+        timer.reset(6000)
+      }
+      
+      let x = 0
+      var scrolled = false;
 
     
