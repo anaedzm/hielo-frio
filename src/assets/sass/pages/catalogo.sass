@@ -47,11 +47,37 @@ body.active
         .image
             img
                 max-height: 97%
+    @media screen and (max-width: 480px)
+        .slides-home
+            .image
+                height: 65vh
+        #vertical-1 .text #uno
+            margin-top: 28vh
+        #vertical-1 .text #dos
+            margin-top: 17%
 .premium
     .slides-home
         .image
             img
                 max-height: 95%
+    @media screen and (max-width: 480px)
+        .slides-horizontal
+            .slide
+                height: auto
+        .slides-home
+            .slide
+                .image
+                    height: 370px
+                    width: 100%
+                    img
+                        max-width: 100%
+                        height: 100%
+                        object-fit: contain
+                        object-position: center
+                        width: 100%
+                    svg
+                        left: -25px
+        
 .horizontal-info 
     height: 100vh
     display: flex
@@ -489,7 +515,7 @@ section.panel
             .panel.image
                 height: 50vh
                 position: absolute
-                bottom: 0
+                top: 0
                 text-align: center
                 img
                     position: relative
@@ -507,6 +533,18 @@ section.panel
             #tres
                 margin-bottom: 40vh
 @media screen and ( max-width: 640px )
+    .grid.basico
+        .grid-element
+            &:first-child
+                background-color: $secondary
+            &:last-child
+                background-color: $premium
+    .grid.intermedio
+        .grid-element
+            &:first-child
+                background-color: $primary
+            &:nth-child(2)
+                background-color: $premium
     #horizontal .panel
         .d-flex, .content
             height: 100%
@@ -521,9 +559,17 @@ section.panel
         .icon
             margin-bottom: 50px
             max-width: 100%
+        .text
+            padding-right: 15px
     #quotes
         .icon
             max-width: 100px
     .nombre-quote
         margin-top: 20px
+    #vertical-1
+        .text
+            #uno
+                margin-top: 30vh
+            #tres
+                margin-bottom: 5vh
 // update

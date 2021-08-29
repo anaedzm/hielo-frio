@@ -50,7 +50,7 @@
             svg
                 {transition: all 0.3s}
             &:hover, &.active {
-                span {opacity: 1}
+                span {opacity: 1; color: white}
                 path, rect, polygon
                     {fill: white}
                

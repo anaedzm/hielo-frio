@@ -97,18 +97,22 @@ body
     .subtitulo-1
         font-size: 23px
         line-height: 25px
-    .grid .grid-element:first-child, .grid .grid-element:last-child, .grid .grid-element:nth-child(2)
+    .grid .grid-element:nth-child(4)
         height: auto
-        background-color: $secondary
+        background-color: $premium
+    .grid .grid-element:nth-child(5)
+        height: auto
+        background-color: $primary
 @media screen and ( max-width: 480px )
     .pie-1
-        font-size: 11px
+        font-size: 15px
+        margin-top: 15px
     .titulo-1
-        font-size: 40px
-        line-height: 42px
+        font-size: 55px
+        line-height: 58px
     .subtitulo-1
-        font-size: 18px
-        line-height: 21px
+        font-size: 20px
+        line-height: 22px
     .container-fluid
         > div
             margin-top: 15px
@@ -123,7 +127,7 @@ body
         justify-content: center
         .text
             @media screen and (max-width: 640px)
-                margin-top: 50px
+                // margin-top: 50px
         .titulo-1
             @media screen and ( max-width:  640px)
                 // max-width: 320px
@@ -137,7 +141,7 @@ body
                     margin: 15px auto 0
                     max-width: 200px
         .pie-1
-            margin-top: 15px
+            margin-bottom: 80px
             letter-spacing: 0em
             @media screen and ( min-width:  641px)
                 margin-top: 45px

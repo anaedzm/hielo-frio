@@ -321,19 +321,21 @@ p
                     margin-left: 45px
                     button 
                         cursor: pointer
-                        width: 80%
+                        width: calc(80% - 56px)
                         height: 120px
                         padding: 5px
                         display: flex
-                        text-align: left
+                        // text-align: left
                         align-items: center
                         flex-direction: row
-                        justify-content: space-between
-                        // &:active, &:focus
-                        //     span
-                        //         color: white
+                        justify-content: flex-start
+                        &:active, &:focus, &:hover
+                            span
+                                color: white
                         svg
                             padding: 15px
+                            width: 120px
+                            object-position: left
                         span 
                             opacity: 1
                             color: $primary
@@ -342,11 +344,10 @@ p
                             line-height: 2em
                             margin-bottom: auto
                             margin-top: auto
-                            flex-grow: 1
-                            display: block
-                            width: 100%
                             height: auto
-                            margin-left: 15px    
+                            text-align: left
+                            margin-left: 145px
+                            
             @media screen and ( max-width: 480px)
                 font-size: 30px
                 .buttons 
@@ -481,6 +482,9 @@ p
                 opacity: 1
                 height: auto
                 margin-top: 13px
+            .pie-1
+                font-size: 15px
+                line-height: 21px
 
 .descanso
     overflow-x: hidden
@@ -518,7 +522,7 @@ p
 .footer
     background: $dark-blue
     min-height: 600px
-    padding: 50px 35px 0
+    padding: 50px 15px 0
 
     @media screen and ( min-width: 641px  )
         padding: 80px 0
