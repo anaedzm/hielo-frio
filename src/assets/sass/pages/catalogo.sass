@@ -52,7 +52,8 @@ body.active
             .image
                 height: 65vh
         #vertical-1 .text #uno
-            margin-top: 28vh
+            margin-top: 0vh
+            padding-top: 5vh
         #vertical-1 .text #dos
             margin-top: 17%
 .premium
@@ -512,11 +513,18 @@ section.panel
             position: relative
             .text, .image
                 padding: 0
+            .text
+                z-index: 0
+                position: absolute
+                height: 50vh
+                bottom: 0
+            
             .panel.image
                 height: 50vh
                 position: absolute
                 top: 0
                 text-align: center
+                z-index: 9
                 img
                     position: relative
                     height: 100%
@@ -533,6 +541,10 @@ section.panel
             #tres
                 margin-bottom: 40vh
 @media screen and ( max-width: 640px )
+    .titulo-1
+        font-size: 50px
+    .subtitulo-1
+        font-size: 25px
     .grid.basico
         .grid-element
             &:first-child
@@ -569,7 +581,11 @@ section.panel
     #vertical-1
         .text
             #uno
-                margin-top: 30vh
+                margin-top: 0vh
+                padding-top: 5vh
             #tres
-                margin-bottom: 5vh
+                margin-bottom: 3vh
+@media screen and ( max-width: 400px )
+    .titulo-1
+        font-size: 45px
 // update

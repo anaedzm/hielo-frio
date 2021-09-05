@@ -29,6 +29,7 @@
         width: 100%
         display: flex
         flex-wrap: nowrap
+        align-items: flex-end
         a
             color: inherit
             flex-grow: 1
@@ -94,7 +95,7 @@
                     opacity: 1
                     stroke-dashoffset: 0
     .slide
-        padding-top: 50px
+        padding-top: 30px
     @media only screen and (min-width: 641px)
         display: none
     #image, #info
@@ -102,7 +103,7 @@
     #image 
         margin-bottom: 10px
         img
-            max-height: 300px
+            max-height: 430px
 #info_CatalogHome
     &.content
         margin-top: 31px
@@ -136,4 +137,12 @@
 #fadeRight
     margin-top: -3px
 @include white-logo
+
+@media screen and ( max-width: 640px )
+    .titulo-1 
+        font-size: 48px
+    .slides-horizontal.home-slides .slide
+        padding: 30px 0 0 
+    
+
 
