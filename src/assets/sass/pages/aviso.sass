@@ -1,6 +1,6 @@
 @import '../_includes'
 @include white-logo
-a 
+a
     i
         transition: all 0.3s
         color: $text
@@ -9,10 +9,22 @@ a
 .descanso
     @media screen and ( max-width: 640px )
         padding: 35px 15px
-.slide 
-    height: 100vh
+.header-image
+    @media screen and (max-width: 640px)
+        min-height: 600px
+        height: unset
+        background: transparent
+
+.slide
+    height: 100%
     display: flex
-    min-height: 600px
+    min-height: 500px
+    @media screen and (max-width: 640px)
+        min-height: 100%
+        height: auto
+        position: absolute
+        top: 0
+
     .container-fluid
         align-self: center
 
@@ -22,14 +34,14 @@ a
 .container-fluid
     position: relative
 .bg
-        position: absolute
+    position: absolute
+    width: 100%
+    height: 100%
+    img
         width: 100%
         height: 100%
-        img 
-            width: 100%
-            height: 100%
-            object-fit: cover
-            object-position: center
+        object-fit: cover
+        object-position: center
 a
     color: inherit
 
