@@ -6,12 +6,25 @@ block content
     include templates/_navbar.pug
     include svg/loader.pug
     video(autoplay onload="doWhatYouNeedTo()" muted loop playsinline inline id="myVideo" onmouseenter="hideCursor()")
-      source(src="assets/video/PruebaHF_Mobile.mp4" type="video/mp4" media="all and (max-width: 640px)")
-      source(src="assets/video/Video_HF_VFinal.mp4" type="video/mp4")
+      //- source(src="assets/video/VideoLow_HF_New.mp4" type="video/mp4" media="all and (max-width: 640px)")
+      //- source(src="assets/video/Video_HF_VFinal.mp4" type="video/mp4")
 
     script.
       let video = document.getElementById('myVideo')
+      let source = document.createElement('source')
+
       document.getElementById('myVideo').play();
+      if (window.innerWidth > 640) {
+        source.setAttribute('src', 'assets/video/Video_HF_VFinal.mp4');
+        source.setAttribute('type', 'video/mp4');
+        video.appendChild(source);
+        video.play();
+      } else {
+        source.setAttribute('src', 'assets/video/VideoLow_HF_New.mp4');
+        source.setAttribute('type', 'video/mp4');
+        video.appendChild(source);
+        video.play();
+      }
       video.addEventListener('loadeddata', function() {
         document.getElementById("loader").remove()
       }, false);
