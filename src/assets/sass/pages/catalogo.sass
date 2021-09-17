@@ -119,9 +119,14 @@ body.active
                 path, circle
                     stroke-dashoffset: 1
                     stroke-dasharray: 1
-                    transition: all 2s ease-in-out
+                    opacity: 0
+                    transition: stroke-dashoffset 2s ease-in-out
                     &.active
-                        stroke-dashoffset: 0 
+                        stroke-dashoffset: 0
+                        opacity: 1
+                        @media screen and (max-width: 640px)
+                            stroke-dashoffset: 2
+
         
     .text 
         // width: 754px
@@ -613,3 +618,37 @@ section.panel
     .titulo-1
         font-size: 45px
 // update
+
+#scroll.intermedio
+    .horizontal-info 
+        .icon
+            &.circle
+                svg#circle
+                    @media screen and ( max-width: 640px )
+                        transform: scaleY(-1) scaleX(1) translate(13%,23%) rotate(-401deg)
+                        path, circle
+
+#scroll
+    .horizontal-info.basico
+        .icon
+            &.circle
+                svg#circle
+                    @media screen and ( max-width: 640px )
+                        transform: scaleY(-1) scaleX(1) translate(19%,28%) rotate(-276deg)
+                        path, circle
+                            stroke-dashoffset: 1
+                            &.active
+                                stroke-dashoffset: 2
+
+#scroll.premium
+    .horizontal-info
+        .icon
+            &.circle
+                svg#circle
+                    @media screen and ( max-width: 640px )
+                        transform: scaleY(1) scaleX(-1) translate(19%,28%) rotate(-276deg)
+                        path, circle
+                            stroke-dashoffset: 1
+                            &.active
+                                stroke-dashoffset: 0
+                        
